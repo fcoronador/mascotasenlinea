@@ -9,6 +9,7 @@
     <title>@yield('titulo')</title>
 </head>
 <body>
+    <a href="{{route('inicio')}}">Inicio</a>
     @yield('contenido')
 
 
