@@ -5,14 +5,17 @@
 @section('contenido')
 
 
-<div class="col-sm-11 container-fluid mt-3">
+
+
+<div class="col-sm-12 container-fluid mt-3">
        
     <div class="card-deck">
       <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
-        <div class="col-md-4">
+        <div class="col-sm-4">
+          
           <tr><td><br></td></tr>
-          <img src="{{url('/img/eventos.png')}}" class="img-fluid cardimg" alt="Responsive image">
+          <img src="/img/eventos.png" class="img-fluid cardimg" alt="Responsive image"> 
         </div>
         <div class="col-md-8" align="center">
           <div class="card-body">
@@ -26,9 +29,9 @@
     </div>
         <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <tr><td><br></td></tr>
-          <img src="{{url('/img/vacuna.png')}}" class="img-fluid cardimg" alt="Responsive image">
+          <img src="/img/vacuna.png" class="img-fluid cardimg" alt="Responsive image">
         </div>
         <div class="col-md-8" align="center">
           <div class="card-body">
@@ -42,9 +45,9 @@
     </div>
       <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <tr><td><br></td></tr>
-          <img src="{{url('/img/blog.png')}}" class="img-fluid cardimg" alt="Responsive image">
+          <img src="/img/blog.png" class="img-fluid cardimg" alt="Responsive image">
         </div>
         <div class="col-md-8 " align="center">
           <div class="card-body">
