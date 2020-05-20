@@ -1,18 +1,18 @@
+@php
+// Testeo de de conexion con la base de datos
+/*   if(DB::connection()->getDatabaseName())
+   {
+     echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+   }
+  */
+@endphp
+
+
 @extends('plantilla.plantilla')
 
 @section('titulo','Mascotas en línea')
 
 @section('contenido')
-
-<h1>Inicio del proyecto</h1>
-<hr>
-<ul>
-    <li><a href="{{route('registro')}}">enlace a Registro</a></li>
-    <li><a href="{{route('quienes')}}">enlace a  Quienes Somos</a></li>
-    <li><a href="{{route('login')}}">enlace a  Iniciar Sesion</a></li>
-</ul>
-
-
 
 <div class="col-sm-12 container-fluid mt-3">
        
@@ -65,9 +65,7 @@
         </div>
       </div>
     </div>
-    </div>
-    
-    
+    </div> 
 </div>
 
 @endsection
