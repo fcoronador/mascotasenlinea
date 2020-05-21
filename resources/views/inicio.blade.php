@@ -1,11 +1,18 @@
+@php
+// Testeo de de conexion con la base de datos
+/*   if(DB::connection()->getDatabaseName())
+   {
+     echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+   }
+  */
+@endphp
+
+
 @extends('plantilla.plantilla')
 
 @section('titulo','Mascotas en línea')
 
 @section('contenido')
-
-
-
 
 <div class="col-sm-12 container-fluid mt-3">
        
@@ -58,9 +65,7 @@
         </div>
       </div>
     </div>
-    </div>
-    
-    
+    </div> 
 </div>
 
 @endsection
