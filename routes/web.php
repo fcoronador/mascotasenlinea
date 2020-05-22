@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('/','inicio')->name('inicio');
+Route::get('/','ControlCliente@index')->name('inicio');
+
+
+
 Route::view('/registro','registro')->name('registro'); 
 Route::view('/contacto','inicio')->name('contacto'); 
 Route::view('/quienes','quienes')->name('quienes'); 
