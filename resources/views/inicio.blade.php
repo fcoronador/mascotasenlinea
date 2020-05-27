@@ -23,7 +23,6 @@
    
 @endforeach
 
-
 <div class="col-sm-12 container-fluid mt-3">
        
     <div class="card-deck">
