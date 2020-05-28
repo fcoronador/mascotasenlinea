@@ -2,12 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/','ControlCliente@index')->name('inicio');
-Route::get('/','ControlProcedimiento@index')->name('inicio');
-Route::get('/','ControlDesparacitacion@index')->name('inicio');
-Route::get('/','ControlExamenes@index')->name('inicio');
-Route::get('/','ControlVacunas@index')->name('inicio');
+
 
 
 Route::view('/registro','registro')->name('registro'); 

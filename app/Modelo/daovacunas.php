@@ -16,8 +16,8 @@ class daovacunas{
     }
 
     public function getVacuna(){
-        $this->$listavacunas=DB::select($this->query);
-        return $this->$listavacunas;
+        $this->listavacunas=DB::select($this->query);
+        return $this->listavacunas;
     }
 
 }
