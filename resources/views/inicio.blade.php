@@ -1,10 +1,11 @@
 @php
 // Testeo de de conexion con la base de datos
-/*   if(DB::connection()->getDatabaseName())
+/* if(DB::connection())
    {
-     echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
-   }
-  */
+     $matriz= DB::select('select * from cliente');
+     dd($matriz);
+   } */
+ 
 @endphp
 
 
