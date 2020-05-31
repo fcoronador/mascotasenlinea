@@ -4,6 +4,15 @@
 
 @section('contenido')
 
+
+@dump($citas)
+
+@foreach ($citas as $item)
+    
+   <a name="" id="" class="btn btn-primary" href="#" role="button"> {{$item->fecha}}</a>
+   
+@endforeach
+
 <h1 class="">CITAS</h1>
 
 <div class="card-deck">

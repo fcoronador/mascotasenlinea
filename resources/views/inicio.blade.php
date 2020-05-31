@@ -17,11 +17,14 @@
 
 @dump($clientes)
 
+
 @foreach ($clientes as $item)
     
    <a name="" id="" class="btn btn-primary" href="#" role="button"> {{$item->nombre}}</a>
    
 @endforeach
+
+
 
 
 <div class="col-sm-12 container-fluid mt-3">
