@@ -20,6 +20,18 @@ class Cliente{
         return $index;
     }
 
+    public function guardarclientes($cliente){
+
+        $index= new daocliente();
+        $index->setCliente($cliente);
+    }
+
+    public function mostrarCliente($id){
+
+        $index= new daocliente();
+        $cliente=$index->seleccionCliente($id);
+        return $cliente;
+    }
 
 
 }

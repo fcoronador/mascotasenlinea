@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/','ControlCliente@index')->name('inicio');
+Route::view('/','inicio')->name('inicio');
 
 
 
@@ -20,5 +20,9 @@ Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
 Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
 
 
+Route::get('/IndexCliente','ControlCliente@index')->name('indexcliente');
+Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');
+Route::post('/CrearCliente','ControlCliente@store')->name('guardarcliente');
+Route::get('/Cliente/{id}/','ControlCliente@show')->name('mostrarcliente');
 
 
