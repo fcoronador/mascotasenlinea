@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','ControlCliente@index')->name('inicio');
 Route::get('/Citas','ControlCitas@index')->name('citas');
-
+Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
 Route::view('/registro','registro')->name('registro'); 
 Route::view('/contacto','inicio')->name('contacto'); 

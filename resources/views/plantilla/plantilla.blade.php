@@ -25,7 +25,7 @@
                         <a class="nav-link menu" href="{{route('quienes')}}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('inicio')}}">Servicios</a>
+                        <a class="nav-link menu" href="{{route('servicios')}}">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
