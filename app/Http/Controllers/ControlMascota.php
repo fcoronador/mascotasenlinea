@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Modelo\Cliente;
-use PHPUnit\Framework\MockObject\Stub\ReturnStub;
+use App\Modelo\Mascota;
 
-class ControlCliente extends Controller
+class ControlMascota extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class ControlCliente extends Controller
      */
     public function index()
     {
-        $index= new Cliente();
-        $clientes=$index->indexclientes()->getClientes();
-        return view('admin.indexCliente',compact('clientes'));
+        $index= new Mascota();
+        $mascotas=$index->indexmascotas()->getMascotas();
+        return view('inicio',compact('mascotas'));
     }
 
     /**
@@ -27,7 +26,7 @@ class ControlCliente extends Controller
      */
     public function create()
     {
-        return view('admin.crearCliente');
+        //
     }
 
     /**
@@ -36,21 +35,9 @@ class ControlCliente extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Cliente $index)
+    public function store(Request $request)
     {
-        $cliente=[];
-
-        $cliente['idCedula']=$request->get('idCedula');
-        $cliente['nombre']=$request->get('nombre');
-        $cliente['apellido']=$request->get('apellido');
-        $cliente['telefono']=$request->get('telefono');
-        $cliente['direccion']=$request->get('direccion');
-        $cliente['correo']=$request->get('correo');
-        $cliente['contrasena']=$request->get('contrasena');
-
-        $index->guardarclientes($cliente);
-
-        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha creado con exito');
+        //
     }
 
     /**
@@ -61,9 +48,7 @@ class ControlCliente extends Controller
      */
     public function show($id)
     {
-        $index= new Cliente();
-        $cliente=$index->mostrarCliente($id);
-        return view('admin.showCliente',compact('cliente'));
+        //
     }
 
     /**
