@@ -4,8 +4,8 @@
    {
      $matriz= DB::select('select * from cliente');
      dd($matriz);
-   } */
- 
+   }
+*/
 @endphp
 
 
@@ -14,7 +14,6 @@
 @section('titulo','Mascotas en línea')
 
 @section('contenido')
-
 
 
 
