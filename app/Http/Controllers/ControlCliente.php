@@ -26,7 +26,6 @@ class ControlCliente extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-
     {
         return view('admin.crearCliente');
     }
@@ -39,19 +38,19 @@ class ControlCliente extends Controller
      */
     public function store(Request $request, Cliente $index)
     {
-       $cliente=[];
+        $cliente=[];
 
-       $cliente['idCedula']=$request->get('idCedula');
-       $cliente['nombre']=$request->get('nombre');
-       $cliente['apellido']=$request->get('apellido');
-       $cliente['telefono']=$request->get('telefono');
-       $cliente['direccion']=$request->get('direccion');
-       $cliente['correo']=$request->get('correo');
-       $cliente['contrasena']=$request->get('contrasena');
+        $cliente['idCedula']=$request->get('idCedula');
+        $cliente['nombre']=$request->get('nombre');
+        $cliente['apellido']=$request->get('apellido');
+        $cliente['telefono']=$request->get('telefono');
+        $cliente['direccion']=$request->get('direccion');
+        $cliente['correo']=$request->get('correo');
+        $cliente['contrasena']=$request->get('contrasena');
 
         $index->guardarclientes($cliente);
 
-       return redirect()->route('indexcliente')->with('estado', 'El cliente se ha creado con exito');
+        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha creado con exito');
     }
 
     /**
