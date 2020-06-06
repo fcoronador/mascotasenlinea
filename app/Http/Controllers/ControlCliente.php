@@ -74,7 +74,9 @@ class ControlCliente extends Controller
      */
     public function edit($id)
     {
-        //
+        $index= new Cliente();
+        $cliente=$index->mostrarCliente($id);
+        return view('admin.editCliente',compact('cliente','id'));
     }
 
     /**
@@ -84,9 +86,22 @@ class ControlCliente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        
+        $cliente=[];
+        $cliente['idCedula']=$request->get('idCedula');
+        $cliente['nombre']=$request->get('nombre');
+        $cliente['apellido']=$request->get('apellido');
+        $cliente['telefono']=$request->get('telefono');
+        $cliente['direccion']=$request->get('direccion');
+        $cliente['correo']=$request->get('correo');
+        $cliente['contrasena']=$request->get('contrasena');
+
+        
+        $index= new Cliente();
+        $index->Actualizar($cliente);
+        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con exito');
     }
 
     /**
@@ -97,6 +112,9 @@ class ControlCliente extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $index = new Cliente();
+        $index->borrar($id);
+        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha sido eliminado con exito');
     }
 }

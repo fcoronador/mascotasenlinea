@@ -35,4 +35,25 @@ class daocliente{
         return $cliente;
     }    
 
+    public function update($cliente){
+        
+
+            DB::table('cliente')
+            ->where('idCedula',$cliente['idCedula'])
+            ->update($cliente);
+
+    }
+
+    public function delete($id){
+        
+        
+        DB::table('controles')->where('mascota_idMascotas', '=', 5)->delete(); 
+        DB::table('procedi')->where('mascota_idMascotas', '=', 5)->delete(); 
+        DB::table('mascota')->where('cliente_idCedula', '=', $id)->delete(); 
+        
+        DB::table('citas')->where('cliente_idCedula', '=', $id)->delete(); 
+        DB::table('cliente')->where('idCedula', '=', $id)->delete(); 
+    }
+
+
 }

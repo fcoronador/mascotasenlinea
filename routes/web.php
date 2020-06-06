@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,8 +22,12 @@ Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//crea
 
 
 Route::get('/IndexCliente','ControlCliente@index')->name('indexcliente');
-Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');
-Route::post('/CrearCliente','ControlCliente@store')->name('guardarcliente');
+Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearCliente','ControlCliente@store')->name('guardarcliente');/* Recibe la data del $_REQUEST */
 Route::get('/Cliente/{id}/','ControlCliente@show')->name('mostrarcliente');
+Route::get('/Cliente/{id}/editar','ControlCliente@edit')->name('editarcliente');
+Route::patch('/Cliente/{id}/actualizar','ControlCliente@update')->name('actualizarcliente');
+Route::delete('/Cliente/{id}/eliminar','ControlCliente@destroy')->name('borrarcliente');
+
 
 

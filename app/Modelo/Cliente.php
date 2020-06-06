@@ -34,4 +34,16 @@ class Cliente{
     }
 
 
+    public function Actualizar($cliente){
+
+        $index=new daocliente();
+        $index->update($cliente);
+    }
+
+    public function borrar($id){
+
+        $index= new daocliente();
+        $index->delete($id);
+    }
+
 }
