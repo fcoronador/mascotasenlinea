@@ -31,7 +31,7 @@ class daocliente{
 
     public function seleccionCliente($id){
 
-        $cliente=DB::select('select * from cliente where nombre = :nombre',['nombre'=> $id]);
+        $cliente=DB::select('select * from cliente where idCedula = :idCedula',['idCedula'=> $id]);
         return $cliente;
     }    
 

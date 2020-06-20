@@ -74,6 +74,7 @@ class ControlCliente extends Controller
      */
     public function edit($id)
     {
+        
         $index= new Cliente();
         $cliente=$index->mostrarCliente($id);
         return view('admin.editCliente',compact('cliente','id'));
