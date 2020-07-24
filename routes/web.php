@@ -1,7 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86cf83c8fcbab8b2f52a095f37fa9538bbaf9af6
 Route::view('/','inicio')->name('inicio');
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
@@ -21,8 +26,12 @@ Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//crea
 
 
 Route::get('/IndexCliente','ControlCliente@index')->name('indexcliente');
-Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');
-Route::post('/CrearCliente','ControlCliente@store')->name('guardarcliente');
+Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearCliente','ControlCliente@store')->name('guardarcliente');/* Recibe la data del $_REQUEST */
 Route::get('/Cliente/{id}/','ControlCliente@show')->name('mostrarcliente');
+Route::get('/Cliente/{id}/editar','ControlCliente@edit')->name('editarcliente');
+Route::patch('/Cliente/{id}/actualizar','ControlCliente@update')->name('actualizarcliente');
+Route::delete('/Cliente/{id}/eliminar','ControlCliente@destroy')->name('borrarcliente');
+
 
 
