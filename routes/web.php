@@ -11,6 +11,7 @@ Route::view('/contacto','inicio')->name('contacto');
 Route::view('/quienes','quienes')->name('quienes'); 
 Route::view('/login','login')->name('login');
 
+
 Route::view('/PanelCliente','cliente.panel')->name('PanelC');
 Route::view('/Actualizar','cliente.actualizar')->name('actualizar');
 
