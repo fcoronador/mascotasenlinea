@@ -34,6 +34,8 @@
                     </thead>
                     <tbody>
                         @foreach ($clientes as $item)
+                        @if ($item->visible)
+
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
                             <th scope="row">{{$item->idCedula}}</th>
@@ -56,6 +58,9 @@
                             @csrf
                             @method('delete')
                         </form>
+                        @endif
+
+
                         @endforeach
                     </tbody>
                 </table>

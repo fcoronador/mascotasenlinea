@@ -1,49 +1,50 @@
-<?php 
+<?php
 
 namespace App\Modelo;
 
 use App\Modelo\daocliente;
 
 
-class Cliente{
+class Cliente
+{
 
-    private $idcedula;
+    private $dao;
 
     public function __construct()
-    {  
-        
+    {
+        $this->dao = new daocliente();
     }
 
-    public function indexclientes(){
+    public function indexclientes()
+    {
 
-        $index= new daocliente();
+        $index = $this->dao;
         return $index;
     }
 
-    public function guardarclientes($cliente){
+    public function guardarclientes($cliente)
+    {
 
-        $index= new daocliente();
-        $index->setCliente($cliente);
+        $this->dao->setCliente($cliente);
     }
 
-    public function mostrarCliente($id){
+    public function mostrarCliente($id)
+    {
 
-        $index= new daocliente();
-        $cliente=$index->seleccionCliente($id);
+        $cliente = $this->dao->seleccionCliente($id);
         return $cliente;
     }
 
 
-    public function Actualizar($cliente){
+    public function Actualizar($cliente)
+    {
 
-        $index=new daocliente();
-        $index->update($cliente);
+        $this->dao->update($cliente);
     }
 
-    public function borrar($id){
+    public function borrar($cliente)
+    {
 
-        $index= new daocliente();
-        $index->delete($id);
+        $this->dao->delete($cliente);
     }
-
 }
