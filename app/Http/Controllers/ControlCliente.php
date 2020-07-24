@@ -8,6 +8,13 @@ use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class ControlCliente extends Controller
 {
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new Cliente();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +22,8 @@ class ControlCliente extends Controller
      */
     public function index()
     {
-        $index= new Cliente();
-        $clientes=$index->indexclientes()->getClientes();
-        return view('admin.indexCliente',compact('clientes'));
+        $clientes = $this->modelo->indexclientes()->getClientes();
+        return view('admin.indexCliente', compact('clientes'));
     }
 
     /**
@@ -38,19 +44,19 @@ class ControlCliente extends Controller
      */
     public function store(Request $request, Cliente $index)
     {
-        $cliente=[];
+        $cliente = [];
 
-        $cliente['idCedula']=$request->get('idCedula');
-        $cliente['nombre']=$request->get('nombre');
-        $cliente['apellido']=$request->get('apellido');
-        $cliente['telefono']=$request->get('telefono');
-        $cliente['direccion']=$request->get('direccion');
-        $cliente['correo']=$request->get('correo');
-        $cliente['contrasena']=$request->get('contrasena');
+        $cliente['idCedula'] = $request->get('idCedula');
+        $cliente['nombre'] = $request->get('nombre');
+        $cliente['apellido'] = $request->get('apellido');
+        $cliente['telefono'] = $request->get('telefono');
+        $cliente['direccion'] = $request->get('direccion');
+        $cliente['correo'] = $request->get('correo');
+        $cliente['contrasena'] = $request->get('contrasena');
 
         $index->guardarclientes($cliente);
 
-        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha creado con exito');
+        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha creado con éxito');
     }
 
     /**
@@ -61,9 +67,8 @@ class ControlCliente extends Controller
      */
     public function show($id)
     {
-        $index= new Cliente();
-        $cliente=$index->mostrarCliente($id);
-        return view('admin.showCliente',compact('cliente'));
+        $cliente = $this->modelo->mostrarCliente($id);
+        return view('admin.showCliente', compact('cliente'));
     }
 
     /**
@@ -74,10 +79,9 @@ class ControlCliente extends Controller
      */
     public function edit($id)
     {
-        
-        $index= new Cliente();
-        $cliente=$index->mostrarCliente($id);
-        return view('admin.editCliente',compact('cliente','id'));
+
+        $cliente = $this->modelo->mostrarCliente($id);
+        return view('admin.editCliente', compact('cliente', 'id'));
     }
 
     /**
@@ -89,19 +93,18 @@ class ControlCliente extends Controller
      */
     public function update(Request $request)
     {
-        
-        $cliente=[];
-        $cliente['idCedula']=$request->get('idCedula');
-        $cliente['nombre']=$request->get('nombre');
-        $cliente['apellido']=$request->get('apellido');
-        $cliente['telefono']=$request->get('telefono');
-        $cliente['direccion']=$request->get('direccion');
-        $cliente['correo']=$request->get('correo');
-        $cliente['contrasena']=$request->get('contrasena');
 
-        
-        $index= new Cliente();
-        $index->Actualizar($cliente);
+        $cliente = [];
+        $cliente['idCedula'] = $request->get('idCedula');
+        $cliente['nombre'] = $request->get('nombre');
+        $cliente['apellido'] = $request->get('apellido');
+        $cliente['telefono'] = $request->get('telefono');
+        $cliente['direccion'] = $request->get('direccion');
+        $cliente['correo'] = $request->get('correo');
+        $cliente['contrasena'] = $request->get('contrasena');
+
+
+        $this->modelo->Actualizar($cliente);
         return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con exito');
     }
 
@@ -113,9 +116,9 @@ class ControlCliente extends Controller
      */
     public function destroy($id)
     {
-        
-        $index = new Cliente();
-        $index->borrar($id);
+        $cliente['idCedula']=$id;
+        $cliente['visible']= false;
+        $this->modelo->borrar($cliente);
         return redirect()->route('indexcliente')->with('estado', 'El cliente se ha sido eliminado con exito');
     }
 }
