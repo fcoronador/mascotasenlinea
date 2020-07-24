@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/','ControlCliente@index')->name('inicio');
+Route::view('/','inicio')->name('inicio');
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
