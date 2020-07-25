@@ -13,7 +13,7 @@ class ControlMascota extends Controller
     {
         $this->modelo = new Mascota();
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +32,8 @@ class ControlMascota extends Controller
      */
     public function create()
     {
-        return view('mascota.crearMascota');
+        $clientes = ControlCliente::listClientes();
+        return view('mascota.crearMascota', compact('clientes'));
     }
 
     /**
@@ -45,17 +46,20 @@ class ControlMascota extends Controller
     {
         $mascota = [];
 
-        $mascota['idCedula'] = $request->get('idCedula');
+        $mascota['numChip'] = $request->get('numChip');
         $mascota['nombre'] = $request->get('nombre');
-        $mascota['apellido'] = $request->get('apellido');
-        $mascota['telefono'] = $request->get('telefono');
-        $mascota['direccion'] = $request->get('direccion');
-        $mascota['correo'] = $request->get('correo');
-        $mascota['contrasena'] = $request->get('contrasena');
-
+        $mascota['especie'] = $request->get('especie');
+        $mascota['sexo'] = $request->get('sexo');
+        $mascota['raza'] = $request->get('raza');
+        $mascota['fecNacimi'] = str_replace('-','/',$request->get('fecNacimi'));
+        if($request->get('fecEsterili')){$mascota['fecEsterili'] = str_replace('-','/',$request->get('fecEsterili'));}
+        else{$mascota['fecEsterili'] = $request->get('fecEsterili');}
+        $mascota['cliente_idCedula'] = $request->get('idCedula');
+        $mascota['visible'] = 1;
+        //dd($mascota);
         $index->guardarmascotas($mascota);
 
-        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha creado con éxito');
+        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha creado con éxito.');
     }
 
     /**
@@ -114,8 +118,8 @@ class ControlMascota extends Controller
      */
     public function destroy($id)
     {
-        $mascota['idCedula']=$id;
-        $mascota['visible']= false;
+        $mascota['idCedula'] = $id;
+        $mascota['visible'] = false;
         $this->modelo->borrar($mascota);
         return redirect()->route('indexmascota')->with('estado', 'La mascota se ha sido eliminado con éxito');
     }

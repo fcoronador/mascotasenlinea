@@ -25,9 +25,7 @@ class daomascota
     public function setMascota($mascota)
     {
 
-        DB::insert('insert into mascota
-            (numChip, nombre, especie, sexo, raza, fecNacimi, fecEsterili)
-            VALUES (:numChip, :nombre, :especie, :sexo, :raza, :fecNacimi, :fecEsterili, :cliente_idCedula)', $mascota);
+        DB::insert('INSERT INTO `mascota` (`numChip`, `nombre`, `especie`, `sexo`, `raza`, `fecNacimi`, `fecEsterili`, `visible`, `cliente_idCedula`) VALUES (:numChip, :nombre, :especie, :sexo, :raza, :fecNacimi, :fecEsterili, :visible ,:cliente_idCedula)', $mascota);
     }
 
 
