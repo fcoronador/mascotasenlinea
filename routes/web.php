@@ -29,5 +29,13 @@ Route::get('/Cliente/{id}/editar','ControlCliente@edit')->name('editarcliente');
 Route::patch('/Cliente/{id}/actualizar','ControlCliente@update')->name('actualizarcliente');
 Route::delete('/Cliente/{id}/eliminar','ControlCliente@destroy')->name('borrarcliente');
 
+Route::get('/IndexMascota','ControlMascota@index')->name('indexmascota');
+Route::get('/CrearMascota','ControlMascota@create')->name('crearmascota');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearMascota','ControlMascota@store')->name('guardarmascota');/* Recibe la data del $_REQUEST */
+Route::get('/Mascota/{id}/','ControlMascota@show')->name('mostrarmascota');
+Route::get('/Mascota/{id}/editar','ControlMascota@edit')->name('editarmascota');
+Route::patch('/Mascota/{id}/actualizar','ControlMascota@update')->name('actualizarmascota');
+Route::delete('/Mascota/{id}/eliminar','ControlMascota@destroy')->name('borrarmascota');
+
 
 

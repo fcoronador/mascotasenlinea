@@ -7,17 +7,45 @@ use App\Modelo\daomascota;
 
 class Mascota{
 
-    private $idcedula;
+   
+    private $dao;
 
     public function __construct()
-    {  
-        
+    {
+        $this->dao = new daomascota();
     }
 
-    public function indexmascotas(){
+    public function indexmascotas()
+    {
 
-        $index= new daomascota();
+        $index = $this->dao;
         return $index;
+    }
+
+    public function guardarmascotas($mascota)
+    {
+
+        $this->dao->setMascota($mascota);
+    }
+
+    public function mostrarMascota($id)
+    {
+
+        $mascota = $this->dao->seleccionMascota($id);
+        return $mascota;
+    }
+
+
+    public function Actualizar($mascota)
+    {
+
+        $this->dao->update($mascota);
+    }
+
+    public function borrar($mascota)
+    {
+
+        $this->dao->delete($mascota);
     }
 
 
