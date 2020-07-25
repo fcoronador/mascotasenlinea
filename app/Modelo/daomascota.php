@@ -10,6 +10,7 @@ class daomascota
 
 
     private $query = "SELECT c.nombre AS Nombre,c.apellido AS Apellido,c.idCedula AS Cedula, m.nombre AS Mascota, m.numChip AS Chip, m.fecNacimi AS 'Fecha_de_nacimiento', TIMESTAMPDIFF(YEAR,m.fecNacimi , NOW()) 'Edad_Mascota', m.visible AS 'visible' FROM cliente c JOIN mascota m ON m.cliente_idCedula=c.idCedula";
+    private $query2 = "SELECT c.nombre AS Nombre,c.apellido AS Apellido,c.idCedula AS Cedula, TIMESTAMPDIFF(YEAR,m.fecNacimi , NOW()) 'Edad_Mascota', m.visible AS 'visible', m.* FROM cliente c JOIN mascota m ON m.cliente_idCedula=c.idCedula where numChip = :numChip";
     private $mascotas;
 
     public function __construct()
@@ -31,7 +32,7 @@ class daomascota
 
     public function seleccionMascota($id)
     {
-        $mascota = DB::select('select * from mascota where numChip = :numChip', ['numChip' => $id]);
+        $mascota = DB::select($this->query2, ['numChip' => $id]);
         return $mascota;
     }
 

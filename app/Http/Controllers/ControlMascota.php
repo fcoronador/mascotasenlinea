@@ -71,6 +71,7 @@ class ControlMascota extends Controller
     public function show($id)
     {
         $mascota = $this->modelo->mostrarMascota($id);
+        //dd($mascota);
         return view('mascota.showMascota', compact('mascota'));
     }
 
