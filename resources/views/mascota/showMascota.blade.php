@@ -45,7 +45,7 @@
                         <tr>
                             <th scope="row">Sexo</th>
                             <td>
-                                @if ($item->sexo == 2)
+                                @if ($item->sexo == 0)
                                     Hembra
                                 @else
                                     Macho
