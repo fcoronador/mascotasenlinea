@@ -31,7 +31,7 @@
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('inicio')}}">Blog</a>
+                        <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
                     </li>
                 </ul>
             </div>
@@ -61,7 +61,6 @@
         </nav>
     </div>
 @yield('contenido')
-
 
 
 </body>

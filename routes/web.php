@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/','inicio')->name('inicio');
+Route::view('/Admin','admin.Admin')->name('administracion');
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
