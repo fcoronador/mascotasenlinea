@@ -20,6 +20,13 @@ class ControlCliente extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public static function listClientes(){
+        $modelo= new Cliente();
+        $clientes = $modelo->indexclientes()->getClientes();
+        return $clientes;
+    }
+
+
     public function index()
     {
         $clientes = $this->modelo->indexclientes()->getClientes();

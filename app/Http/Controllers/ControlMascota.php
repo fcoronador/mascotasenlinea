@@ -7,6 +7,21 @@ use App\Modelo\Mascota;
 
 class ControlMascota extends Controller
 {
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new Mascota();
+    }
+
+    public static function listMascotas(){
+        
+        $modelo = new Mascota();
+        $mascotas = $modelo->indexmascotas()->getMascotas();
+        return $mascotas;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +29,8 @@ class ControlMascota extends Controller
      */
     public function index()
     {
-        $index= new Mascota();
-        $mascotas=$index->indexmascotas()->getMascotas();
-        return view('inicio',compact('mascotas'));
+        $mascotas = $this->modelo->indexmascotas()->getMascotas();
+        return view('mascota.indexMascota', compact('mascotas'));
     }
 
     /**
@@ -26,7 +40,8 @@ class ControlMascota extends Controller
      */
     public function create()
     {
-        //
+        $clientes = ControlCliente::listClientes();
+        return view('mascota.crearMascota', compact('clientes'));
     }
 
     /**
@@ -35,9 +50,24 @@ class ControlMascota extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Mascota $index)
     {
-        //
+        $mascota = [];
+
+        $mascota['numChip'] = $request->get('numChip');
+        $mascota['nombre'] = $request->get('nombre');
+        $mascota['especie'] = $request->get('especie');
+        $mascota['sexo'] = $request->get('sexo');
+        $mascota['raza'] = $request->get('raza');
+        $mascota['fecNacimi'] = str_replace('-','/',$request->get('fecNacimi'));
+        if($request->get('fecEsterili')){$mascota['fecEsterili'] = str_replace('-','/',$request->get('fecEsterili'));}
+        else{$mascota['fecEsterili'] = $request->get('fecEsterili');}
+        $mascota['cliente_idCedula'] = $request->get('idCedula');
+        $mascota['visible'] = 1;
+        //dd($mascota);
+        $index->guardarmascotas($mascota);
+
+        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha creado con éxito.');
     }
 
     /**
@@ -48,7 +78,8 @@ class ControlMascota extends Controller
      */
     public function show($id)
     {
-        //
+        $mascota = $this->modelo->mostrarMascota($id);
+        return view('mascota.showMascota', compact('mascota'));
     }
 
     /**
@@ -59,7 +90,14 @@ class ControlMascota extends Controller
      */
     public function edit($id)
     {
-        //
+        $mascota = $this->modelo->mostrarMascota($id);
+
+        foreach($mascota as $item){
+            $item->fecNacimi = str_replace('/','-',$item->fecNacimi);
+            if($item->fecEsterili)
+            {$item->fecEsterili = str_replace('/','-',$item->fecEsterili);}
+        }
+        return view('mascota.editMascota', compact('mascota', 'id'));
     }
 
     /**
@@ -69,9 +107,24 @@ class ControlMascota extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+        $mascota = [];
+
+        $mascota['numChip'] = $request->get('numChip');
+        $mascota['nombre'] = $request->get('nombre');
+        $mascota['especie'] = $request->get('especie');
+        $mascota['sexo'] = $request->get('sexo');
+        $mascota['raza'] = $request->get('raza');
+        $mascota['fecNacimi'] = str_replace('-','/',$request->get('fecNacimi'));
+        if($request->get('fecEsterili')){$mascota['fecEsterili'] = str_replace('-','/',$request->get('fecEsterili'));}
+        else{$mascota['fecEsterili'] = $request->get('fecEsterili');}
+        $mascota['cliente_idCedula'] = $request->get('idCedula');
+
+
+        $this->modelo->Actualizar($mascota);
+        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha actualizado con éxito');
     }
 
     /**
@@ -82,6 +135,9 @@ class ControlMascota extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mascota['numChip'] = $id;
+        $mascota['visible'] = false;
+        $this->modelo->borrar($mascota);
+        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha sido eliminado con éxito');
     }
 }
