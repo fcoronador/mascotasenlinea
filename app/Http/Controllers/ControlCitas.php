@@ -7,6 +7,14 @@ use App\Modelo\Citas;
 
 class ControlCitas extends Controller
 {
+
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new Citas();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +34,7 @@ class ControlCitas extends Controller
      */
     public function create()
     {
-        //
+        //return view('citas.crearcita');
     }
 
     /**
@@ -35,10 +43,20 @@ class ControlCitas extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Citas $index)
     {
-        //
+        $Citas = [];
+
+        $Citas['fecha'] = $request->get('fecha');
+        $Citas['hora'] = $request->get('hora');
+        $Citas['motivo'] = $request->get('motivo');
+        $Citas['servicios_idServi'] = $request->get('servicios_idServi');
+        $Citas['cliente_idCedula'] = $request->get('cliente_idCedula');
+        $index->guardarcita($Citas);
+
+        return redirect()->route('cita')->with('estado', 'La cita se ha creado con éxito');
     }
+
 
     /**
      * Display the specified resource.
@@ -48,7 +66,8 @@ class ControlCitas extends Controller
      */
     public function show($id)
     {
-        //
+        $citas = $this->modelo->mostrarcita($id);
+        return view('citas.citas', compact('citas')); 
     }
 
     /**
@@ -59,7 +78,8 @@ class ControlCitas extends Controller
      */
     public function edit($id)
     {
-        //
+        $citas = $this->modelo->mostrarcita($id);
+        return view('citas.editCita', compact('citas', 'id'));
     }
 
     /**

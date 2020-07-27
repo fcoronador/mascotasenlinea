@@ -3,12 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 86cf83c8fcbab8b2f52a095f37fa9538bbaf9af6
 Route::view('/','inicio')->name('inicio');
-Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
 Route::view('/registro','registro')->name('registro'); 
@@ -24,6 +19,14 @@ Route::view('/MiMascota/Detalles','cliente.MascotaDetalles')->name('MascotaD');/
 Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
 Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
 
+
+Route::get('/Citas','ControlCitas@index')->name('citas');
+//Route::get('/CrearCita','ControlCitas@create')->name('crearcita');
+Route::post('/CrearCita','ControlCitas@store')->name('guardarcita');
+Route::get('/Citas/{id}/','ControlCitas@show')->name('mostrarcita');
+Route::get('/Citas/{id}/editar','ControlCitas@edit')->name('editarcita');
+Route::patch('/Citas/{id}/actualizar','ControlCitas@update')->name('actualizarcita');
+Route::delete('/Citas/{id}/eliminar','ControlCitas@destroy')->name('borrarcita');
 
 Route::get('/IndexCliente','ControlCliente@index')->name('indexcliente');
 Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');/* Sale data en el POST->$_REQUEST */

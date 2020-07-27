@@ -38,7 +38,8 @@
 
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                            <th scope="row">{{$item->idCedula}}</th>
+                            <th scope="row"><a name="" id="" class="" href="{{route('mostrarcita',$item->idCedula)}}"
+                                role="button">{{$item->idCedula}}</th>
                             <td><a name="" id="" class="" href="{{route('mostrarcliente',$item->idCedula)}}"
                                     role="button">
                                     {{$item->nombre}}</a></td>
