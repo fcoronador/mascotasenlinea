@@ -9,7 +9,7 @@ class daomascota
 {
 
 
-    private $query = "SELECT c.nombre AS Nombre,c.apellido AS Apellido,c.idCedula AS Cedula, m.nombre AS Mascota, m.numChip AS Chip, m.fecNacimi AS 'Fecha_de_nacimiento', TIMESTAMPDIFF(YEAR,m.fecNacimi , NOW()) 'Edad_Mascota', m.visible AS 'visible' FROM cliente c JOIN mascota m ON m.cliente_idCedula=c.idCedula";
+    private $query = "SELECT c.nombre AS Nombre,c.apellido AS Apellido,c.idCedula AS Cedula, m.nombre AS Mascota, m.numChip AS Chip, m.fecNacimi AS 'Fecha_de_nacimiento', TIMESTAMPDIFF(YEAR,m.fecNacimi , NOW()) 'Edad_Mascota', m.visible AS 'visible', m.idMascotas AS idMascota FROM cliente c JOIN mascota m ON m.cliente_idCedula=c.idCedula";
     private $query2 = "SELECT c.nombre AS Nombre,c.apellido AS Apellido,c.idCedula AS Cedula, TIMESTAMPDIFF(YEAR,m.fecNacimi , NOW()) 'Edad_Mascota', m.visible AS 'visible', m.* FROM cliente c JOIN mascota m ON m.cliente_idCedula=c.idCedula where numChip = :numChip";
     private $mascotas;
 
@@ -48,12 +48,5 @@ class daomascota
         DB::table('mascota')
             ->where('numChip', $mascota['numChip'])
             ->update($mascota);
-
-        /*  DB::table('controles')->where('mascota_idMascotas', '=', 5)->delete();
-        DB::table('procedi')->where('mascota_idMascotas', '=', 5)->delete();
-        DB::table('mascota')->where('cliente_idCedula', '=', $id)->delete();
-
-        DB::table('citas')->where('cliente_idCedula', '=', $id)->delete();
-        DB::table('cliente')->where('idCedula', '=', $id)->delete(); */
     }
 }

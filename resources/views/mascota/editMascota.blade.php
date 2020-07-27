@@ -19,7 +19,7 @@
             <form action="{{route('actualizarmascota',$id)}}" method="post">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
-            <input type="hidden" value="{{$propiedad->Cedula}}" name="idCedula">
+                <input type="hidden" value="{{$propiedad->Cedula}}" name="idCedula">
 
                 <div class="form-group col-8 mx-auto">
                     <label for="idCedula">Número de identificación</label>
@@ -40,19 +40,21 @@
                     <br>
                     <label for="sexo">Sexo</label>
                     <div class="form-check form-check-inline">
-                       
+
                         <label class="form-check-label">
                             <br>
-                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="1"  @if ($propiedad->sexo == 1) {{'checked'}} @endif>
+                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="1" @if
+                                ($propiedad->sexo == 1) {{'checked'}} @endif>
                             Macho
                         </label>
-                        
-                       
+
+
                         <label class="form-check-label">
                             <br>
-                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="0" @if ($propiedad->sexo == 0) {{'checked'}} @endif> Hembra
+                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="0" @if
+                                ($propiedad->sexo == 0) {{'checked'}} @endif> Hembra
                         </label>
-                        
+
                     </div>
                     <br>
                     <label for="raza">Raza</label>
@@ -60,8 +62,8 @@
                         placeholder="" aria-describedby="helpId">
                     <br>
                     <label for="fecNacimi">Fecha de nacimiento</label>
-                    <input value="2011-08-19" type="date" name="fecNacimi" id="" class="form-control"
-                        placeholder="" aria-describedby="helpId">
+                    <input value="2011-08-19" type="date" name="fecNacimi" id="" class="form-control" placeholder=""
+                        aria-describedby="helpId">
                     <br>
                     <label for="fecEsterili">Fecha de Esterilización</label>
                     <input value="{{$propiedad->fecEsterili}}" type="date" name="fecEsterili" id="" class="form-control"

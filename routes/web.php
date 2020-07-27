@@ -38,4 +38,13 @@ Route::patch('/Mascota/{id}/actualizar','ControlMascota@update')->name('actualiz
 Route::delete('/Mascota/{id}/eliminar','ControlMascota@destroy')->name('borrarmascota');
 
 
+Route::get('/IndexControl','ControlContro@index')->name('indexcontrol');
+Route::get('/CrearControl','ControlContro@create')->name('crearcontrol');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearControl','ControlContro@store')->name('guardarcontrol');/* Recibe la data del $_REQUEST */
+Route::get('/Control/{id}/','ControlContro@show')->name('mostrarcontrol');
+Route::get('/Control/{id}/editar','ControlContro@edit')->name('editarcontrol');
+Route::patch('/Control/{id}/actualizar','ControlContro@update')->name('actualizarcontrol');
+Route::delete('/Control/{id}/eliminar','ControlContro@destroy')->name('borrarcontrol');
+
+
 

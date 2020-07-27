@@ -61,9 +61,11 @@ FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
 CREATE VIEW ConsultarControles AS 
 --Query9
 SELECT  u.nombre AS Cliente, m.nombre AS Mascota,c.fecha AS Fecha,c.peso AS Peso,
-	c.diagnos AS Diagnóstico,c.trata AS Tratamiento,c.observ AS Observación 
-	FROM( controles c JOIN mascota m ON c.mascota_idMascotas=m.idMascotas) 
-	LEFT JOIN cliente u ON u.idCedula=m.cliente_idCedula
+	c.diagnos AS Diagnóstico,c.trata AS Tratamiento,c.observ AS Observación,
+    v.nombre AS Veterinario, v.cargo AS Cargo  
+	FROM((controles c JOIN mascota m ON c.mascota_idMascotas=m.idMascotas) 
+	LEFT JOIN cliente u ON u.idCedula=m.cliente_idCedula)
+    LEFT JOIN veterin v ON v.idVeterin=c.veterin_idVeterin 
 	WHERE u.idCedula= 100 ;
 
 CREATE VIEW ConsultarExamenes AS 

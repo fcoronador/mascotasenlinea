@@ -14,6 +14,14 @@ class ControlMascota extends Controller
         $this->modelo = new Mascota();
     }
 
+    public static function listMascotas(){
+        
+        $modelo = new Mascota();
+        $mascotas = $modelo->indexmascotas()->getMascotas();
+        return $mascotas;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
