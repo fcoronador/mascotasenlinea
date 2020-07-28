@@ -50,7 +50,25 @@ Route::delete('/Control/{id}/eliminar','ControlContro@destroy')->name('borrarcon
 Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi');
 Route::get('/CrearProcedi','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
 Route::post('/CrearProcedi','ControlProcedimiento@store')->name('guardarprocedimiento');/* Recibe la data del $_REQUEST */
-Route::get('/Procedimiento/{id}/','ControlProcedimiento@show')->name('mostrarprocedimiento');
-Route::get('/Procedimiento/{id}/editar','ControlProcedimiento@edit')->name('editarprocedimiento');
-Route::patch('/Procedimiento/{id}/actualizar','ControlProcedimiento@update')->name('actualizarprocedimiento');
-Route::delete('/Procedimiento/{id}/eliminar','ControlProcedimiento@destroy')->name('borrarprocedimiento');
+Route::get('/Procedimientos/{id}/','ControlProcedimiento@show')->name('mostrarprocedimiento');
+Route::get('/Procedimientos/{id}/editar','ControlProcedimiento@edit')->name('editarprocedimiento');
+Route::patch('/Procedimientos/{id}/actualizar','ControlProcedimiento@update')->name('actualizarprocedimiento');
+Route::delete('/Procedimientos/{id}/eliminar','ControlProcedimiento@destroy')->name('borrarprocedimiento');
+
+
+Route::get('/IndexExamen','ControlExamenes@index')->name('indexexamenes');
+Route::get('/CrearExamen','ControlExamenes@create')->name('crearexamen');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearExamen','ControlExamenes@store')->name('guardarexamen');/* Recibe la data del $_REQUEST */
+Route::get('/Examenes/{id}/','ControlExamenes@show')->name('mostrarexamen');
+Route::get('/Examenes/{id}/editar','ControlExamenes@edit')->name('editarexamen');
+Route::patch('/Examenes/{id}/actualizar','ControlExamenes@update')->name('actualizarexamen');
+Route::delete('/Examenes/{id}/eliminar','ControlExamenes@destroy')->name('borrarexamen');
+
+
+Route::get('/IndexDesparacitacion','ControlDesparacitacion@index')->name('indexdesparas');
+Route::get('/CrearDesparacitacion','ControlDesparacitacion@create')->name('creardesparacitacion');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearDesparacitacion','ControlDesparacitacion@store')->name('guardardesparacitacion');/* Recibe la data del $_REQUEST */
+Route::get('/Desparacitacion/{id}/','ControlDesparacitacion@show')->name('mostrardesparacitacion');
+Route::get('/Desparacitacion/{id}/editar','ControlDesparacitacion@edit')->name('editardesparacitacion');
+Route::patch('/Desparacitacion/{id}/actualizar','ControlDesparacitacion@update')->name('actualizardesparacitacion');
+Route::delete('/Desparacitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');

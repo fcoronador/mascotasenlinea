@@ -16,7 +16,7 @@ class ControlProcedimiento extends Controller
 
     public function index()
     {
-        $procedimientos= $this->modelo->indexprocedi()->getProcedi();
+        $procedimiento = $this->modelo->indexprocedi()->getProcedi();
         return view('procedimientos.indexProcedi',compact('procedimiento'));
     }
 

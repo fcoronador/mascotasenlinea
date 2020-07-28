@@ -16,14 +16,33 @@ class daoexamenes{
     }
 
     public function getExamenes(){
-        $this->$listaexamenes=DB::select($this->query);
+        $this->$listaexamenes = DB::select($this->query);
         return $this->$listaexamenes;
     }
 
-    public function setCliente($cliente)
+    public function setExamen($examen)
     {
-        DB::insert('insert into cliente (idCedula, nombre, apellido, telefono, direccion, correo, contrasena)
-                    VALUES (:idCedula, :nombre, :apellido, :telefono, :direccion, :correo, :contrasena)', $cliente);
+        DB::insert('insert into examenes (idExam, tipo, resulta, lab)
+                    VALUES (:idExam, :tipo, :resulta, :lab)', $examen);
     }
 
+    public function seleccionExamen($id)
+    {
+        $examen = DB::select('select * from examenes where idExam = :idExam', ['idExam' => $id]);
+        return $examen;
+    }
+
+    public function update($examen)
+    {
+        DB::table('examenes')
+            ->where('idExam', $examen['idCedula'])
+            ->update($examen);
+    }
+
+    public function delete($examen)
+    {
+        DB::table('examenes')
+            ->where('idExam', $examen['idExam'])
+            ->update($examen);
+    }
 }

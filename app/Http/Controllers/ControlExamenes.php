@@ -15,6 +15,12 @@ class ControlExamenes extends Controller
         $this->modelo = new Examenes();
     }
 
+    public static function listExam(){
+        $modelo= new Examenes();
+        $exam = $modelo->indexexamenes()->getExamenes();
+        return $exam;
+    }
+
     public function index()
     {
         $examenes = $this->modelo->indexexamenes()->getExamenes();
