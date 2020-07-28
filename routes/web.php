@@ -30,4 +30,10 @@ Route::patch('/Cliente/{id}/actualizar','ControlCliente@update')->name('actualiz
 Route::delete('/Cliente/{id}/eliminar','ControlCliente@destroy')->name('borrarcliente');
 
 
-
+Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi');
+Route::get('/CrearProcedi','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearProcedi','ControlProcedimiento@store')->name('guardarprocedimiento');/* Recibe la data del $_REQUEST */
+Route::get('/Procedimiento/{id}/','ControlProcedimiento@show')->name('mostrarprocedimiento');
+Route::get('/Procedimiento/{id}/editar','ControlProcedimiento@edit')->name('editarprocedimiento');
+Route::patch('/Procedimiento/{id}/actualizar','ControlProcedimiento@update')->name('actualizarprocedimiento');
+Route::delete('/Procedimiento/{id}/eliminar','ControlProcedimiento@destroy')->name('borrarprocedimiento');

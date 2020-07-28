@@ -15,9 +15,15 @@ class daoexamenes{
         
     }
 
-    public function getExam(){
+    public function getExamenes(){
         $this->$listaexamenes=DB::select($this->query);
         return $this->$listaexamenes;
+    }
+
+    public function setCliente($cliente)
+    {
+        DB::insert('insert into cliente (idCedula, nombre, apellido, telefono, direccion, correo, contrasena)
+                    VALUES (:idCedula, :nombre, :apellido, :telefono, :direccion, :correo, :contrasena)', $cliente);
     }
 
 }

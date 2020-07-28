@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Procedimiento;
+use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class ControlProcedimiento extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $modelo;
+
+    public function __construct(){
+        $this->modelo = new Procedimiento();
+    }
+
     public function index()
     {
-        $index= new Procedimiento();
-        $procedimientos=$index->indexprocedi()->getProcedi();
-        return view('inicio',compact('procedimientos'));
+        $procedimientos= $this->modelo->indexprocedi()->getProcedi();
+        return view('procedimientos.indexProcedi',compact('procedimiento'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ControlProcedimiento extends Controller
      */
     public function create()
     {
-        //
+        return view('procedimientos.crearProcedi');
     }
 
     /**
@@ -35,9 +36,15 @@ class ControlProcedimiento extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Procedimiento $index)
     {
-        //
+        $procedi=[];
+        $procedi['idProc']=$request->get('idProc');
+        $procedi['fecha']=$request->get('fecha');
+        $procedi['sigDosis']=$request->get('sigDosis');
+        $index->guardarprocedi($procedi);
+
+        return redirect()->route('indexprocedi')->with('estado', 'Se ha creado con exito');
     }
 
     /**
@@ -48,7 +55,8 @@ class ControlProcedimiento extends Controller
      */
     public function show($id)
     {
-        //
+        $procedi=$this->modelo->mostrarProcedi($id);
+        return view('procedimientos.showProcedi',compact('procedi'));
     }
 
     /**
@@ -59,7 +67,8 @@ class ControlProcedimiento extends Controller
      */
     public function edit($id)
     {
-        //
+        $procedi=$this->modelo->mostrarProcedi($id);
+        return view('procedimientos.editProcedi',compact('procedi','id'));
     }
 
     /**
@@ -71,7 +80,13 @@ class ControlProcedimiento extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $procedi=[];
+        $procedi['idProc']=$request->get('idProc');
+        $procedi['fecha']=$request->get('fecha');
+        $procedi['sigDosis']=$request->get('sigDosis');
+        
+        $this->modelo->Actualizar($procedi);
+        return redirect()->route('indexprocedi')->with('estado', 'Se ha actualizado con exito');
     }
 
     /**
@@ -82,6 +97,9 @@ class ControlProcedimiento extends Controller
      */
     public function destroy($id)
     {
-        //
+        $procedi['idProc']=$id;
+        $procedi['visible']= false;
+        $this->modelo->borrar($procedi);
+        return redirect()->route('indexprocedi')->with('estado', 'Se ha sido eliminado con exito');
     }
 }
