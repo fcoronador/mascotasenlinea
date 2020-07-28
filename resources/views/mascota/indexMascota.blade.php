@@ -21,7 +21,7 @@
             <h1>Mascotas Registradas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-success" href="{{route('crearmascota')}}" role="button">Crear mascota</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearmascota')}}" role="button">Crear mascota</a>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
                     <thead>

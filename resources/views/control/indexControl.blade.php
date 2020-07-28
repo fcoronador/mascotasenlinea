@@ -21,7 +21,7 @@
             <h1>Controles Registradas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-success" href="{{route('crearcontrol')}}" role="button">Crear un Control</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un Control</a>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
                     <thead>

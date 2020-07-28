@@ -14218,6 +14218,54 @@ a.text-dark:focus {
 }
 
 #boton_eliminar {
+  background: #f31f1f;
   color: white;
+}
+
+.tablaCitas {
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: #3f48cc;
+}
+
+.btn-primary:hover {
+  background: #1a1f6e;
+}
+
+.btn-danger:hover {
+  background: white;
+}
+
+.btnCrear {
+  background: #ff5103;
+  border-color: #040726;
+  color: white;
+}
+
+.btn-default:hover {
+  background: #30399a;
+  color: #ff8635;
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  color: #114148;
+}
+
+a {
+  color: #111948;
+}
+
+h4 {
+  color: #0a015f;
+  font-weight: bold;
+}
+
+body {
+  margin: 0px;
 }
 

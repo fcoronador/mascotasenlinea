@@ -50,7 +50,7 @@
             <h5 class="card-title titulo">VACUNAS</h5>
             <p class="card-text">No olvides vacunar a tus mascotas, agenda una cita y visítanos</p>
            
-            <a href="{{route('citas')}}" class="btn btn-primary">Agendar Cita</a>
+            <a href="{{route('indexcliente')}}" class="btn btn-primary">Agendar Cita</a>
           </div>
         </div>
       </div>
