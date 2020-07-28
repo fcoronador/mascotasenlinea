@@ -19,6 +19,14 @@ class ControlServicios extends Controller
         return view('servicios',compact('servicios'));
     }
 
+
+    public static function listaServicios()
+    {        
+        $index= new Servicios();
+        $servicios=$index->indexservicios()->getServicios();
+        return $servicios;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
