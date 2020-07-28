@@ -7,19 +7,32 @@ use App\Modelo\daoprocedi;
 
 class Procedimiento{
 
-    private $idMascotas;
-    private $idVacun;
-    private $idDespara;
-    private $idVeterin;
-    private $idExam;
+    private $dao;
 
     public function __construct()
     {  
-        
+        $this->dao = new daoprocedi();
     }
 
     public function indexprocedi(){
-        $index= new daoprocedi();
+        $index= $this->dao;
         return $index;
+    }
+
+    public function guardarprocedi($procedi){
+        $this->dao->setProcedi($procedi);
+    }
+
+    public function mostrarprocedi($id){
+        $procedi = $this->dao->seleccionProcedi($id);
+        return $procedi;
+    }
+
+    public function Actualizar($procedi){
+        $this->dao->update($procedi);
+    }
+
+    public function borrar($id){
+        $this->dao->delete($procedi);
     }
 }

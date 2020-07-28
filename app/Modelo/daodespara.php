@@ -15,9 +15,33 @@ class daodespara{
         
     }
 
-    public function getDespara(){
-        $this->$listadesparacitacion=DB::select($this->query);
-        return $this->$listadesparacitacion;
+    public function getDesparas(){
+        $this->listadesparacitacion=DB::select($this->query);
+        return $this->listadesparacitacion;
     }
 
+    public function setDesparas($despara)
+    {
+        DB::insert('insert into despara (idDespara, nombre) VALUES (:idDespara, :nombre)', $despara);
+    }
+
+    public function seleccionDespara($id)
+    {
+        $despara = DB::select('select * from despara where idDespara = :idDespara', ['idDespara' => $id]);
+        return $despara;
+    }
+
+    public function update($despara)
+    {
+        DB::table('despara')
+            ->where('idDespara', $despara['idDespara'])
+            ->update($despara);
+    }
+
+    public function delete($despara)
+    {
+        DB::table('despara')
+            ->where('idDespara', $despara['idDespara'])
+            ->update($despara);
+    }
 }

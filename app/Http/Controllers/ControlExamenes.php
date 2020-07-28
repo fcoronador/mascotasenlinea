@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Examenes;
+use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class ControlExamenes extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new Examenes();
+    }
+
+    public static function listExam(){
+        $modelo= new Examenes();
+        $exam = $modelo->indexexamenes()->getExamenes();
+        return $exam;
+    }
+
     public function index()
     {
-        $index= new Examenes();
-        $examen=$index->indexexam()->getExam();
-        return view('inicio',compact('examen'));
+        $examenes = $this->modelo->indexexamenes()->getExamenes();
+        return view('examenes.indexExamen', compact('examenes'));
     }
 
     /**
@@ -26,7 +34,7 @@ class ControlExamenes extends Controller
      */
     public function create()
     {
-        //
+        return view('examenes.crearExamen');
     }
 
     /**
@@ -35,9 +43,16 @@ class ControlExamenes extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Examenes $index)
     {
-        //
+        $examen = [];
+        $examen['idExam'] = $request->get('idExam');
+        $examen['tipo'] = $request->get('tipo');
+        $examen['resulta'] = $request->get('resulta');
+        $examen['lab'] = $request->get('lab');
+        $index->guardarexamenes($examen);
+
+        return redirect()->route('indexexamen')->with('estado', 'El examen se ha creado con éxito');
     }
 
     /**
@@ -48,7 +63,8 @@ class ControlExamenes extends Controller
      */
     public function show($id)
     {
-        //
+        $examen = $this->modelo->mostrarExamen($id);
+        return view('examenes.showExamen', compact('examen'));
     }
 
     /**
@@ -59,7 +75,8 @@ class ControlExamenes extends Controller
      */
     public function edit($id)
     {
-        //
+        $examen = $this->modelo->mostrarExamen($id);
+        return view('examenes.editExamen', compact('examen', 'id'));
     }
 
     /**
@@ -71,7 +88,14 @@ class ControlExamenes extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $examen = [];
+        $examen['idExam'] = $request->get('idExam');
+        $examen['tipo'] = $request->get('tipo');
+        $examen['resulta'] = $request->get('resulta');
+        $examen['lab'] = $request->get('lab');
+
+        $this->modelo->Actualizar($examen);
+        return redirect()->route('indexexamen')->with('estado', 'El examen se ha actualizado con exito');
     }
 
     /**
@@ -82,6 +106,9 @@ class ControlExamenes extends Controller
      */
     public function destroy($id)
     {
-        //
+        $examen['idExam']=$id;
+        $examen['visible']= false;
+        $this->modelo->borrar($examen);
+        return redirect()->route('indexexamen')->with('estado', 'El examen se ha sido eliminado con exito');
     }
 }
