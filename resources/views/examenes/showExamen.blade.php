@@ -19,7 +19,7 @@
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
             @foreach ($examen as $item)
-            <h1>Detalles del examen: {{$item->tipo}} {{$item->resultado}} </h1>
+            <h1>Detalles del examen: {{$item->tipo}} </h1>
             <hr>
             <div class="table-responsive my-3">
                 <table class="table table-hover">

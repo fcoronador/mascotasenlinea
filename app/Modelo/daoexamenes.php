@@ -16,8 +16,8 @@ class daoexamenes{
     }
 
     public function getExamenes(){
-        $this->$listaexamenes = DB::select($this->query);
-        return $this->$listaexamenes;
+        $this->listaexamenes = DB::select($this->query);
+        return $this->listaexamenes;
     }
 
     public function setExamen($examen)
@@ -35,7 +35,7 @@ class daoexamenes{
     public function update($examen)
     {
         DB::table('examenes')
-            ->where('idExam', $examen['idCedula'])
+            ->where('idExam', $examen['idExam'])
             ->update($examen);
     }
 

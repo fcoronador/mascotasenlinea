@@ -55,15 +55,15 @@ Route::delete('/Control/{id}/eliminar','ControlContro@destroy')->name('borrarcon
 
 
 Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi');
-Route::get('/CrearProcedi','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
-Route::post('/CrearProcedi','ControlProcedimiento@store')->name('guardarprocedimiento');/* Recibe la data del $_REQUEST */
+Route::get('/CrearProcedimiento','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearProcedimiento','ControlProcedimiento@store')->name('guardarprocedimiento');/* Recibe la data del $_REQUEST */
 Route::get('/Procedimientos/{id}/','ControlProcedimiento@show')->name('mostrarprocedimiento');
 Route::get('/Procedimientos/{id}/editar','ControlProcedimiento@edit')->name('editarprocedimiento');
 Route::patch('/Procedimientos/{id}/actualizar','ControlProcedimiento@update')->name('actualizarprocedimiento');
 Route::delete('/Procedimientos/{id}/eliminar','ControlProcedimiento@destroy')->name('borrarprocedimiento');
 
 
-Route::get('/IndexExamen','ControlExamenes@index')->name('indexexamenes');
+Route::get('/IndexExamen','ControlExamenes@index')->name('indexexamen');
 Route::get('/CrearExamen','ControlExamenes@create')->name('crearexamen');/* Sale data en el POST->$_REQUEST */
 Route::post('/CrearExamen','ControlExamenes@store')->name('guardarexamen');/* Recibe la data del $_REQUEST */
 Route::get('/Examenes/{id}/','ControlExamenes@show')->name('mostrarexamen');

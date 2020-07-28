@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-@foreach ($procedimiento as $propiedad)
+@foreach ($procedi as $propiedad)
 
 
 <div class="row">

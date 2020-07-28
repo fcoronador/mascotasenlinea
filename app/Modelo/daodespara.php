@@ -16,8 +16,8 @@ class daodespara{
     }
 
     public function getDesparas(){
-        $this->$listadesparacitacion=DB::select($this->query);
-        return $this->$listadesparacitacion;
+        $this->listadesparacitacion=DB::select($this->query);
+        return $this->listadesparacitacion;
     }
 
     public function setDesparas($despara)

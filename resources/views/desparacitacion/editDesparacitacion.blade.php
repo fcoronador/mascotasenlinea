@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-@foreach ($desparacitacion as $propiedad)
+@foreach ($despara as $propiedad)
 
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">

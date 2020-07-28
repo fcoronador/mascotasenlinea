@@ -18,8 +18,8 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            @foreach ($procedimiento as $item)
-            <h1>Detalles del procedimiento: {{$item->fecha}} {{$item->sigDosis}} </h1>
+            @foreach ($procedi as $item)
+            <h1>Detalles del procedimiento: </h1>
             <hr>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
@@ -30,12 +30,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Nombre Procedimiento</th>
+                            <th scope="row">Fecha del procedimiento</th>
                             <td>{{$item->fecha}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Nombre Procedimiento</th>
-                            <td>{{$item->fecha}}</td>
+                            <th scope="row">Fecha de la siguiente dosis</th>
+                            <td>{{$item->sigDosis}}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>

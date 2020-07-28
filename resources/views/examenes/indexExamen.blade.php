@@ -41,7 +41,6 @@
                             <th scope="row">{{$item->idExam}}</th>
                             <td><a name="" id="" class="" href="{{route('mostrarexamen',$item->idExam)}}" role="button">
                                 {{$item->tipo}}</a></td>
-                            <td>{{$item->Resultado}}</td>
                             <td>
                                 <a name="" id="" class="btn btn-primary btn-sm"
                                     href="{{route('editarexamen',$item->idExam)}}" role="button"> Editar</a>
