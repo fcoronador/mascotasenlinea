@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js" defer></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css ">
+    {{-- Hoja de estilos de datables buena --}}
+    <script src="/js/app.js"></script>{{-- No dejar JavaScript encima de este --}}
+
+
+    
     <title>@yield('titulo')</title>
 
 </head>
+
 <body>
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
         <div class="col-sm-5 encabezado">
             <a href="{{route('inicio')}}">
-                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" 
-                alt="Responsive image">
+                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" alt="Responsive image">
             </a>
         </div>
-    
-        <nav class="navbar navbar-expand-md sticky-top" >
+
+        <nav class="navbar navbar-expand-md sticky-top">
             <div class="navbar1 navbar-collapse collapse w-110 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item active ">
@@ -35,33 +41,39 @@
                     </li>
                 </ul>
             </div>
-    
+
             <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto " href="#" ></a>
-                <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <a class="navbar-brand mx-auto " href="#"></a>
+                <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse"
+                    data-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
             <div class="navbar2 navbar-collapse collapse w-100 order-3 dual-collapse2 ">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                          <a class="nav-link registro" href="{{route('registro')}}">Registrarse 
-                          <span class="huella">
-                           <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png" >
-                        </span></a>
+                        <a class="nav-link registro" href="{{route('registro')}}">Registrarse
+                            <span class="huella">
+                                <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
+                            </span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link login" href="{{route('login')}}">Iniciar Sesión
-                         <span class="huella">
-                         <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
-                      </span></a>
+                            <span class="huella">
+                                <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
+                            </span></a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
-@yield('contenido')
+    @yield('contenido')
+
+
+
+
 
 
 </body>
+
 </html>

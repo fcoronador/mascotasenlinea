@@ -21,9 +21,10 @@
             <h1>Mascotas Registradas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearmascota')}}" role="button">Crear mascota</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearmascota')}}" role="button">Crear
+                mascota</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="mascotas">
                     <thead>
                         <tr>
                             <th scope="col">Chip</th>
@@ -39,10 +40,9 @@
 
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                        <th scope="row">{{$item->Chip}}</th>
+                            <th scope="row">{{$item->Chip}}</th>
                             <td>
-                                <a name="" id="" class="" href="{{route('mostrarmascota',$item->Chip)}}"
-                                    role="button">
+                                <a name="" id="" class="" href="{{route('mostrarmascota',$item->Chip)}}" role="button">
                                     {{$item->Mascota}}</a>
                             </td>
                             <td>

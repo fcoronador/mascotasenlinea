@@ -4,6 +4,10 @@
 
 @section('contenido')
 
+
+
+
+
 @if(session('estado'))
 <div class="container">
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -21,9 +25,10 @@
             <h1>Clientes Registrados</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcliente')}}" role="button">Crear cliente</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcliente')}}" role="button">Crear
+                cliente</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="myTable">
+                <table class="table table-hover" id="table_id">
                     <thead>
                         <tr>
                             <th scope="col">Cédula</th>
@@ -39,7 +44,7 @@
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
                             <th scope="row"><a name="" id="" class="" href="{{route('mostrarcita',$item->idCedula)}}"
-                                role="button">{{$item->idCedula}}</th>
+                                    role="button">{{$item->idCedula}}</th>
                             <td><a name="" id="" class="" href="{{route('mostrarcliente',$item->idCedula)}}"
                                     role="button">
                                     {{$item->nombre}}</a></td>
@@ -65,7 +70,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                
             </div>
+
+
         </div>
     </div>
 </div>

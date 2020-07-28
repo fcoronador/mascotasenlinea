@@ -1,7 +1,14 @@
 require('./bootstrap');
-require( 'datatables.net-dt' )();
 
 
-$(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+$(document).ready(function() {
+    $('#table_id').DataTable();
+});
+
+$(document).ready(function() {
+    $('#mascotas').DataTable();
+});
+ 
+$(document).ready(function() {
+    $('#controles').DataTable();
+}); 

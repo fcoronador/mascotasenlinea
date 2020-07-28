@@ -21,9 +21,10 @@
             <h1>Controles Registradas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un Control</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un
+                Control</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="controles">
                     <thead>
                         <tr>
                             <th scope="col">Cliente</th>
@@ -31,6 +32,8 @@
                             <th scope="col">Fecha</th>
                             <th scope="col">Peso</th>
                             <th scope="col">Veterinario</th>
+                            <th scope="col">Opciones</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -39,10 +42,9 @@
 
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                        <th scope="row">{{$item->Cliente}}</th>
+                            <th scope="row">{{$item->Cliente}}</th>
                             <td>
-                                <a name="" id="" class="" href="{{route('mostrarcontrol',$item->ID)}}"
-                                    role="button">
+                                <a name="" id="" class="" href="{{route('mostrarcontrol',$item->ID)}}" role="button">
                                     {{$item->Mascota}}</a>
                             </td>
                             <td>
@@ -64,8 +66,8 @@
                                 </a>
                             </td>
                         </tr>
-                        <form class="d-none" id="delete{{$item->ID}}"
-                            action="{{route('borrarcontrol',$id=$item->ID)}}" method="post">
+                        <form class="d-none" id="delete{{$item->ID}}" action="{{route('borrarcontrol',$id=$item->ID)}}"
+                            method="post">
                             @csrf
                             @method('delete')
                         </form>
@@ -76,6 +78,35 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>

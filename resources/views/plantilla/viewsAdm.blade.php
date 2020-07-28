@@ -17,7 +17,7 @@
     <div id="section3ContentId" class="collapse in" role="tabpanel" aria-labelledby="section3HeaderId">
         <div class="card-body">
             <a name="" id="" class="btn btn-primary" href="{{route('indexcontrol')}}" role="button">Lista de
-                Mascotas</a>
+                Controles</a>
         </div>
     </div>
 </div>
