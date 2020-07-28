@@ -4,14 +4,14 @@
 
 @section('contenido')
 
-{{-- @dump($citas)
+{{-- @dump($servicios)
  --}}
 
 
 <h1 class="">CITAS</h1>
 
 <div class="card-deck">
-    <div class="card">
+    <div class="card col-sm-7">
         <img class="card-img-top" src="holder.js/100x180/" alt="">
         <div class="card-body">
             <h4 class="card-title">Tus próximas citas</h4>
@@ -22,32 +22,36 @@
                 <a name="" id="" class="btn btn-primary" href="#" role="button"> {{$item->fecha}}</a>
                 @endforeach --}}
 
-                <div class="table-responsive my-2 table-striped  ">
-                    <table class="table table-hover">
+                <div class="table-responsive my-2 table-striped tablaCitas">
+                    <table class="table table-hover ">
                         <thead>
                             <tr>
                                 <th scope="col">Fecha</th>
                                 <th scope="col">Hora</th>
                                 <th scope="col">Motivo</th>
+                                <th scope="col">Servicio</th>
+                                <th scope="col">Veterinario</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($citas as $item)
                             @if ($item->visible)
     
-                            <tr> {{-- Aqui van impresiones de la variable --}}
+                            <tr class="tablaCitas"> {{-- Aqui van impresiones de la variable --}}
     
-                                <th scope="row">{{$item->fecha}}</th>
-                                 <td>{{$item->hora}}</td>
-                                 <td>{{$item->motivo}}</td>
+                                <th scope="row">{{$item->Fecha}}</th>
+                                 <td>{{$item->Hora}}</td>
+                                 <td>{{$item->Motivo}}</td>
+                                 <td>{{$item->Servicio}}</td>
+                                 <td>{{$item->Veterinario}}</td>
                                 <td>
-                                     <a name="" id="" class="btn btn-primary btn-sm"
-                                        href="{{route('editarcita',$item->fecha)}}" role="button"> Editar</a>
+                                     <a name="" id="" class="btn btn-primary btn-sm "
+                                        href="{{route('editarcita',$item->Fecha)}}" role="button"> Editar</a>
     
-                                    {{-- <a id="boton_eliminar" class=" btn btn-danger btn-sm "
-                                        onclick="document.getElementById('delete{{$item->nombre}}').submit()">
+                                    <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                        onclick="document.getElementById('delete{{$item->Fecha}}').submit()">
                                         Borrar
-                                    </a> --}}
+                                    </a>
                                 </td>
                             </tr>
                             {{-- <form class="d-none" id="delete{{$item->nombre}}"
@@ -72,20 +76,22 @@
     </div>
 
 
-    <div class="card">
+    <div class="card col-sm-5">
         <img class="card-img-top" src="holder.js/100x180/" alt="">
         <div class="card-body">
             <h4 class="card-title">Agenda tu cita</h4>
             <p class="card-text">¿Necesitas programar una cita? <br> 
                 Llena el formulario y estaremos felices de atenderte</p>
             
-                <div class="row">
+                <div class="row" >
                     <div class="col-12 col-sm-10 col-lg-8 mx-auto">
                         <div class="container">
                     <form action="{{route('guardarcita')}}" method="post">
                         @csrf
                         <div class="form-group">
                             
+                        <input name="cc" value="{{$cc}}" class="form-control" placeholder="" aria-describedby="helpId" hidden>
+
                                        
                         <label for="fecha">Fecha</label>
                         <input type="date" name="fecha" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -101,12 +107,12 @@
                         <small id="helpId" class="text-muted">Por favor ingrese el motivo </small>
                         <br>
                         
-                        <label for="motivo">Servicio</label>
-                        <select class="form-control" id="servicios_idServi">
-                            <option value="1">item1</option>
-                            <option value="2">item2</option>
-                            <option value="3">item3</option>
-                            <option value="4">item4</option>
+                        <label for="servicios">Servicio</label>
+                        
+                          <select class="form-control" name="idServi" id="">
+                            @foreach ($servicios as $item)
+                            <option value="{{$item->idServi}}">{{$item->servicios}}</option>
+                            @endforeach
                           </select>
 
 
@@ -114,7 +120,7 @@
                         <br>
 
 
-                        <input type="submit" value="Enviar">
+                        <input type="submit" class="btn btnCrear btn-default" value="Enviar">
                 
                             </div>
                         </div>

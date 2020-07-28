@@ -4,10 +4,10 @@
 
 @section('contenido')
 
-{{-- @dump($citas)
- --}}
+@dump($citas)
 
- @foreach ($citas as $propiedad)
+
+@foreach ($citas as $propiedad)
 
 
  <div class="row">
@@ -15,7 +15,7 @@
          <div class="container p-3">
              <h1 class="">Editar cita: {{$propiedad->fecha }} {{$propiedad->hora}}</h1>
              <hr>
-             <form action="{{route('actualizarcita',$id)}}" method="post">
+             <form action="{{route('editarcita',$id)}}" method="post">
                  @csrf
                  <input type="hidden" name="_method" value="patch">
  

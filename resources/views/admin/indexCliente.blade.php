@@ -21,7 +21,7 @@
             <h1>Clientes Registrados</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-success" href="{{route('crearcliente')}}" role="button">Crear cliente</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcliente')}}" role="button">Crear cliente</a>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
                     <thead>

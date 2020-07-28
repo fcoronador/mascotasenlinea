@@ -20,7 +20,7 @@ Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
 Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
 
 
-Route::get('/Citas','ControlCitas@index')->name('citas');
+//Route::get('/Citas','ControlCitas@index')->name('citas');
 //Route::get('/CrearCita','ControlCitas@create')->name('crearcita');
 Route::post('/CrearCita','ControlCitas@store')->name('guardarcita');
 Route::get('/Citas/{id}/','ControlCitas@show')->name('mostrarcita');
