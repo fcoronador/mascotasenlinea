@@ -29,6 +29,23 @@ Route::get('/Cliente/{id}/editar','ControlCliente@edit')->name('editarcliente');
 Route::patch('/Cliente/{id}/actualizar','ControlCliente@update')->name('actualizarcliente');
 Route::delete('/Cliente/{id}/eliminar','ControlCliente@destroy')->name('borrarcliente');
 
+Route::get('/IndexMascota','ControlMascota@index')->name('indexmascota');
+Route::get('/CrearMascota','ControlMascota@create')->name('crearmascota');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearMascota','ControlMascota@store')->name('guardarmascota');/* Recibe la data del $_REQUEST */
+Route::get('/Mascota/{id}/','ControlMascota@show')->name('mostrarmascota');
+Route::get('/Mascota/{id}/editar','ControlMascota@edit')->name('editarmascota');
+Route::patch('/Mascota/{id}/actualizar','ControlMascota@update')->name('actualizarmascota');
+Route::delete('/Mascota/{id}/eliminar','ControlMascota@destroy')->name('borrarmascota');
+
+
+Route::get('/IndexControl','ControlContro@index')->name('indexcontrol');
+Route::get('/CrearControl','ControlContro@create')->name('crearcontrol');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearControl','ControlContro@store')->name('guardarcontrol');/* Recibe la data del $_REQUEST */
+Route::get('/Control/{id}/','ControlContro@show')->name('mostrarcontrol');
+Route::get('/Control/{id}/editar','ControlContro@edit')->name('editarcontrol');
+Route::patch('/Control/{id}/actualizar','ControlContro@update')->name('actualizarcontrol');
+Route::delete('/Control/{id}/eliminar','ControlContro@destroy')->name('borrarcontrol');
+
 
 Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi');
 Route::get('/CrearProcedi','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
