@@ -23,7 +23,7 @@
 
             <a name="" id="" class="btn btn-success" href="{{route('crearcliente')}}" role="button">Crear cliente</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="myTable">
                     <thead>
                         <tr>
                             <th scope="col">Cédula</th>
