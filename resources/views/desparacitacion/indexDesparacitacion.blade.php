@@ -23,9 +23,10 @@
 
             <a name="" id="" class="btn btn-success" href="{{route('creardesparacitacion')}}" role="button">Crear desparacitacion</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="despara">
                     <thead>
                         <tr>
+                            <th scope="col">Código</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Opciones</th>
                         </tr>

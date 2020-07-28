@@ -18,17 +18,16 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1>Examenes</h1>
+            <h1>Exámenes</h1>
             <hr>
 
             <a name="" id="" class="btn btn-success" href="{{route('crearexamen')}}" role="button">Crear examen</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="exa">
                     <thead>
                         <tr>
+                            <th scope="col">Código</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Resultado</th>
-                            <th scope="col">Laboratorio</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>

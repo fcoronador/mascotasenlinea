@@ -43,16 +43,16 @@
 
                         <label class="form-check-label">
                             <br>
-                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="1" @if
-                                ($propiedad->sexo == 1) {{'checked'}} @endif>
+                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="1"
+                             @if ($propiedad->sexo == 1) {{'checked'}} @endif>
                             Macho
                         </label>
 
 
                         <label class="form-check-label">
                             <br>
-                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="0" @if
-                                ($propiedad->sexo == 0) {{'checked'}} @endif> Hembra
+                            <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="0" 
+                            @if ($propiedad->sexo == 0) {{'checked'}} @endif> Hembra
                         </label>
 
                     </div>

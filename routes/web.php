@@ -56,7 +56,7 @@ Route::patch('/Control/{id}/actualizar','ControlContro@update')->name('actualiza
 Route::delete('/Control/{id}/eliminar','ControlContro@destroy')->name('borrarcontrol');
 
 
-Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi');
+Route::get('/IndexProcedimiento','ControlProcedimiento@index')->name('indexprocedi'); 
 Route::get('/CrearProcedimiento','ControlProcedimiento@create')->name('crearprocedimiento');/* Sale data en el POST->$_REQUEST */
 Route::post('/CrearProcedimiento','ControlProcedimiento@store')->name('guardarprocedimiento');/* Recibe la data del $_REQUEST */
 Route::get('/Procedimientos/{id}/','ControlProcedimiento@show')->name('mostrarprocedimiento');

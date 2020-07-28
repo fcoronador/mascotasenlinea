@@ -8,7 +8,7 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery'); //Esto me incluye el jQuery
     window.Popper = require('popper.js').default;
-    
+    Chart = require('chart.js');
     
     require('bootstrap');
     require('datatables.net')(window, $); //ESto activo el datatable.net

@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1 class="">Control de la mascota: {{$propiedad->Mascota}}</h1>
+            <h1 class="">Editar de la mascota: {{$propiedad->Mascota}}</h1>
             <br>
             <h2>Veterinario: {{$propiedad->Veterinario}} <br> {{$propiedad->Cargo}}</h2>
             <hr>

@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<h1 class="">Crear cliente</h1>
+<h1 class="my-3">Crear cliente</h1>
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-6 mx-auto">
         <div class="container">
