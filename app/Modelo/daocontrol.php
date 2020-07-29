@@ -22,11 +22,18 @@ class daocontrol
 	LEFT JOIN cliente u ON u.idCedula=m.cliente_idCedula)
     LEFT JOIN veterin v ON v.idVeterin=c.veterin_idVeterin where idControl = :idControl';
 
+    private $query3 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes ,count(idControl) AS cantidad FROM controles GROUP BY MONTH (createdAt), YEAR (createdAt)';
 
     private $listacontroles;
 
     public function __construct()
     {
+    }
+
+    public function getControlesAdmin()
+    {
+        $cantidad = DB::select($this->query3);
+        return $cantidad;
     }
 
     public function getControl()

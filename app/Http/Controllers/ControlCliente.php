@@ -25,6 +25,11 @@ class ControlCliente extends Controller
         $clientes = $modelo->indexclientes()->getClientes();
         return $clientes;
     }
+    public static function cantClientes(){
+        $modelo= new Cliente();
+        $cantidad = $modelo->adminCliente();
+        return $cantidad;
+    }
 
 
     public function index()

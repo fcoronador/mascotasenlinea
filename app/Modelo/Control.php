@@ -21,6 +21,12 @@ class Control{
         return $index;
     }
 
+    public function adminControl(){
+        return $this->dao->getControlesAdmin();
+    }
+
+
+
     public function guardarcontroles($control)
     {
 

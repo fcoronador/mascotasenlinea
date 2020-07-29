@@ -22,6 +22,10 @@ class Mascota{
         return $index;
     }
 
+    public function adminMascota(){
+        return $this->dao->getMascotasAdmin();
+    }
+
     public function guardarmascotas($mascota)
     {
 
