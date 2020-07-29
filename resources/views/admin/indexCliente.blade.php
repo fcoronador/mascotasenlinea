@@ -58,12 +58,12 @@
                                     Borrar
                                 </a>
                             </td>
+                            <form class="d-none" id="delete{{$item->nombre}}"
+                                action="{{route('borrarcliente',$id=$item->idCedula)}}" method="post">
+                                @csrf
+                                @method('delete')
+                            </form>
                         </tr>
-                        <form class="d-none" id="delete{{$item->nombre}}"
-                            action="{{route('borrarcliente',$id=$item->idCedula)}}" method="post">
-                            @csrf
-                            @method('delete')
-                        </form>
                         @endif
 
 

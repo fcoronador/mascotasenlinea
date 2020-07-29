@@ -46,16 +46,17 @@
                                     href="{{route('editarprocedimiento',$item->idProc)}}" role="button"> Editar</a>
 
                                 <a id="boton_eliminar" class=" btn btn-danger btn-sm "
-                                    onclick="document.getElementById('delete{{$item->fecha}}').submit()">
+                                    onclick="document.getElementById('delete{{$item->idProc}}').submit()">
                                     Borrar
                                 </a>
                             </td>
-                        </tr>
+                        
                         <form class="d-none" id="delete{{$item->idProc}}"
                             action="{{route('borrarprocedimiento',$id=$item->idProc)}}" method="post">
                             @csrf
                             @method('delete')
                         </form>
+                    </tr>
                         @endforeach
                     </tbody>
                 </table>

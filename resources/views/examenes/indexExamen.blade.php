@@ -49,12 +49,13 @@
                                     Borrar
                                 </a>
                             </td>
-                        </tr>
+                        
                         <form class="d-none" id="delete{{$item->tipo}}"
                             action="{{route('borrarexamen',$id=$item->idExam)}}" method="post">
                             @csrf
                             @method('delete')
                         </form>
+                    </tr>
                         @endif
                         @endforeach
                     </tbody>

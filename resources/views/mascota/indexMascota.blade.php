@@ -60,13 +60,13 @@
                                     Borrar
                                 </a>
                             </td>
+                            <form class="d-none" id="delete{{$item->Chip}}"
+                                action="{{route('borrarmascota',$id=$item->Chip)}}" method="post">
+                                @csrf
+                                @method('delete')
+                            </form>
                         </tr>
-                        <form class="d-none" id="delete{{$item->Chip}}"
-                            action="{{route('borrarmascota',$id=$item->Chip)}}" method="post">
-                            @csrf
-                            @method('delete')
-                        </form>
-                        @endif
+                            @endif
 
 
                         @endforeach

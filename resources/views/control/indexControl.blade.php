@@ -65,12 +65,13 @@
                                     Borrar
                                 </a>
                             </td>
-                        </tr>
+                        
                         <form class="d-none" id="delete{{$item->ID}}" action="{{route('borrarcontrol',$id=$item->ID)}}"
                             method="post">
                             @csrf
                             @method('delete')
                         </form>
+                    </tr>
                         @endif
 
 
