@@ -20,6 +20,12 @@ class ControlMascota extends Controller
         $mascotas = $modelo->indexmascotas()->getMascotas();
         return $mascotas;
     }
+    public static function cantMascotas(){
+        
+        $modelo = new Mascota();
+        $mascotas = $modelo->adminMascota();
+        return $mascotas;
+    }
 
 
     /**

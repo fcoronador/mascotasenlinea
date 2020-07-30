@@ -16,6 +16,12 @@ class ControlContro extends Controller
         $this->modelo = new Control();
     }
 
+    public static function cantControl(){
+        
+        $modelo = new Control();
+        $controles = $modelo->adminControl();
+        return $controles;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,6 +33,7 @@ class ControlContro extends Controller
         return view('control.indexControl',compact('controles'));
     }
 
+   
     /**
      * Show the form for creating a new resource.
      *
