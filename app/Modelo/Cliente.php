@@ -15,6 +15,11 @@ class Cliente
         $this->dao = new daocliente();
     }
 
+    public function adminCliente(){
+        return $this->dao->getClientesAdmin();
+    }
+
+
     public function indexclientes()
     {
 
@@ -34,7 +39,6 @@ class Cliente
         $cliente = $this->dao->seleccionCliente($id);
         return $cliente;
     }
-
 
     public function Actualizar($cliente)
     {

@@ -9,10 +9,16 @@ class daocliente
 {
 
     private $query = 'select * from cliente';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes ,count(nombre) AS cantidad FROM cliente c GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listaclientes;
 
     public function __construct()
     {
+    }
+
+    public function getClientesAdmin(){
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
     }
 
     public function getClientes()

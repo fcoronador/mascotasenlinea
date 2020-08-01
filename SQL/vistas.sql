@@ -91,7 +91,10 @@ select m.nombre AS Nombre, p.fecha AS Fecha, p.sigDosis AS 'Siguiente Dosis', d.
     	LEFT JOIN procedi p	on p.mascota_idMascotas= m.idMascotas)
         left join despara d on p.despara_idDespara = d.idDespara WHERE c.idCedula= 100;
 
-
+-- Consultar Cantidad de clientes por año y por mes
+SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes ,count(nombre) AS cantidad
+ FROM cliente c 
+ GROUP BY MONTH (createdAt), YEAR (createdAt)
 
 
 
