@@ -89925,6 +89925,16 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./graficas */ "./resources/js/graficas.js");
+
+__webpack_require__(/*! ./sidebar */ "./resources/js/sidebar.js");
+
+$(document).ready(function () {
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+});
 $(document).ready(function () {
   $('#table_id').DataTable();
 });
@@ -89999,6 +90009,67 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /* require( 'datatables.net-bs4' )(window, $);
 require( 'datatables.net-buttons-bs4' )(window, $); */
+
+/***/ }),
+
+/***/ "./resources/js/graficas.js":
+/*!**********************************!*\
+  !*** ./resources/js/graficas.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#myChart4').ready(function () {
+    var ctx = document.getElementById('myChart4').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: eti4,
+        datasets: [{
+          label: 'Cantidad de mascotas creadas creadas por mes',
+          data: val4,
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+          borderWidth: 1
+        }]
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/sidebar.js":
+/*!*********************************!*\
+  !*** ./resources/js/sidebar.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $("#ItemCate").click(function () {
+    $("#paneCate").addClass("show");
+    $("#paneSub").removeClass("show");
+    $("#paneSub").addClass("collapse");
+    $("#paneProd").removeClass("show");
+    $("#paneProd").addClass("collapse");
+  });
+  $("#ItemSub").click(function () {
+    $("#paneCate").removeClass("show");
+    $("#paneCate").addClass("collapse");
+    $("#paneSub").addClass("show");
+    $("#paneProd").removeClass("show");
+    $("#paneProd").addClass("collapse");
+  });
+  $("#ItemProd").click(function () {
+    $("#paneCate").removeClass("show");
+    $("#paneCate").addClass("collapse");
+    $("#paneSub").removeClass("show");
+    $("#paneSub").addClass("collapse");
+    $("#paneProd").addClass("show");
+  });
+});
 
 /***/ }),
 

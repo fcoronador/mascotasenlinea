@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css ">
     {{-- Hoja de estilos de datables buena --}}
     <script src="/js/app.js"></script>{{-- No dejar JavaScript encima de este --}}
-
-
-    
     <title>@yield('titulo')</title>
-
 </head>
 
 <body>
@@ -52,13 +48,13 @@
             <div class="navbar2 navbar-collapse collapse w-100 order-3 dual-collapse2 ">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link registro" href="{{route('registro')}}">Registrarse
+                        <a class="nav-link registro" href="{{route('registro')}}" data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link login" href="{{route('login')}}">Iniciar Sesión
+                        <a class="nav-link login" href="{{route('login')}}" data-toggle="modal" data-target="#loginModal" ">Iniciar Sesión
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
                             </span></a>
@@ -67,10 +63,9 @@
             </div>
         </nav>
     </div>
+
+
     @yield('contenido')
-
-
-
 
 
 

@@ -1,45 +1,59 @@
-<div class="col-9">
+<div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">
+            <i class="fa fa-building" aria-hidden="true"></i>
+        </button>
+    </nav>
 
-    <div class="container border" style=" height:100%;">
-
-        <div id="section1ContentId" class="collapse in" role="tabpanel" aria-labelledby="section1HeaderId">
-            <div class="card-body"  style="height: 80vh; width: 60vw;">
+    <div id="paneCate" class="container show">
+        <h1 class="mt-4">Categorias</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
+            larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+            optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which
+            will toggle the menu when clicked.</p>
+        <div class="card-body"  style="height: 80vh; width: 60vw;">
                 <h3>Cantidad de clientes creados por mes</h3>
                 <canvas id="myChart1" width="" height=""></canvas>
-            </div>
         </div>
-        <div id="section2ContentId" class="collapse in" role="tabpanel" aria-labelledby="section2HeaderId">
+    </div>
+
+    <div id="paneSub" class="container collapse">
+        <h1 class="mt-4">Subcategorias</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
+            larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+            optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which
+            will toggle the menu when clicked.</p>
             <div class="card-body">
                 <h3>Cantidad de mascotas creados por mes</h3>
                 <canvas id="myChart2" width="" height=""></canvas>
             </div>
-        </div>
-        <div id="section3ContentId" class="collapse in" role="tabpanel" aria-labelledby="section3HeaderId">
+    </div>
+
+    <div id="paneProd" class="container collapse">
+        <h1 class="mt-4">Productos</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
+            larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+            optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which
+            will toggle the menu when clicked.</p>
             <div class="card-body">
                 <h3>Cantidad de controles creados por mes</h3>
                 <canvas id="myChart3" width="" height=""></canvas>
             </div>
-        </div>
-        <div id="section4ContentId" class="collapse in" role="tabpanel" aria-labelledby="section4HeaderId">
             <div class="card-body">
                 <h3></h3>
-                <canvas id="myChart3" width="" height=""></canvas>
+                <canvas id="myChart4" width="" height=""></canvas>
+                <script> 
+                    var eti4= {!! json_encode($cantidadCli['etiquetas']) !!};
+                    var val4=  {!! json_encode($cantidadCli['valor']) !!};
+                </script>
             </div>
-        </div>
-        <div id="section5ContentId" class="collapse in" role="tabpanel" aria-labelledby="section5HeaderId">
-            <div class="card-body">
-                <canvas id="myChart3" width="" height=""></canvas>
-            </div>
-        </div>
-        <div id="section6ContentId" class="collapse in" role="tabpanel" aria-labelledby="section6HeaderId">
-            <div class="card-body">
-                <canvas id="myChart3" width="" height=""></canvas>
-            </div>
-        </div>
-
 
     </div>
 </div>
+
 
 
 <script>
