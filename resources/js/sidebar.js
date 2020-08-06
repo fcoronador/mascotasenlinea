@@ -1,33 +1,33 @@
 
   $(document).ready(function(){
-    $("#ItemCate").click(function(){
-      $("#paneCate").addClass("show");
+    $("#ItemCliente").click(function(){
+      $("#paneCliente").addClass("show");
 
-      $("#paneSub").removeClass("show");
-      $("#paneSub").addClass("collapse");
+      $("#paneMascota").removeClass("show");
+      $("#paneMascota").addClass("collapse");
 
-      $("#paneProd").removeClass("show");
-      $("#paneProd").addClass("collapse");
+      $("#paneControles").removeClass("show");
+      $("#paneControles").addClass("collapse");
     });
 
-    $("#ItemSub").click(function(){
-        $("#paneCate").removeClass("show");
-        $("#paneCate").addClass("collapse");
+    $("#ItemMascota").click(function(){
+        $("#paneCliente").removeClass("show");
+        $("#paneCliente").addClass("collapse");
 
-        $("#paneSub").addClass("show");
+        $("#paneMascota").addClass("show");
 
-        $("#paneProd").removeClass("show");
-        $("#paneProd").addClass("collapse");
+        $("#paneControles").removeClass("show");
+        $("#paneControles").addClass("collapse");
     });
 
-    $("#ItemProd").click(function(){
-        $("#paneCate").removeClass("show");
-        $("#paneCate").addClass("collapse");
+    $("#ItemControles").click(function(){
+        $("#paneCliente").removeClass("show");
+        $("#paneCliente").addClass("collapse");
 
-        $("#paneSub").removeClass("show");
-        $("#paneSub").addClass("collapse");
+        $("#paneMascota").removeClass("show");
+        $("#paneMascota").addClass("collapse");
 
-        $("#paneProd").addClass("show");
+        $("#paneControles").addClass("show");
     });
 
   });
