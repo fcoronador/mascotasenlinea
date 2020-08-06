@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','inicio')->name('inicio');
 /* Route::get('/','ControlAuth@RegistroClienteShow')->name('inicio'); */
 Route::post('/','ControlAuth@RegistroCliente')->name('registrocliente');
-
+Route::post('/login','ControlAuth@Login')->name('login');
+Route::get('/logout','ControlAuth@Logout')->name('logout');
 
 Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Citas','ControlCitas@index')->name('citas');
@@ -14,7 +15,7 @@ Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
 Route::view('/contacto','inicio')->name('contacto'); 
 Route::view('/quienes','quienes')->name('quienes'); 
-Route::view('/login','login')->name('login');
+
 
 
 Route::view('/PanelCliente','cliente.panel')->name('PanelC');

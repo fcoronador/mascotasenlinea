@@ -32,9 +32,12 @@
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
-                    </li>
+                    @if (session('rol')===1)
+                        <li class="nav-item">
+                            <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
+                        </li>
+                    @endif
+
                 </ul>
             </div>
 
@@ -53,12 +56,29 @@
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
                     </li>
+
+                    @if (session('rol'))
+                        
+                    <li class="nav-item">
+                        <a class="nav-link login" href="{{route('logout')}}">Cerrar Sesión
+                            <span class="huella">
+                                <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
+                            </span>
+                        </a>
+                    </li>
+                                            
+                    @else
+                        
                     <li class="nav-item">
                         <a class="nav-link login" href="{{route('login')}}" data-toggle="modal" data-target="#loginModal" ">Iniciar Sesión
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
-                            </span></a>
+                            </span>
+                        </a>
                     </li>
+                        
+                    @endif
+
                 </ul>
             </div>
         </nav>

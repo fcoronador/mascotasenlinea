@@ -33,6 +33,10 @@ class Auth{
         return $existe;
     }
 
+    public function obtenerUsuario($correo)
+    {
+        return $this->dao->getUsuario($correo);
+    }
 
 
    /*  public function mostrarCita($id)

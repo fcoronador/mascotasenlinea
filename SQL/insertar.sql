@@ -334,13 +334,13 @@ INSERT INTO `rol` (`rolNombre`, `rolDescripcion`, `rolEstado`, `rolUsuSesion`, `
 VALUES ('cliente', 'dueño de una mascota', '1', 'cliente', now(), now());
 
 INSERT INTO `usuario_s` (`usuLogin`, `usuPassword`, `usuUsuSesion`, `usuEstado`, `usuCreatedAt`, `usuUpdatedAt`)
-VALUES ('coronado@correo.com', '1234', 'Fredy', '1', now(), now());
+VALUES ('coronado@correo.com', '$2y$10$IIdztk/PTzscUFFhqi6dfOaiKxaVah5RFNDLivqpDivAPmA9MHZMa', 'Fredy', '1', now(), now());
 
 INSERT INTO `usuario_s` (`usuLogin`, `usuPassword`, `usuUsuSesion`, `usuEstado`, `usuCreatedAt`, `usuUpdatedAt`)
-VALUES ('parra@correo.com', '1234', 'Susana', '1', now(), now());
+VALUES ('parra@correo.com', '$2y$10$IIdztk/PTzscUFFhqi6dfOaiKxaVah5RFNDLivqpDivAPmA9MHZMa', 'Susana', '1', now(), now());
 
 INSERT INTO `usuario_s` (`usuLogin`, `usuPassword`, `usuUsuSesion`, `usuEstado`, `usuCreatedAt`, `usuUpdatedAt`)
-VALUES ('ortiz@correo.com', '1234', 'Viviana', '1', now(), now());
+VALUES ('ortiz@correo.com', '$2y$10$IIdztk/PTzscUFFhqi6dfOaiKxaVah5RFNDLivqpDivAPmA9MHZMa', 'Viviana', '1', now(), now());
 
 INSERT INTO `usuario_s_roles` (`id_rol`, `estado`, `fechaUserRol`, `usuRolUsuSesion`, `created_at`, `updated_at`, `usuario_s_usuId`)
 VALUES ('1', '1', now(), 'Fredy', now(), now(), '1');
