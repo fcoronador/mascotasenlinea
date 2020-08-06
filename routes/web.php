@@ -4,6 +4,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/','inicio')->name('inicio');
+/* Route::get('/','ControlAuth@RegistroClienteShow')->name('inicio'); */
+Route::post('/','ControlAuth@RegistroCliente')->name('registrocliente');
+
+
 Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
@@ -82,4 +86,3 @@ Route::patch('/Desparacitacion/{id}/actualizar','ControlDesparacitacion@update')
 Route::delete('/Desparacitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');
 
 
-Route::post('/registro','ControlAuth@storeRegistro')->name('registro');

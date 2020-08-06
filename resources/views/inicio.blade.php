@@ -16,7 +16,26 @@ dd($matriz);
 @section('contenido')
 
 
-
+@if(session('estado'))
+<div class="container">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('estado')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+@endif
+@if(session('alerta'))
+<div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{session('alerta')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+@endif
 
 
 <div class="col-sm-12 container-fluid mt-3">
@@ -80,7 +99,7 @@ dd($matriz);
     </div>
 </div>
 
-@endsection
+
 
 
 <!-- Modal -->
@@ -95,16 +114,15 @@ dd($matriz);
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+            <form action="{{route('registrocliente')}}" method="POST">
+                @csrf
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="" class="form-control" placeholder="">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" id="" class="form-control" placeholder="">
-                        <label for="documento">Documento</label>
-                        <input type="number" name="documento" id="" class="form-control" placeholder="">
                         <label for="correo">Correo electrónico</label>
                         <input type="email" name="correo" id="" class="form-control" placeholder="">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="" class="form-control" placeholder="">
+                        <label for="confirmar">Confirmar Contraseña</label>
+                        <input type="password" name="confirmar" id="" class="form-control" placeholder="">
                     </div>
             </div>
             <div class="modal-footer">
@@ -136,3 +154,5 @@ dd($matriz);
         </div>
     </div>
 </div>
+
+@endsection

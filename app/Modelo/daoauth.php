@@ -22,19 +22,25 @@ class daoauth{
 
     }
 
-    public function setCitas($id)
+    public function setCliente($persona)
     {
-        DB::insert('insert into citas (fecha, hora, motivo, cliente_idCedula, servicios_idServi, visible)
-                    VALUES (:fecha, :hora, :motivo, :cliente_idCedula, :servicios_idServi, :visible)',$id);
+        DB::insert('INSERT INTO usuario_s (usuLogin, usuPassword, usuUsuSesion, usuEstado) VALUES (:usuLogin, :usuPassword, :usuUsuSesion, :usuEstado)',$persona);
+       
+        $cliente = DB::select('select * from usuario_s where usuUsuSesion = :usuUsuSesion',['usuUsuSesion'=>$persona['usuUsuSesion']]);
+        $idcliente='';
+        foreach($cliente as $item){$idcliente=$item->usuId;}
+
+        DB::insert('INSERT INTO `usuario_s_roles` (id_rol, usuRolUsuSesion,usuario_s_usuId)
+        VALUES (:id_rol, :usuRolUsuSesion,:usuario_s_usuId);',
+        ['id_rol'=>3,
+        'usuRolUsuSesion'=> $persona['usuUsuSesion'],
+        'usuario_s_usuId'=>$idcliente
+        ]);   
     }
 
-    public function seleccionCita($id)
+    public function verificarCorreo($correo)
     {
-       $citas = DB::select('SELECT  date_format(c.fecha,"%m-%d-%Y") AS Fecha ,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
-       s.servicios AS Servicio ,v.nombre AS Veterinario
-       FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
-       LEFT JOIN veterin v ON v.idVeterin = s.veterin_idVeterin  where cliente_idCedula = :idCedula', ['idCedula' => $id]);
-        return $citas;
-
+       $existe = DB::select('select usuLogin from usuario_s where usuLogin = :usuLogin', ['usuLogin' => $correo]);
+       return $existe;
     }
 }

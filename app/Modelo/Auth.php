@@ -14,7 +14,7 @@ class Auth{
         $this->dao = new daoauth();
     }
 
-    public function indexcitas(){
+    public function index(){
 
         //$index= new daocitas();
         
@@ -22,17 +22,24 @@ class Auth{
         return $index;
     }
 
-     public function guardarcita($cita)
+    public function guardarCliente($persona)
     {
-
-        $this->dao->setCitas($cita);
+        $this->dao->setCliente($persona);
     }
 
-    public function mostrarCita($id)
+    public function verificarCorreo($correo)
+    {
+        $existe = $this->dao->verificarCorreo($correo);
+        return $existe;
+    }
+
+
+
+   /*  public function mostrarCita($id)
     {
         $cliente = $this->dao->seleccionCita($id);
         return $cliente;
-    }
+    } */
 
 /* 
     public function Actualizar($cita)

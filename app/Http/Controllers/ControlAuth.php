@@ -14,18 +14,28 @@ class ControlAuth extends Controller
         $this->modelo = new Auth();
     }
 
-
-
-    public function storeRegistro(Request $request, Auth $index)
+  
+    public function RegistroCliente(Request $request, Auth $index)
     {
-        $registro = [];
-        $registro['perNombre'] = $request->get('nombre');
-        $registro['perApellido'] = $request->get('apellido');
-        $registro['perDocumento'] = $request->get('documento');
-        $registro['perUsuSesion'] = $request->get('correo');
-        $registro['perEstado'] = true;
+        $persona = [];
+    
+        $existe = $index->verificarCorreo($request->get('correo'));
+        if($existe){
+            return redirect()->route('inicio')->with('alerta', 'El correo ya existe');
+        }else{
+            $persona['usuLogin'] = $request->get('correo');
+        }
+        
+        if ($request->get('password') === $request->get('confirmar')) {
+          $persona['usuPassword'] = password_hash($request->get('password'), PASSWORD_BCRYPT);
+        } else {
+          return redirect()->route('inicio')->with('alerta', 'Las contraseñas no coinciden');
+        }
+        $persona['usuUsuSesion'] = $request->get('correo');
+        $persona['usuEstado'] = true;
+        
+        $index->guardarCliente($persona);
 
-        $this->modelo->guardarclientes($cliente);
         return redirect()->route('inicio')->with('estado', 'Se ha registrado con éxito');
     }
 }

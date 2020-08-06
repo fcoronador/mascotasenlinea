@@ -48,7 +48,7 @@
             <div class="navbar2 navbar-collapse collapse w-100 order-3 dual-collapse2 ">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link registro" href="{{route('registro')}}" data-toggle="modal" data-target="#registroModal">Registrarse
+                        <a class="nav-link registro" href="" data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
