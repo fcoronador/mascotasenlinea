@@ -8,7 +8,6 @@ Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
 
-Route::view('/registro','registro')->name('registro'); 
 Route::view('/contacto','inicio')->name('contacto'); 
 Route::view('/quienes','quienes')->name('quienes'); 
 Route::view('/login','login')->name('login');
@@ -81,3 +80,6 @@ Route::get('/Desparacitacion/{id}/','ControlDesparacitacion@show')->name('mostra
 Route::get('/Desparacitacion/{id}/editar','ControlDesparacitacion@edit')->name('editardesparacitacion');
 Route::patch('/Desparacitacion/{id}/actualizar','ControlDesparacitacion@update')->name('actualizardesparacitacion');
 Route::delete('/Desparacitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');
+
+
+Route::post('/registro','ControlAuth@storeRegistro')->name('registro');
