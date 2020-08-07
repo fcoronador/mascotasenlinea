@@ -76,7 +76,7 @@ class ControlCitas extends Controller
         $servicios = ControlServicios::listaServicios();
         $citas = $this->modelo->mostrarcita($id);
         $cc=$id;
-        return view('citas.citas', compact('citas','servicios','cc')); 
+        return view('citas.citas', compact('citas','servicios','cc','nombre')); 
 
     }
 
@@ -86,10 +86,12 @@ class ControlCitas extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idCita)
     {
-        $citas = $this->modelo->mostrarcita($id);
-        return view('citas.editcita', compact('citas', 'id'));
+        $servicios = ControlServicios::listaServicios();
+        $idCita = $this->modelo->mostrarEditCita($idCita);
+        
+        return view('citas.editcita', compact('idCita','citas','servicios'));
     }
 
     
@@ -102,7 +104,19 @@ class ControlCitas extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Citas = [];
+        $Citas['fecha'] = str_replace('-','/',$request->get('fecha'));
+        $Citas['hora'] = $request->get('hora');
+        $Citas['motivo'] = $request->get('motivo');
+        $Citas['servicios_idServi'] = $request->get('idServi');
+        $Citas['idCitas'] = $id;
+        $Citas['visible'] = 1;
+/*         dd($Citas);
+ */        
+        $this->modelo->Actualizar($Citas);
+
+
+        return redirect()->route('indexcliente')->with('estado', 'La cita se ha actualizado con éxito');
     }
 
     /**
@@ -111,8 +125,11 @@ class ControlCitas extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idCita)
     {
-        //
+        $Citas['idCitas']=$idCita;
+        $Citas['visible']= false;
+        $this->modelo->borrar($Citas);
+        return redirect()->route('indexcliente')->with('estado', 'La cita se ha sido eliminado con exito');
     }
 }

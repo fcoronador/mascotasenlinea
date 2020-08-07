@@ -43,7 +43,7 @@
 
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                            <th scope="row"><a name="" id="" class="" href="{{route('mostrarcita',$item->idCedula)}}"
+                            <th scope="row"><a name="" id="" class="" href="{{route('mostrarcita',$item->idCedula, $item->nombre)}}"
                                     role="button">{{$item->idCedula}}</th>
                             <td><a name="" id="" class="" href="{{route('mostrarcliente',$item->idCedula)}}"
                                     role="button">

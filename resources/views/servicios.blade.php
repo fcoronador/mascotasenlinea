@@ -1,6 +1,6 @@
 @extends('plantilla.plantilla')
 
-@section('titulo','Login')
+@section('titulo','Servicios')
 
 @section('contenido')
 
@@ -10,8 +10,13 @@
 
 
 @foreach ($servicios as $item)
-                <a name="" id="" class="btn btn-primary" href="#" role="button"> {{$item->servicios}}</a>
-                @endforeach
+    
+
+<a name="" id="" class="btn btn-primary" href="#" role="button"> {{$item->servicios}}</a>
+
+
+
+@endforeach
 
 @endsection
 

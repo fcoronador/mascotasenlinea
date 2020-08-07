@@ -30,11 +30,40 @@ class daocitas{
 
     public function seleccionCita($id)
     {
-       $citas = DB::select('SELECT  date_format(c.fecha,"%m-%d-%Y") AS Fecha ,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
+       $citas = DB::select('SELECT  date_format(c.fecha,"%d-%m-%Y") AS Fecha , c.idCitas AS idCita,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
        s.servicios AS Servicio ,v.nombre AS Veterinario
        FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
        LEFT JOIN veterin v ON v.idVeterin = s.veterin_idVeterin  where cliente_idCedula = :idCedula', ['idCedula' => $id]);
         return $citas;
 
     }
+
+    public function editCita($idCita){
+        $idCita = DB::select('SELECT  date_format(c.fecha,"%d-%m-%Y") AS Fecha , c.idCitas AS idCita,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
+        s.servicios AS Servicio ,v.nombre AS Veterinario
+        FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
+        LEFT JOIN veterin v ON v.idVeterin = s.veterin_idVeterin  where c.idCitas = :idCita', ['idCita' => $idCita]);
+         return $idCita;
+    }
+
+
+
+    public function update($Citas)
+    {
+        /* dd($Citas); */
+        DB::table('citas')
+            ->where('idCitas', $Citas['idCitas'])
+            ->update($Citas);
+    }
+
+    public function delete($Citas)
+    {
+
+        DB::table('citas')
+            ->where('idCitas', $Citas['idCitas'])
+            ->update($Citas);
+    
+    }
+
+
 }

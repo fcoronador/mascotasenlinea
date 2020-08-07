@@ -26,9 +26,9 @@ Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//crea
 //Route::get('/CrearCita','ControlCitas@create')->name('crearcita');
 Route::post('/CrearCita','ControlCitas@store')->name('guardarcita');
 Route::get('/Citas/{id}/','ControlCitas@show')->name('mostrarcita');
-Route::get('/Citas/{id}/editar','ControlCitas@edit')->name('editarcita');
+Route::get('/Citas/{idCita}/editar','ControlCitas@edit')->name('editarcita');
 Route::patch('/Citas/{id}/actualizar','ControlCitas@update')->name('actualizarcita');
-Route::delete('/Citas/{id}/eliminar','ControlCitas@destroy')->name('borrarcita');
+Route::delete('/Citas/{idCita}/eliminar','ControlCitas@destroy')->name('borrarcita');
 
 Route::get('/IndexCliente','ControlCliente@index')->name('indexcliente');
 Route::get('/CrearCliente','ControlCliente@create')->name('crearcliente');/* Sale data en el POST->$_REQUEST */
