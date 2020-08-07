@@ -96,6 +96,8 @@ SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes ,count(nombre) AS cant
  FROM cliente c 
  GROUP BY MONTH (createdAt), YEAR (createdAt)
 
+select u.usuLogin as username,u.usuPassword as password, usuEstado as visible, r.id_Rol as rol  
+from (usuario_s u join usuario_s_roles r on u.usuUsuSesion = r.usuRolUsuSesion )
 
 
 

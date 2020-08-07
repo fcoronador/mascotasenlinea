@@ -26,9 +26,9 @@
                     <li class="nav-item active ">
                         <a class="nav-link menu" href="{{route('quienes')}}">Nosotros</a>
                     </li>
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link menu" href="{{route('servicios')}}">Servicios</a>
-                    </li> --}}
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
@@ -84,8 +84,17 @@
         </nav>
     </div>
 
-
+@if (session('rol')===1)
+    
     @yield('contenido')
+
+@else
+    
+    <div class="container my-5">
+        <h1> <i class="fa fa-window-close-o" aria-hidden="true"></i> Lo siento no tienes permiso para acceder a este contenido</h1>
+    </div>
+
+@endif
 
 
 
