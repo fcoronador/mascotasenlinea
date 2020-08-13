@@ -84,8 +84,17 @@
         </nav>
     </div>
 
-
+@if (session('rol')===1)
+    
     @yield('contenido')
+
+@else
+    
+    <div class="container my-5">
+        <h1> <i class="fa fa-window-close-o" aria-hidden="true"></i> Lo siento no tienes permiso para acceder a este contenido</h1>
+    </div>
+
+@endif
 
 
 

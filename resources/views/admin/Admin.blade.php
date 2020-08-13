@@ -1,4 +1,4 @@
-@extends('plantilla.plantilla')
+@extends('plantilla.plantillaAdmin')
 
 
 @section('titulo','Administración')
@@ -6,21 +6,15 @@
 @section('contenido')
 
 <div class="row">
-    <div class="col-sm-12 col-lg-12">
-        <div class="container">
-            <h1 class="my-3">Panel Administrativo</h1>
-        </div>
-
-        <div class="d-flex container">
-           
-            @include('plantilla.sidebar')
-            @include('plantilla.viewsAdm')
-            
-        </div>
+    <div class="col-12 col-sm-10 col-lg-10 mx-auto">
+        <div class="container p-3">
+            <div class="d-flex" id="wrapper">
+        @include('plantilla.sidebar')
+        @include('plantilla.viewsAdm')
+            </div>
+       </div>
     </div>
 </div>
-
-
-
-
+       
+    
 @endsection

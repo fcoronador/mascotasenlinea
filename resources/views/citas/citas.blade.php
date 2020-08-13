@@ -1,4 +1,4 @@
-@extends('plantilla.plantilla')
+@extends('plantilla.plantillaAdmin')
 
 @section('titulo','Mascotas en línea')
 
