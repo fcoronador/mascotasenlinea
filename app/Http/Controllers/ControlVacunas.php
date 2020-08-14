@@ -4,84 +4,79 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Vacunas;
+use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class ControlVacunas extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new Vacunas();
+    }
+
+    public static function listVacun()
+    {
+        $modelo= new Vacunas();
+        $vacunas = $modelo->indexvacunas()->getVacunas();
+        return $vacunas;
+    }
+
+    public static function cantVacunas()
+    {
+        $modelo= new Vacunas();
+        $cantidad = $modelo->adminVacuna();
+        return $cantidad;
+    }
+
     public function index()
     {
-        $index= new Vacunas();
-        $vacuna=$index->indexvacuna()->getVacuna();
-        return view('inicio',compact('vacuna'));
+        $vacunas=$this->modelo->indexvacunas()->getVacunas();
+        return view('vacunas.indexVacuna', compact('vacunas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('vacunas.crearVacuna');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(Request $request, Vacunas $index)
     {
-        //
+        $vacuna = [];
+        $vacuna['idVacun'] = $request->get('idVacun');
+        $vacuna['nombre'] = $request->get('nombre');
+
+        $index->guardarvacuna($vacuna);
+        return redirect()->route('indexvacuna')->with('estado', 'La vacuna se ha creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $vacuna = $this->modelo->mostrarvacuna($id);
+        return view('vacunas.showVacuna', compact('vacuna'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+     public function edit($id)
     {
-        //
+        $vacuna = $this->modelo->mostrarvacuna($id);
+        return view('vacunas.editVacuna', compact('vacuna', 'id'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $vacuna = [];
+        $vacuna['idVacun'] = $request->get('idVacun');
+        $vacuna['nombre'] = $request->get('nombre');
+
+        $this->modelo->Actualizar($vacuna);
+        return redirect()->route('indexvacuna')->with('estado', 'La vacuna se ha actualizado con exito');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $vacuna['idVacun']=$id;
+        $vacuna['visible']= false;
+        $this->modelo->borrar($vacuna);
+        return redirect()->route('indexvacuna')->with('estado', 'La vacuna se ha eliminado con exito');
     }
 }

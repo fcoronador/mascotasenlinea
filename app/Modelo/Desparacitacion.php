@@ -4,7 +4,6 @@ namespace App\Modelo;
 
 use App\Modelo\daodespara;
 
-
 class Desparacitacion{
 
     private $dao;
@@ -12,6 +11,11 @@ class Desparacitacion{
     public function __construct()
     {  
         $this->dao = new daodespara();
+    }
+
+    public function adminDespara()
+    {
+        return $this->dao->getDesparaAdmin();
     }
 
     public function indexdesparas()

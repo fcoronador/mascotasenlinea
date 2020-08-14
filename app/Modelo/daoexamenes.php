@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class daoexamenes{
 
     private $query='select * from examenes';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM examenes e GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listaexamenes;
 
     public function __construct()
@@ -15,7 +16,14 @@ class daoexamenes{
         
     }
 
-    public function getExamenes(){
+    public function getExamenesAdmin()
+    {
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
+    }
+
+    public function getExamenes()
+    {
         $this->listaexamenes = DB::select($this->query);
         return $this->listaexamenes;
     }
