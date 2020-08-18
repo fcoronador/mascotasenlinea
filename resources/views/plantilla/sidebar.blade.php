@@ -1,6 +1,6 @@
 
 
-    <!-- Sidebar -->
+    <!-- Sidebar --> 
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Menú</div>
         <div class="list-group list-group-flush">

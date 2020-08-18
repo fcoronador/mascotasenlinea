@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Auth;
+use App\Modelo\Cliente;
+//use App\Http\Controllers\ControlCliente;
 
 class ControlAuth extends Controller
 {
     private $modelo;
+    private $ModeloCli;
 
     public function __construct()
     {
         $this->modelo = new Auth();
+        $this->ModeloCli = new Cliente();
     }
 
 
@@ -51,20 +55,46 @@ class ControlAuth extends Controller
 
             if (password_verify($request->get('password'), $item->password)) {
                 
-                
+                $cliente = $this->ModeloCli->cliente($request->get('correo'));
+
                 if ($item->rol == 1) {
 
                     session(['rol'=> 1]);
+                    foreach($cliente as $prop)
+                    {
+                        session(['idCedula'=> $prop->idCedula]);
+                        session(['nombre'=> $prop->nombre]);
+                        session(['apellido'=> $prop->apellido]);
+                        session(['correo'=> $prop->correo]);
+                    }
+                    
+                    //$temp = new ControlCliente();
+                   //return $temp->show(session('idCedula'));
+
                     return redirect()->route('administracion');
 
                 } elseif ($item->rol == 2) {
 
                     session(['rol'=> 2]);
-                    return redirect()->route('inicio');
+                    foreach($cliente as $prop)
+                    {
+                        session(['idCedula'=> $prop->idCedula]);
+                        session(['nombre'=> $prop->nombre]);
+                        session(['apellido'=> $prop->apellido]);
+                        session(['correo'=> $prop->correo]);
+                    }
+                    return redirect()->route('veterinario');
 
                 } elseif ($item->rol == 3) {
 
                     session(['rol'=> 3]);
+                    foreach($cliente as $prop)
+                    {
+                        session(['idCedula'=> $prop->idCedula]);
+                        session(['nombre'=> $prop->nombre]);
+                        session(['apellido'=> $prop->apellido]);
+                        session(['correo'=> $prop->correo]);
+                    }
                     return redirect()->route('inicio');
                 }
             }
@@ -73,6 +103,10 @@ class ControlAuth extends Controller
 
     public function Logout(){
         session()->forget('rol');
+        session()->forget('idCedula');
+        session()->forget('nombre');
+        session()->forget('apellido');
+        session()->forget('correo');
         return redirect()->route('inicio')->with('estado', 'Ha salido con éxito');
     }
 

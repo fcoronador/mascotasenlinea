@@ -10,6 +10,9 @@ Route::post('/login','ControlAuth@Login')->name('login');
 Route::get('/logout','ControlAuth@Logout')->name('logout');
 
 Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
+Route::get('/Vet','ControlPanelVet@index')->name('veterinario');
+Route::get('/Usuario','ControlPanelUsuario@index')->name('usuario');
+
 Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
 

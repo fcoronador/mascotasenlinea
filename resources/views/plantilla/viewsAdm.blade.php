@@ -1,8 +1,14 @@
-<div id="page-content-wrapper">
+<div id="page-content-wrapper"> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">
             <i class="fa fa-building" aria-hidden="true"></i>
         </button>
+        @if (session('rol') == 1 )
+            <span class="navbar-brand mx-5"> Bienvenido Admin. {{session('nombre')}}&nbsp;{{session('apellido')}} </span>
+        @endif
+        @if (session('rol') == 2 )
+        <span class="navbar-brand mx-5"> Bienvenido Vet. {{session('nombre')}}&nbsp;{{session('apellido')}} </span>
+        @endif
     </nav>
 
     <div id="paneCliente" class="container show">

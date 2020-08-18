@@ -66,4 +66,9 @@ class daocliente
         DB::table('citas')->where('cliente_idCedula', '=', $id)->delete();
         DB::table('cliente')->where('idCedula', '=', $id)->delete(); */
     }
+
+    public function getClienteCorreo($correo)
+    {
+        return $cliente = DB::select('select * from cliente where correo = :correo',['correo'=>$correo]);
+    }
 }

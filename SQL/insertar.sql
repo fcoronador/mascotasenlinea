@@ -3,13 +3,13 @@ use Mascotas;
 
 /* Inserts cliente */
 INSERT INTO `cliente` (`idCedula`, `nombre`, `apellido`, `telefono`, `direccion`, `correo`, `contrasena`)
-VALUES ('100', 'fredy', 'coronado', '100', '100A', 'correo@correo.com', '100');
+VALUES ('100', 'fredy', 'coronado', '100', '100A', 'coronado@correo.com', '100');
 
 INSERT INTO `cliente` (`idCedula`, `nombre`, `apellido`, `telefono`, `direccion`, `correo`, `contrasena`)
-VALUES ('200', 'Susana', 'Parra', '200', '200A', 'correo@correo.com', '200');
+VALUES ('200', 'Susana', 'Parra', '200', '200A', 'parra@correo.com', '200');
 
 INSERT INTO `cliente` (`idCedula`, `nombre`, `apellido`, `telefono`, `direccion`, `correo`, `contrasena`)
-VALUES ('300', 'Viviana', 'Ortiz', '300', '300A', 'correo@correo.com', '300');
+VALUES ('300', 'Viviana', 'Ortiz', '300', '300A', 'ortiz@correo.com', '300');
 
 INSERT INTO `cliente` (`idCedula`, `nombre`, `apellido`, `telefono`, `direccion`, `correo`, `contrasena`)
 VALUES ('400', 'Tito', 'Fuentes', '400', '400A', 'correo@correo.com', '400');
