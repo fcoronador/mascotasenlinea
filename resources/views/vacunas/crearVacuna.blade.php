@@ -11,13 +11,9 @@
     <form action="{{route('guardarvacuna')}}" method="post">
         @csrf
         <div class="form-group">
-        <label for="idVacun">Número de vacuna</label>
-        <input type="number" name="idVacun" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el numero de la vacuna</small>
-        <br>
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el nombre del medicamento</small>
+        <small id="helpId" class="text-muted">Por favor ingrese el nombre de la vacuna</small>
         <br>
         <input type="submit" value="Enviar">
             </div>

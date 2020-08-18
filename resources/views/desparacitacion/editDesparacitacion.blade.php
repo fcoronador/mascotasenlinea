@@ -23,7 +23,7 @@
                     <br>
 
                     <label for="nombre">Nombre</label>
-                    <input value="{{$propiedad->nombre}}" type="text" name="tipo" id="" class="form-control"
+                    <input value="{{$propiedad->nombre}}" type="text" name="nombre" id="" class="form-control"
                         placeholder="" aria-describedby="helpId">
                     <br>
 

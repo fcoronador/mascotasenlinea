@@ -18,7 +18,7 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            @foreach ($desparacitacion as $item)
+            @foreach ($despara as $item)
             <h1>Detalles de la desparacitacion: {{$item->nombre}} </h1>
             <hr>
             <div class="table-responsive my-3">

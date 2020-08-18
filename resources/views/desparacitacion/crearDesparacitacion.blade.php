@@ -11,10 +11,6 @@
     <form action="{{route('guardardesparacitacion')}}" method="post">
         @csrf
         <div class="form-group">
-        <label for="idDespara">Número de desparacitacion</label>
-        <input type="number" name="idDespara" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el numero de desparacitacion</small>
-        <br>
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId">
         <small id="helpId" class="text-muted">Por favor ingrese el nombre del medicamento</small>
