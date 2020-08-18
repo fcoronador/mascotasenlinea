@@ -71,5 +71,37 @@
             </div>
 
     </div>
+
+    <div id="paneProcedimientos" class="container collapse">
+        <h1 class="mt-4">Procedimientos</h1>
+        <a href="{{route('indexprocedi')}}" class="btn btn-primary">Lista de Procedimientos</a>
+    </div>
+
+    <div id="paneVacunas" class="container collapse">
+        <h1 class="mt-4">Vacunas</h1>
+        <a href="{{route('indexvacuna')}}" class="btn btn-primary">Lista de Vacunas</a>
+
+    </div>
+    <div id="paneExamenes" class="container collapse">
+        <h1 class="mt-4">Exámenes</h1>
+        <a href="{{route('indexexamen')}}" class="btn btn-primary">Lista de Examenes</a>
+
+    </div>
+    <div id="paneDesparas" class="container collapse">
+        <h1 class="mt-4">Desparacitantes</h1>
+        <a href="{{route('indexdespara')}}" class="btn btn-primary">Lista de Desparacitantes</a>
+
+    </div>
+    <div id="paneServicios" class="container collapse">
+        <h1 class="mt-4">Servicios</h1>
+        <a href="" class="btn btn-primary">Lista de Desparacitantes</a>
+    </div>
+    <div id="paneCitas" class="container collapse">
+        <h1 class="mt-4">Citas</h1>
+    </div>
+    <div id="paneVete" class="container collapse">
+        <h1 class="mt-4">Veterinarios</h1>
+        <a href="" class="btn btn-primary">Lista de Veterinarios</a>
+    </div>
 </div>
 
