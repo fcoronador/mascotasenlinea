@@ -81,7 +81,7 @@ Route::patch('/Examenes/{id}/actualizar','ControlExamenes@update')->name('actual
 Route::delete('/Examenes/{id}/eliminar','ControlExamenes@destroy')->name('borrarexamen');
 
 
-Route::get('/IndexDesparacitacion','ControlDesparacitacion@index')->name('indexdesparas');
+Route::get('/IndexDesparacitacion','ControlDesparacitacion@index')->name('indexdespara');
 Route::get('/CrearDesparacitacion','ControlDesparacitacion@create')->name('creardesparacitacion');/* Sale data en el POST->$_REQUEST */
 Route::post('/CrearDesparacitacion','ControlDesparacitacion@store')->name('guardardesparacitacion');/* Recibe la data del $_REQUEST */
 Route::get('/Desparacitacion/{id}/','ControlDesparacitacion@show')->name('mostrardesparacitacion');
@@ -90,3 +90,10 @@ Route::patch('/Desparacitacion/{id}/actualizar','ControlDesparacitacion@update')
 Route::delete('/Desparacitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');
 
 
+Route::get('/IndexVacunas','ControlVacunas@index')->name('indexvacuna');
+Route::get('/CrearVacunas','ControlVacunas@create')->name('crearvacuna');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearVacunas','ControlVacunas@store')->name('guardarvacuna');/* Recibe la data del $_REQUEST */
+Route::get('/Vacunas/{id}/','ControlVacunas@show')->name('mostrarvacuna');
+Route::get('/Vacunas/{id}/editar','ControlVacunas@edit')->name('editarvacuna');
+Route::patch('/Vacunas/{id}/actualizar','ControlVacunas@update')->name('actualizarvacuna');
+Route::delete('/Vacunas/{id}/eliminar','ControlVacunas@destroy')->name('borrarvacuna');

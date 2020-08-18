@@ -4,19 +4,44 @@ namespace App\Modelo;
 
 use App\Modelo\daovacunas;
 
-
 class Vacunas{
 
-    private $idVacun;
-    private $nombre;
-    
+    private $dao;
+
     public function __construct()
     {  
-        
+        $this->dao = new daovacunas();
     }
 
-    public function indexvacuna(){
-        $index= new daovacunas();
+    public function adminVacuna()
+    {
+        return $this->dao->getVacunaAdmin();
+    }
+
+    public function indexvacunas()
+    {
+        $index = $this->dao;
         return $index;
+    }
+
+    public function guardarvacuna($vacuna)
+    {
+        $this->dao->setVacunas($vacuna);
+    }
+
+    public function mostrarvacuna($id)
+    {
+        $vacuna = $this->dao->seleccionVacuna($id);
+        return $vacuna;
+    }
+
+    public function Actualizar($vacuna)
+    {
+        $this->dao->update($vacuna);
+    }
+
+    public function borrar($vacuna)
+    {
+        $this->dao->delete($vacuna);
     }
 }
