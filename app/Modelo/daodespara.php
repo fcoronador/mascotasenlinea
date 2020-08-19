@@ -8,11 +8,17 @@ use Illuminate\Support\Facades\DB;
 class daodespara{
 
     private $query='select * from despara';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM despara d GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listadesparacitacion;
 
     public function __construct()
     {  
         
+    }
+
+    public function getDesparaAdmin(){
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
     }
 
     public function getDesparas(){

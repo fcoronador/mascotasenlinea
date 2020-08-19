@@ -1,6 +1,6 @@
 @extends('plantilla.plantillaAdmin')
 
-@section('titulo','Index desparacitacion')
+@section('titulo','Index vacuna')
 
 @section('contenido')
 
@@ -18,12 +18,12 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1>Desparacitaciones</h1>
+            <h1>Vacunas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-success" href="{{route('creardesparacitacion')}}" role="button">Crear desparacitacion</a>
+            <a name="" id="" class="btn btn-success" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="despara">
+                <table class="table table-hover" id="vacun">
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
@@ -32,17 +32,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($desparas as $item)
+                        @foreach ($vacunas as $item)
                         @if ($item->visible)
 
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                            <th scope="row">{{$item->idDespara}}</th>
-                            <td><a name="" id="" class="" href="{{route('mostrardesparacitacion',$item->idDespara)}}" role="button">
+                            <th scope="row">{{$item->idVacun}}</th>
+                            <td><a name="" id="" class="" href="{{route('mostrarvacuna',$item->idVacun)}}" role="button">
                                 {{$item->nombre}}</a></td>
                             <td>
                                 <a name="" id="" class="btn btn-primary btn-sm"
-                                    href="{{route('editardesparacitacion',$item->idDespara)}}" role="button"> Editar</a>
+                                    href="{{route('editarvacuna',$item->idVacun)}}" role="button"> Editar</a>
 
                                 <a id="boton_eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->nombre}}').submit()">
@@ -51,7 +51,7 @@
                             </td>
                        
                         <form class="d-none" id="delete{{$item->nombre}}"
-                            action="{{route('borrardesparacitacion',$id=$item->idDespara)}}" method="post">
+                            action="{{route('borrarvacuna',$id=$item->idVacun)}}" method="post">
                             @csrf
                             @method('delete')
                         </form>

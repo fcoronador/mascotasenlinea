@@ -1,6 +1,6 @@
 @extends('plantilla.plantillaAdmin')
 
-@section('titulo','Examen')
+@section('titulo','Vacuna')
 
 @section('contenido')
 
@@ -18,32 +18,24 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            @foreach ($examen as $item)
-            <h1>Detalles del examen: {{$item->tipo}} </h1>
+            @foreach ($vacuna as $item)
+            <h1>Detalles de la vacuna: {{$item->nombre}} </h1>
             <hr>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th colspan="2" scope="col">Datos del examen</th>
+                            <th colspan="2" scope="col">Datos de la vacuna</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Número de examen</th>
-                            <td>{{$item->idExam}}</td>
+                            <th scope="row">Número de la vacuna</th>
+                            <td>{{$item->idVacun}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Tipo</th>
-                            <td>{{$item->tipo}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Resultado</th>
-                            <td>{{$item->resulta}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Laboratorio</th>
-                            <td>{{$item->lab}}</td>
+                            <th scope="row">Nombre</th>
+                            <td>{{$item->nombre}}</td>
                         </tr>
                         @endforeach
                     </tbody>

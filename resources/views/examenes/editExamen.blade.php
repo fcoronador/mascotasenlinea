@@ -1,4 +1,4 @@
-@extends('plantilla.plantilla')
+@extends('plantilla.plantillaAdmin')
 
 @section('titulo','Editar examen')
 
@@ -29,7 +29,7 @@
                     <br>
 
                     <label for="resulta">Resultado</label>
-                    <input value="{{$propiedad->resulta}}" type="text" name="resulta" id="" class="form-control"
+                    <input value="{{$propiedad->resulta}}" type="textarea" name="resulta" id="" class="form-control"
                         placeholder="" aria-describedby="helpId">
                     <br>
 

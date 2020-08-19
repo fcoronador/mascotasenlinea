@@ -51,4 +51,9 @@ class Cliente
 
         $this->dao->delete($cliente);
     }
+
+    public  function cliente($correo)
+    {
+        return $cliente = $this->dao->getClienteCorreo($correo);
+    }
 }

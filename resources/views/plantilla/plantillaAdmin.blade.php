@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
         <div class="col-sm-5 encabezado">
             <a href="{{route('inicio')}}">
@@ -32,7 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
-                    @if (session('rol')===1)
+                    @if (session('rol')===1 || session('rol') ===2) 
                         <li class="nav-item">
                             <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
                         </li>
@@ -50,12 +51,17 @@
             </div>
             <div class="navbar2 navbar-collapse collapse w-100 order-3 dual-collapse2 ">
                 <ul class="navbar-nav ml-auto">
+
+                    @if (session('rol')==null)
+                        
+                    
                     <li class="nav-item">
                         <a class="nav-link registro" href="" data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
                     </li>
+                    @endif
 
                     @if (session('rol'))
                         
@@ -84,7 +90,7 @@
         </nav>
     </div>
 
-@if (session('rol')===1)
+@if (session('rol')===1 || session('rol') == 2 )
     
     @yield('contenido')
 

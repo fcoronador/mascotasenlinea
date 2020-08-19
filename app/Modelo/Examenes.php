@@ -13,7 +13,13 @@ class Examenes{
         $this->dao = new daoexamenes();
     }
 
-    public function indexexamenes(){
+    public function adminExamen()
+    {
+        return $this->dao->getExamenesAdmin();
+    }
+
+    public function indexexamenes()
+    {
         $index = $this->dao;
         return $index;
     }
