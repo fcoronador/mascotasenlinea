@@ -13,9 +13,7 @@ Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Vet','ControlPanelVet@index')->name('veterinario');
 Route::get('/Usuario','ControlPanelUsuario@index')->name('usuario');
 
-Route::get('/Citas','ControlCitas@index')->name('citas');
-Route::get('/Servicios','ControlServicios@index')->name('servicios');
-
+//Route::get('/Citas','ControlCitas@index')->name('citas');
 Route::view('/contacto','inicio')->name('contacto'); 
 Route::view('/quienes','quienes')->name('quienes'); 
 
@@ -27,6 +25,24 @@ Route::view('/Actualizar','cliente.actualizar')->name('actualizar');
 Route::view('/MiMascota/Detalles','cliente.MascotaDetalles')->name('MascotaD');//index
 Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
 Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
+
+Route::get('/Servicios','ControlServicios@index')->name('servicios');
+Route::get('/CrearServicio','ControlServicios@create')->name('crearservicio');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearServicio','ControlServicios@store')->name('guardarservicio');/* Recibe la data del $_REQUEST */
+Route::get('/Servicios/{id}/','ControlServicios@show')->name('mostrarservicio');
+Route::get('/Servicios/{id}/editar','ControlServicios@edit')->name('editarservicio');
+Route::patch('/Servicios/{id}/actualizar','ControlServicios@update')->name('actualizarservicio');
+Route::delete('/Servicios/{id}/eliminar','ControlServicios@destroy')->name('borrarservicio');
+
+
+
+Route::get('/Veterinarios','ControlVeterinarios@index')->name('indexveterinarios');
+Route::get('/CrearVeterinario','ControlVeterinarios@create')->name('crearveterinario');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearVeterinario','ControlVeterinarios@store')->name('guardarveterinario');/* Recibe la data del $_REQUEST */
+Route::get('/Veterinarios/{id}/','ControlVeterinarios@show')->name('mostrarveterinario');
+Route::get('/Veterinarios/{id}/editar','ControlVeterinarios@edit')->name('editarveterinario');
+Route::patch('/Veterinarios/{id}/actualizar','ControlVeterinarios@update')->name('actualizarveterinario');
+Route::delete('/Veterinarios/{id}/eliminar','ControlVeterinarios@destroy')->name('borrarveterinario');
 
 
 //Route::get('/Citas','ControlCitas@index')->name('citas');

@@ -116,10 +116,12 @@
                         <br>
 
                         <label for="servicios">Servicio</label>
-
+                        
                         <select class="form-control" name="idServi" id="">
                             @foreach ($servicios as $item)
+                            @if ($item->visible)
                             <option value="{{$item->idServi}}">{{$item->servicios}}</option>
+                            @endif
                             @endforeach
                         </select>
 

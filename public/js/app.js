@@ -89956,6 +89956,12 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#despara').DataTable();
 });
+$(document).ready(function () {
+  $('#servi').DataTable();
+});
+$(document).ready(function () {
+  $('#veter').DataTable();
+});
 
 /***/ }),
 

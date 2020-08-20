@@ -119,12 +119,7 @@ class ControlCitas extends Controller
         return redirect()->route('indexcliente')->with('estado', 'La cita se ha actualizado con éxito');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy($idCita)
     {
         $Citas['idCitas']=$idCita;
