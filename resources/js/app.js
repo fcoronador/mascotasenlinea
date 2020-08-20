@@ -1,6 +1,8 @@
 require('./bootstrap');
+require('./datatables');
 require('./graficas');
 require('./sidebar');
+require('./validacion');
 
 $(document).ready(function(){
     $("#menu-toggle").click(function(e) {
@@ -9,31 +11,10 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function () {
-    $('#table_id').DataTable();
-});
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
 
-$(document).ready(function () {
-    $('#mascotas').DataTable();
-});
-
-$(document).ready(function () {
-    $('#controles').DataTable();
-});
-
-$(document).ready(function () {
-    $('#citas').DataTable();
-}); 
-$(document).ready(function () {
-    $('#prodce').DataTable();
-}); 
-$(document).ready(function () {
-    $('#exa').DataTable();
-});
-$(document).ready(function () {
-    $('#despara').DataTable();
-});
-
-
-
-
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
