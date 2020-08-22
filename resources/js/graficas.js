@@ -1,5 +1,7 @@
 
+
 $(document).ready(function () {
+    if ( $("#panel").length ) {
 
     $('#myChart1').ready(function () {
         var ctx = document.getElementById('myChart1').getContext('2d');
@@ -142,7 +144,10 @@ $(document).ready(function () {
         });
 
     })
+    
+    }
 });
+
 
 
 
