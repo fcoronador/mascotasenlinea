@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     let soloLetras = /[^a-zA-ZáéíóúñÑüÜÁÉÍÓÚ\-\s]/g;
     let soloNumeros = /[\-\D]/g;
-    let soloDir = /[^a-zA-z0-9\-\°\s]/g;
+    let soloDir = /[^a-zA-z0-9\#\-\°\s]/g;
     let soloCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/g;
 
     $('#idCedula').change(function () {
@@ -89,6 +89,6 @@ $(document).ready(function () {
         }
     });
     
-
+    
 
 });

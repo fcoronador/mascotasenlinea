@@ -12,7 +12,7 @@
     <title>@yield('titulo')</title>
 </head>
 
-<body>
+<body >
 
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
         <div class="col-sm-5 encabezado">
@@ -53,7 +53,6 @@
                 <ul class="navbar-nav ml-auto">
 
                     @if (session('rol')==null)
-                        
                     
                     <li class="nav-item">
                         <a class="nav-link registro" href="" data-toggle="modal" data-target="#registroModal">Registrarse

@@ -13,7 +13,7 @@
         <div class="form-group">
 
         <label for="idCedula">Número de identificación</label>
-        <input type="number" name="idCedula" id="idCedula" class="form-control" placeholder="" aria-describedby="helpidCed">
+        <input type="text" name="idCedula" id="idCedula" class="form-control" placeholder="" aria-describedby="helpidCed">
         <h6 id="helpidCed" class="text-muted">Por favor ingrese el número de idenficación</h6>
         <br>
 

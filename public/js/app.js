@@ -89945,6 +89945,11 @@ $(function () {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+$(document).ready(function () {
+  $('$bd').ready(function () {
+    location.reload();
+  });
+});
 
 /***/ }),
 
@@ -90190,7 +90195,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   var soloLetras = /[^a-zA-ZáéíóúñÑüÜÁÉÍÓÚ\-\s]/g;
   var soloNumeros = /[\-\D]/g;
-  var soloDir = /[^a-zA-z0-9\-\°\s]/g;
+  var soloDir = /[^a-zA-z0-9\#\-\°\s]/g;
   var soloCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/g;
   $('#idCedula').change(function () {
     var n = $('#idCedula').val().length;

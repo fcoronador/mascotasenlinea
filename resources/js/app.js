@@ -9,6 +9,7 @@ $(document).ready(function(){
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+  
 });
 
 $(function () {
@@ -18,3 +19,9 @@ $(function () {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+$(document).ready(function(){
+    $('$bd').ready(function(){
+        location.reload();
+    });
+});
