@@ -89950,6 +89950,12 @@ $(document).ready(function () {
     location.reload();
   });
 });
+$(document).ready(function () {
+  $('#servi').DataTable();
+});
+$(document).ready(function () {
+  $('#veter').DataTable();
+});
 
 /***/ }),
 
@@ -90286,8 +90292,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/develop/EnvLav/actual/proyecto/mascotaslinea/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/develop/EnvLav/actual/proyecto/mascotaslinea/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\mascotasenlinea\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\mascotasenlinea\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

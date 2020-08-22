@@ -34,17 +34,25 @@ class Citas{
         return $cliente;
     }
 
-/* 
+
+    public function mostrarEditCita($idCita)
+    {
+        $cliente = $this->dao->editCita($idCita);
+        return $cliente;
+    }
+
+
     public function Actualizar($cita)
     {
 
         $this->dao->update($cita);
     }
+    
 
     public function borrar($cita)
     {
 
         $this->dao->delete($cita);
-    } */
+    }
 
 }

@@ -11,13 +11,35 @@ class Servicios{
 
     public function __construct()
     {  
-        
+        $this->dao = new daoservicios();
     }
 
     public function indexservicios(){
 
-        $index= new daoservicios();
+        $index = $this->dao;
         return $index;
+    }
+
+    public function guardarservicio($servicio)
+    {
+        $this->dao->setServicios($servicio);
+    }
+
+
+    public function mostrarservicio($id)
+    {
+        $servicio = $this->dao->seleccionServicio($id);
+        return $servicio;
+    }
+
+    public function Actualizar($servicio)
+    {
+        $this->dao->update($servicio);
+    }
+
+    public function borrar($servicio)
+    {
+        $this->dao->delete($servicio);
     }
 
 
