@@ -94,14 +94,14 @@
     </div>
     <div id="paneServicios" class="container collapse">
         <h1 class="mt-4">Servicios</h1>
-        <a href="" class="btn btn-primary">Lista de Desparacitantes</a>
+        <a href="{{route('servicios')}}" class="btn btn-primary">Lista de Servicios</a>
     </div>
     <div id="paneCitas" class="container collapse">
         <h1 class="mt-4">Citas</h1>
     </div>
     <div id="paneVete" class="container collapse">
         <h1 class="mt-4">Veterinarios</h1>
-        <a href="" class="btn btn-primary">Lista de Veterinarios</a>
+        <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
     </div>
 </div>
 
