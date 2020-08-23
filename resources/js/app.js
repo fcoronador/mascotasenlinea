@@ -20,8 +20,3 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-$(document).ready(function(){
-    $('$bd').ready(function(){
-        location.reload();
-    });
-});

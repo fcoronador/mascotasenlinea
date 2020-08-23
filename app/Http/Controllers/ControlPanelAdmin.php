@@ -12,6 +12,8 @@ class ControlPanelAdmin extends Controller
 
     public function index()
     {
+        if(session('rol') == 1){
+
         $clientes = ControlCliente::cantClientes();
         $mascotas = ControlMascota::cantMascotas();
         $control = ControlContro::cantControl();
@@ -22,7 +24,11 @@ class ControlPanelAdmin extends Controller
 
         //dd($cantidadMasco);
 
-        return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+        }else{
+            
+            return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
+        }
     }
 
     public function etiquetas($consulta)

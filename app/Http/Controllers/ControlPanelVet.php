@@ -8,17 +8,23 @@ class ControlPanelVet extends Controller
 {
     public function index()
     {
-        $clientes = ControlCliente::cantClientes();
-        $mascotas = ControlMascota::cantMascotas();
-        $control = ControlContro::cantControl();
+        if(session('rol')==2 ){
 
-        $cantidadCli = $this->etiquetas($clientes);
-        $cantidadMasco = $this->etiquetas($mascotas);
-        $cantidadControl = $this->etiquetas($control);
-
-        //dd($cantidadMasco);
-
-        return view('vet.Vet', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+            $clientes = ControlCliente::cantClientes();
+            $mascotas = ControlMascota::cantMascotas();
+            $control = ControlContro::cantControl();
+    
+            $cantidadCli = $this->etiquetas($clientes);
+            $cantidadMasco = $this->etiquetas($mascotas);
+            $cantidadControl = $this->etiquetas($control);
+    
+            //dd($cantidadMasco);
+    
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+        }else{
+                
+            return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
+        }
     }
 
     public function etiquetas($consulta)

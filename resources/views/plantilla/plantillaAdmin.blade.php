@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css ">
     {{-- Hoja de estilos de datables buena --}}
     <script src="/js/app.js"></script>{{-- No dejar JavaScript encima de este --}}
+    <script>
+        
+    </script>
     <title>@yield('titulo')</title>
 </head>
 
@@ -53,13 +56,13 @@
                 <ul class="navbar-nav ml-auto">
 
                     @if (session('rol')==null)
-                    
                     <li class="nav-item">
                         <a class="nav-link registro" href="" data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
                     </li>
+                   
                     @endif
 
                     @if (session('rol'))
