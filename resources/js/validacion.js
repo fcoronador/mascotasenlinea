@@ -16,8 +16,7 @@ $(document).ready(function () {
             $('#helpidCed').text('Has escrito correctamente la identificación.').addClass('alert alert-primary my-2').removeClass('alert-danger');
         }
     });
-    
-    
+
 
     $('#nombre').change(function () {
 
@@ -89,6 +88,49 @@ $(document).ready(function () {
         }
     });
     
-    
+    $('#numChip').change(function () {
+
+        let n = $('#numChip').val().length;
+
+        if (n > 15 || $('#numChip').val() <= 30000 || soloNumeros.test($('#numChip').val())) {
+            $('#Helpchip').text('Has escrito mal el número de chip.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+        } else {
+            $('#Helpchip').text('Has escrito correctamente el número de chip.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+        }
+    });
+
+    $('#especie').change(function () {
+
+        let n = $('#especie').val().length;
+
+        if (n > 40 || soloLetras.test($('#especie').val())) {
+            $('#Helpesp').text('Has escrito mal la especie.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+        } else {
+            $('#Helpesp').text('Has escrito correctamente la especie.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+        }
+    });
+
+    $('#raza').change(function () {
+
+        let n = $('#raza').val().length;
+
+        if (n > 40 || soloLetras.test($('#raza').val())) {
+            $('#Helraz').text('Has escrito mal la raza.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+        } else {
+            $('#Helraz').text('Has escrito correctamente la raza.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+        }
+    });
+
+
+    $('#peso').change(function () {
+
+        let n = $('#peso').val().length;
+
+        if (n > 15 || $('#peso').val() <= 0 || soloNumeros.test($('#peso').val())) {
+            $('#Helpps').text('Has escrito mal el número del peso.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+        } else {
+            $('#Helpps').text('Has escrito correctamente el número del peso.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+        }
+    });
 
 });

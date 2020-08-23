@@ -35,12 +35,12 @@
 
 
                     <label for="fecha">Fecha y Hora</label>
-                    <input type="datetime-local" name="fecha" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{$propiedad->Fecha}}">
+                    <input type="datetime-local" name="fecha" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{$propiedad->Fecha}}" required>
                     <small id="helpId" class="text-muted">Por favor ingrese el fecha y hora del control. </small>
                     <br>
                     <label for="peso">Peso</label>
-                <input type="number" name="peso" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{$propiedad->Peso}}">
-                    <small id="helpId" class="text-muted">Por favor ingrese el peso. </small>
+                    <input value="{{$propiedad->Peso}}" type="number" name="peso" id="peso" class="form-control" placeholder="" aria-describedby="Helppes" required>
+                    <h6 id="Helpps" class="text-muted">Por favor ingrese el peso. </h6>
                     <br>
                     <label for="diagnos">Diagnóstico</label>
                 <textarea class="form-control" id="" name="diagnos" rows="6">{{$propiedad->Diagnostico}}</textarea>
