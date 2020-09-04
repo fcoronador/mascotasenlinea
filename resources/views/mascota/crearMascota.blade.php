@@ -21,38 +21,36 @@
         </select>
 
         <label for="numChip">Número de Chip</label>
-        <input type="number" name="numChip" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el número de idenficación.</small>
-        <br>
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el nombre. </small>
-        <br>
-        <label for="especie">Especie</label>
-        <input type="text" name="especie" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el especie. </small>
-        <br>
-        <label for="sexo">Sexo</label>
+        <input type="number" name="numChip" id="numChip" class="form-control" placeholder="" aria-describedby="Helpchip">
+        <h6 id="Helpchip" class="text-muted">Por favor ingrese el número de idenficación.</h6>
 
+        <label for="nombre">Nombre</label>
+        <input min="3" max="40" required
+        type="text" name="nombre" id="nombre" class="form-control" aria-describedby="helpNombre" >
+        <h6 id="helpNombre" class="text-muted">Por favor ingrese el nombre </h6>
+        
+        <label for="especie">Especie</label>
+        <input type="text" name="especie" id="especie" class="form-control" placeholder="" aria-describedby="Helpesp" required>
+        <h6 id="Helpesp" class="text-muted">Por favor ingrese el especie. </h6>
+
+        <label for="sexo">Sexo</label>
         <div class="form-check form-check-inline">
             <label class="form-check-label"> 
                 <br>
-                <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="1"> Macho
+                <input class="form-check-input ml-3" type="radio" name="sexo" id="" value="1"> Macho
             </label>
             <label class="form-check-label"> 
                 <br>
-                <input class="form-check-input ml-3" type="checkbox" name="sexo" id="" value="0"> Hembra
+                <input class="form-check-input ml-3" type="radio" name="sexo" id="" value="2"> Hembra
             </label>
         </div>
-
-        <small id="helpId" class="text-muted">Por favor ingrese el sexo de la mascota. </small>
-        <br>
+       <br>
         <label for="raza">Raza</label>
-        <input type="text" name="raza" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el raza. </small>
-        <br>
+        <input type="text" name="raza" id="raza" class="form-control" placeholder="" aria-describedby="Helpraz" required>
+        <h6 id="Helpraz" class="text-muted">Por favor ingrese la raza. </h6>
+
         <label for="fecNacimi">Fecha de Nacimiento</label>
-        <input type="date" name="fecNacimi" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <input type="date" name="fecNacimi" id="" class="form-control" placeholder="" aria-describedby="helpId" required>
         <small id="helpId" class="text-muted">Por favor ingrese el fecha de nacimiento. </small>
         <br>
         <label for="fecEsterili">Fecha de Esterilización</label>

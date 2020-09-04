@@ -110,7 +110,7 @@ class ControlAuth extends Controller
         session()->forget('nombre');
         session()->forget('apellido');
         session()->forget('correo');
-        return redirect()->route('inicio')->with('estado', 'Ha salido con éxito');
+        return redirect()->back()->with('estado', 'Ha salido con éxito');
     }
 
     public function consultarUsuario($correo)

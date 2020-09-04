@@ -89925,9 +89925,13 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./datatables */ "./resources/js/datatables.js");
+
 __webpack_require__(/*! ./graficas */ "./resources/js/graficas.js");
 
 __webpack_require__(/*! ./sidebar */ "./resources/js/sidebar.js");
+
+__webpack_require__(/*! ./validacion */ "./resources/js/validacion.js");
 
 $(document).ready(function () {
   $("#menu-toggle").click(function (e) {
@@ -89935,26 +89939,18 @@ $(document).ready(function () {
     $("#wrapper").toggleClass("toggled");
   });
 });
-$(document).ready(function () {
-  $('#table_id').DataTable();
+$(function () {
+  $('[data-toggle="popover"]').popover();
 });
-$(document).ready(function () {
-  $('#mascotas').DataTable();
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
+<<<<<<< HEAD
+=======
 $(document).ready(function () {
-  $('#controles').DataTable();
-});
-$(document).ready(function () {
-  $('#citas').DataTable();
-});
-$(document).ready(function () {
-  $('#prodce').DataTable();
-});
-$(document).ready(function () {
-  $('#exa').DataTable();
-});
-$(document).ready(function () {
-  $('#despara').DataTable();
+  $('$bd').ready(function () {
+    location.reload();
+  });
 });
 $(document).ready(function () {
   $('#servi').DataTable();
@@ -89962,6 +89958,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#veter').DataTable();
 });
+>>>>>>> 913dfb4ee049d0bc412eefa34cab23d68d3f2cc5
 
 /***/ }),
 
@@ -90018,6 +90015,37 @@ require( 'datatables.net-buttons-bs4' )(window, $); */
 
 /***/ }),
 
+/***/ "./resources/js/datatables.js":
+/*!************************************!*\
+  !*** ./resources/js/datatables.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#table_id').DataTable();
+});
+$(document).ready(function () {
+  $('#mascotas').DataTable();
+});
+$(document).ready(function () {
+  $('#controles').DataTable();
+});
+$(document).ready(function () {
+  $('#citas').DataTable();
+});
+$(document).ready(function () {
+  $('#prodce').DataTable();
+});
+$(document).ready(function () {
+  $('#exa').DataTable();
+});
+$(document).ready(function () {
+  $('#despara').DataTable();
+});
+
+/***/ }),
+
 /***/ "./resources/js/graficas.js":
 /*!**********************************!*\
   !*** ./resources/js/graficas.js ***!
@@ -90026,88 +90054,90 @@ require( 'datatables.net-buttons-bs4' )(window, $); */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $('#myChart1').ready(function () {
-    var ctx = document.getElementById('myChart1').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: eti1,
-        datasets: [{
-          label: 'Cantidad de clientes creados por mes',
-          data: val1,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
+  if ($("#panel").length) {
+    $('#myChart1').ready(function () {
+      var ctx = document.getElementById('myChart1').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: eti1,
+          datasets: [{
+            label: 'Cantidad de clientes creados por mes',
+            data: val1,
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    });
+    $('#myChart2').ready(function () {
+      var ctx = document.getElementById('myChart2').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: eti2,
+          datasets: [{
+            label: 'Cantidad de mascotas creadas creadas por mes',
+            data: val2,
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            borderWidth: 1
           }]
         }
-      }
+      });
     });
-  });
-  $('#myChart2').ready(function () {
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: eti2,
-        datasets: [{
-          label: 'Cantidad de mascotas creadas creadas por mes',
-          data: val2,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-          borderWidth: 1
-        }]
-      }
+    $('#myChart3').ready(function () {
+      var ctx = document.getElementById('myChart3').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: eti3,
+          datasets: [{
+            label: 'Cantidad de mascotas atendidas',
+            data: val3,
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
     });
-  });
-  $('#myChart3').ready(function () {
-    var ctx = document.getElementById('myChart3').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: eti3,
-        datasets: [{
-          label: 'Cantidad de mascotas atendidas',
-          data: val3,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
+    $('#myChart4').ready(function () {
+      var ctx = document.getElementById('myChart4').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: eti4,
+          datasets: [{
+            label: 'Cantidad de mascotas creadas creadas por mes',
+            data: val4,
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            borderWidth: 1
           }]
         }
-      }
+      });
     });
-  });
-  $('#myChart4').ready(function () {
-    var ctx = document.getElementById('myChart4').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: eti4,
-        datasets: [{
-          label: 'Cantidad de mascotas creadas creadas por mes',
-          data: val4,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-          borderWidth: 1
-        }]
-      }
-    });
-  });
+  }
 });
 
 /***/ }),
@@ -90159,6 +90189,125 @@ $(document).ready(function () {
   $("#ItemVete").click(function () {
     $("#paneVete").addClass("show");
     $("#paneMascota, #paneCliente, #paneVacunas, #paneProcedimientos, #paneExamenes, #paneDesparas, #paneServicios, #paneCitas,#paneControles ").removeClass("show").addClass("collapse");
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/validacion.js":
+/*!************************************!*\
+  !*** ./resources/js/validacion.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  var soloLetras = /[^a-zA-ZáéíóúñÑüÜÁÉÍÓÚ\-\s]/g;
+  var soloNumeros = /[\-\D]/g;
+  var soloDir = /[^a-zA-z0-9\#\-\°\s]/g;
+  var soloCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/g;
+  $('#idCedula').change(function () {
+    var n = $('#idCedula').val().length;
+
+    if (n > 15 || $('#idCedula').val() <= 30000 || soloNumeros.test($('#idCedula').val())) {
+      $('#helpidCed').text('Has escrito mal la identificación.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpidCed').text('Has escrito correctamente la identificación.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#nombre').change(function () {
+    var n = $('#nombre').val().length;
+
+    if (n > 40 || soloLetras.test($('#nombre').val())) {
+      $('#helpNombre').text('Has escrito mal el nombre.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpNombre').text('Has escrito correctamente el nombre.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#apellido').change(function () {
+    var n = $('#apellido').val().length;
+
+    if (n > 40 || soloLetras.test($('#apellido').val())) {
+      $('#helpApellido').text('Has escrito mal el apellido.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpApellido').text('Has escrito correctamente el apellido.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#telefono').change(function () {
+    var n = $('#telefono').val().length;
+
+    if (n > 15 || $('#telefono').val() < 1000000 || soloNumeros.test($('#telefono').val())) {
+      $('#helpTelefono').text('Has escrito mal teléfono.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpTelefono').text('Has escrito correctamente teléfono.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#direccion').change(function () {
+    var n = $('#direccion').val().length;
+
+    if (n > 75 || soloDir.test($('#direccion').val())) {
+      $('#helpDir').text('Has escrito mal la dirección.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpDir').text('Has escrito correctamente la dirección.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#correo').change(function () {
+    var n = $('#correo').val().length;
+
+    if (n > 40) {
+      $('#helpcor').text('Has escrito mal el correo.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    }
+
+    if (soloCorreo.test($('#correo').val())) {
+      $('#helpcor').text('Has escrito correctamente el correo.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    } else {
+      $('#helpcor').text('Has escrito mal el correo.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    }
+  });
+  $('#contrasena').change(function () {
+    var n = $('#contrasena').val().length;
+
+    if (n > 300) {
+      $('#helpcontra').text('Has sobrepasado el límite cáracteres.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#helpcontra').text('Has escrito correctamente la contraseña.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#numChip').change(function () {
+    var n = $('#numChip').val().length;
+
+    if (n > 15 || $('#numChip').val() <= 30000 || soloNumeros.test($('#numChip').val())) {
+      $('#Helpchip').text('Has escrito mal el número de chip.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#Helpchip').text('Has escrito correctamente el número de chip.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#especie').change(function () {
+    var n = $('#especie').val().length;
+
+    if (n > 40 || soloLetras.test($('#especie').val())) {
+      $('#Helpesp').text('Has escrito mal la especie.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#Helpesp').text('Has escrito correctamente la especie.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#raza').change(function () {
+    var n = $('#raza').val().length;
+
+    if (n > 40 || soloLetras.test($('#raza').val())) {
+      $('#Helraz').text('Has escrito mal la raza.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#Helraz').text('Has escrito correctamente la raza.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
+  });
+  $('#peso').change(function () {
+    var n = $('#peso').val().length;
+
+    if (n > 15 || $('#peso').val() <= 0 || soloNumeros.test($('#peso').val())) {
+      $('#Helpps').text('Has escrito mal el número del peso.').addClass('alert alert-danger my-2').removeClass('alert-primary');
+    } else {
+      $('#Helpps').text('Has escrito correctamente el número del peso.').addClass('alert alert-primary my-2').removeClass('alert-danger');
+    }
   });
 });
 
