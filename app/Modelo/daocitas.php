@@ -22,10 +22,10 @@ class daocitas{
 
     }
 
-    public function setCitas($id)
+    public function setCitas($Citas)
     {
         DB::insert('insert into citas (fecha, hora, motivo, cliente_idCedula, servicios_idServi, visible)
-                    VALUES (:fecha, :hora, :motivo, :cliente_idCedula, :servicios_idServi, :visible)',$id);
+                    VALUES (:fecha, :hora, :motivo, :cliente_idCedula, :servicios_idServi, :visible)',$Citas);
     }
 
     public function seleccionCita($id)
