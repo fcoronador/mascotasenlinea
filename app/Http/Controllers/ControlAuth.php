@@ -98,6 +98,9 @@ class ControlAuth extends Controller
                     return redirect()->route('inicio');
                 }
             }
+            else{
+                return redirect()->route('inicio')->with('alerta', 'Contraseña incorrecta.');
+            }
         }
     }
 

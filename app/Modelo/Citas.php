@@ -22,10 +22,10 @@ class Citas{
         return $index;
     }
 
-     public function guardarcita($cita)
+     public function guardarcita($Citas)
     {
 
-        $this->dao->setCitas($cita);
+        $this->dao->setCitas($Citas);
     }
 
     public function mostrarCita($id)
