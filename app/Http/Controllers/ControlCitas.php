@@ -22,8 +22,8 @@ class ControlCitas extends Controller
      */
     public function index()
     {
-        $index= new Citas();
-        $citas=$index->indexcitas()->getCitas();
+        
+        $citas=$this->modelo->indexcitas()->getCitas();
         return view('citas.citas',compact('citas'));
     }
 
@@ -76,7 +76,7 @@ class ControlCitas extends Controller
         $servicios = ControlServicios::listaServicios();
         $citas = $this->modelo->mostrarcita($id);
         $cc=$id;
-        return view('citas.citas', compact('citas','servicios','cc','nombre')); 
+        return view('citas.citas', compact('citas','servicios','cc')); 
 
     }
 
@@ -90,8 +90,7 @@ class ControlCitas extends Controller
     {
         $servicios = ControlServicios::listaServicios();
         $idCita = $this->modelo->mostrarEditCita($idCita);
-        
-        return view('citas.editcita', compact('idCita','citas','servicios'));
+        return view('citas.editcita', compact('idCita','servicios'));
     }
 
     
