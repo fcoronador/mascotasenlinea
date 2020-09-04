@@ -89945,20 +89945,6 @@ $(function () {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
-<<<<<<< HEAD
-=======
-$(document).ready(function () {
-  $('$bd').ready(function () {
-    location.reload();
-  });
-});
-$(document).ready(function () {
-  $('#servi').DataTable();
-});
-$(document).ready(function () {
-  $('#veter').DataTable();
-});
->>>>>>> 913dfb4ee049d0bc412eefa34cab23d68d3f2cc5
 
 /***/ }),
 
