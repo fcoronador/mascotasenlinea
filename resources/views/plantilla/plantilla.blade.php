@@ -53,7 +53,7 @@
 
                    @if (session('rol')==null)
                     <li class="nav-item">
-                        <a class="nav-link registro" href="" data-toggle="modal" data-target="#registroModal">Registrarse
+                        <a class="nav-link registro"  data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
@@ -73,7 +73,7 @@
                     @else
                         
                     <li class="nav-item">
-                        <a class="nav-link login" href="{{route('login')}}" data-toggle="modal" data-target="#loginModal" ">Iniciar Sesión
+                        <a class="nav-link login"  data-toggle="modal" data-target="#loginModal" ">Iniciar Sesión
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
                             </span>
