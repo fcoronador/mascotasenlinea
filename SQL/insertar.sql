@@ -87,6 +87,7 @@ VALUES ( 'peluqueria');
 
 /* CITAS */
 
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`, `veterin_idVeterin`)
 VALUES ('2020/04/12', '10:10', 'Control', '100', '4','1');
 
 INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`, `veterin_idVeterin`)
@@ -115,6 +116,36 @@ VALUES ('2020/04/20', '14:56', 'control', '1000', '4','1');
 
 INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`, `veterin_idVeterin`)
 VALUES ('2020/04/21', '15:00', 'control', '1000', '4','1');
+
+/* CONTROLES */
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/04/13', '3', 'bueno', 'mucho amor', 'muy tierno', '1', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '2', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '3', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/18', '5', 'qwert', 'qwert', 'qwert', '4', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/19', '2', 'qwert', 'qwert', 'qwert', '5', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '6', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '7', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '8', '1');
+
+INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
+VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '9', '1');
+
 INSERT INTO `controles` (`fecha`, `peso`, `diagnos`, `trata`, `observ`, `mascota_idMascotas`, `veterin_idVeterin`)
 VALUES ('2020/05/13', '3', 'bueno', 'mucho amor', 'muy tierno', '10', '1');
 
