@@ -69,53 +69,53 @@ INSERT INTO `veterin` ( `rol`, `cargo`,`nombre`) VALUES ( '2', 'Veterinario','Dr
 
 /* SERVICIOS */
 
-INSERT INTO `servicios` ( `servicios`)
-VALUES ( 'examen');
+INSERT INTO `servicios` ( `servicios`, `veterin_idVeterin`)
+VALUES ( 'examen', '1');
 
-INSERT INTO `servicios` ( `servicios`)
-VALUES ( 'vacunas');
+INSERT INTO `servicios` ( `servicios`, `veterin_idVeterin`)
+VALUES ( 'vacunas', '1');
 
-INSERT INTO `servicios` ( `servicios`)
-VALUES ( 'desparacitación');
+INSERT INTO `servicios` ( `servicios`, `veterin_idVeterin`)
+VALUES ( 'desparacitación', '1');
 
-INSERT INTO `servicios` ( `servicios`)
-VALUES ( 'controles');
+INSERT INTO `servicios` ( `servicios`, `veterin_idVeterin`)
+VALUES ( 'controles', '1');
 
-INSERT INTO `servicios` ( `servicios`)
-VALUES ( 'peluqueria');
+INSERT INTO `servicios` ( `servicios`, `veterin_idVeterin`)
+VALUES ( 'peluqueria', '1');
 
 
 /* CITAS */
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/12', '10:10', 'Control', '100', '4', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/12', '10:10', 'Control', '100', '4');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/13', '20:20', 'examen', '200', '1', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/13', '20:20', 'examen', '200', '1');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/14', '8:10', 'vacunas', '300', '2', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/14', '8:10', 'vacunas', '300', '2');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/12', '20:30', 'desparacitacion', '600', '3', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/12', '20:30', 'desparacitacion', '600', '3');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/14', '8:10', 'examen', '700', '3', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/14', '8:10', 'examen', '700', '3');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/15', '20:40', 'peluqueria', '800', '5', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/15', '20:40', 'peluqueria', '800', '5');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/16', '20:50', 'control', '900', '4', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/16', '20:50', 'control', '900', '4');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/18', '14:30', 'vacunas', '200', '2', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/18', '14:30', 'vacunas', '200', '2');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/20', '14:56', 'control', '1000', '4', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/20', '14:56', 'control', '1000', '4');
 
-INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`,`veterin_idVeterin`)
-VALUES ('2020/04/21', '15:00', 'control', '1000', '4', '1');
+INSERT INTO `citas` (`fecha`, `hora`, `motivo`, `cliente_idCedula`, `servicios_idServi`)
+VALUES ('2020/04/21', '15:00', 'control', '1000', '4');
 
 /* CONTROLES */
 
