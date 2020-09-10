@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`cliente` (
   `contrasena` VARCHAR(300) NOT NULL COMMENT 'Contraseña del usuario\n',
   PRIMARY KEY (`idCedula`))
 ENGINE = InnoDB;
-
+ 
 
 -- -----------------------------------------------------
 -- Table `Mascotas`.`servicios`
