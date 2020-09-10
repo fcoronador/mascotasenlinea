@@ -23,16 +23,21 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`cliente` (
   `apellido` VARCHAR(45) NOT NULL COMMENT 'Apellido del usuario',
   `telefono` DOUBLE NOT NULL COMMENT 'Telefóno del usuario',
   `direccion` VARCHAR(80) NULL COMMENT 'Dirección del usuario',
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica', 
   `correo` VARCHAR(45) NULL COMMENT 'Correo electronico',
   `contrasena` VARCHAR(300) NOT NULL COMMENT 'Contraseña del usuario\n',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
   PRIMARY KEY (`idCedula`))
 ENGINE = InnoDB;
- 
+
+
+-- -----------------------------------------------------
+-- Table `Mascotas`.`servicios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Mascotas`.`servicios` (
+  `idServi` INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador de servicios',
+  `servicios` VARCHAR(45) NOT NULL COMMENT 'Desparacitantes aplicados a las mascotas',
+  PRIMARY KEY (`idServi`))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `Mascotas`.`veterin`
@@ -42,11 +47,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`veterin` (
   `rol` INT NOT NULL COMMENT 'Nombre de la mascota',
   `cargo` VARCHAR(45) NOT NULL COMMENT 'Nombre de la mascota',
   `nombre` VARCHAR(100) NOT NULL,
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   PRIMARY KEY (`idVeterin`))
 ENGINE = InnoDB;
 
@@ -74,11 +74,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`citas` (
   `fecha` TIMESTAMP NOT NULL COMMENT 'Fecha de las citas',
   `hora` TIME NOT NULL COMMENT 'Hora de la cita',
   `motivo` VARCHAR(45) NOT NULL COMMENT 'Motivo de la cita',
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   `cliente_idCedula` DOUBLE NOT NULL,
   `servicios_idServi` INT NOT NULL,
   `veterin_idVeterin` INT NOT NULL,
@@ -114,11 +109,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`mascota` (
   `raza` VARCHAR(45) NOT NULL COMMENT 'Raza de la mascota',
   `fecNacimi` TIMESTAMP NOT NULL COMMENT 'Fecha de nacimiento de la mascota',
   `fecEsterili` DATETIME NULL COMMENT 'Fecha de esterilización de la mascota',
-  `visible` BOOLEAN NOT NULL  DEFAULT '1' COMMENT 'Campo para eliminació lógica',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   `cliente_idCedula` DOUBLE NOT NULL,
   PRIMARY KEY (`idMascotas`),
   UNIQUE INDEX `idMascotas_UNIQUE` (`idMascotas` ASC),
@@ -141,11 +131,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`controles` (
   `diagnos` LONGTEXT NULL COMMENT 'Diagnostico de la mascota durante el control',
   `trata` LONGTEXT NULL COMMENT 'Tratamiento formulado a la mascota',
   `observ` LONGTEXT NULL COMMENT 'Observaciones adicionales sobre el control',
-  `visible` BOOLEAN NOT NULL  DEFAULT '1' COMMENT 'Campo para eliminación lógica', 
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
   `mascota_idMascotas` INT NOT NULL,
   `veterin_idVeterin` INT NOT NULL,
   PRIMARY KEY (`idControl`),
@@ -171,11 +156,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`examenes` (
   `tipo` VARCHAR(45) NOT NULL COMMENT 'Descripción del exámen realizado',
   `resulta` MEDIUMTEXT NOT NULL COMMENT 'Resultado del exámen',
   `lab` VARCHAR(45) NOT NULL COMMENT 'Nombre del laboratorio que realizó el exámen\n',
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   PRIMARY KEY (`idExam`),
   UNIQUE INDEX `idExamenes_UNIQUE` (`idExam` ASC))
 ENGINE = InnoDB;
@@ -187,11 +167,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Mascotas`.`vacunas` (
   `idVacun` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL COMMENT 'Nombre de la vacuna',
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica',
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   PRIMARY KEY (`idVacun`))
 ENGINE = InnoDB;
 
@@ -202,11 +177,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Mascotas`.`despara` (
   `idDespara` INT NOT NULL AUTO_INCREMENT COMMENT 'Indice de desparacitante',
   `nombre` VARCHAR(45) NOT NULL COMMENT 'Nombre del desparacitante',
-  `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica', 
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
   PRIMARY KEY (`idDespara`))
 ENGINE = InnoDB;
 
@@ -218,11 +188,6 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`procedi` (
   `idProc` INT NOT NULL AUTO_INCREMENT COMMENT 'Indice de procedimientos',
   `fecha` DATETIME NOT NULL COMMENT 'Fecha de los procedimientos',
   `sigDosis` DATETIME NULL COMMENT 'Siguiente dosis del medicamento aplicado',
-  `visible` BOOLEAN NOT NULL  DEFAULT '1' COMMENT 'Campo para eliminació lógica', 
-  `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
-  `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
-  `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
-  `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
   `mascota_idMascotas` INT NOT NULL,
   `vacunas_idVacun` INT NOT NULL,
   `despara_idDespara` INT NOT NULL,
