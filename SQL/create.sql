@@ -57,18 +57,12 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Mascotas`.`servicios` (
   `idServi` INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador de servicios',
   `servicios` VARCHAR(45) NOT NULL COMMENT 'Desparacitantes aplicados a las mascotas',
-  `veterin_idVeterin` INT NOT NULL,
   `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica', 
   `createdAt` TIMESTAMP NULL DEFAULT current_timestamp COMMENT 'Fecha de creación',
   `createdBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que creo el registro',
   `updatedAt` TIMESTAMP NULL DEFAULT current_timestamp on update current_timestamp,
   `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
-  PRIMARY KEY (`idServi`),
-  CONSTRAINT `fk_servicios_veterin1`
-    FOREIGN KEY (`veterin_idVeterin`)
-    REFERENCES `Mascotas`.`veterin` (`idVeterin`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idServi`))
 ENGINE = InnoDB;
 
 
@@ -87,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`citas` (
   `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro', 
   `cliente_idCedula` DOUBLE NOT NULL,
   `servicios_idServi` INT NOT NULL,
+  `veterin_idVeterin` INT NOT NULL,
   PRIMARY KEY (`idCitas`),
   UNIQUE INDEX `idCitas_UNIQUE` (`idCitas` ASC),
   CONSTRAINT `fk_citas_cliente1`
@@ -97,6 +92,11 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`citas` (
   CONSTRAINT `fk_citas_servicios1`
     FOREIGN KEY (`servicios_idServi`)
     REFERENCES `Mascotas`.`servicios` (`idServi`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_citas_veterin1`
+    FOREIGN KEY (`veterin_idVeterin`)
+    REFERENCES `Mascotas`.`veterin` (`idVeterin`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
