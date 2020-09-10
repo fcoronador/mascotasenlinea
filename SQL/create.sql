@@ -13,7 +13,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `Mascotas` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
 USE `Mascotas` ;
-
+ 
 -- -----------------------------------------------------
 -- Table `Mascotas`.`cliente`
 -- -----------------------------------------------------
