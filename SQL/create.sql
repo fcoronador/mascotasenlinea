@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `Mascotas`.`cliente` (
   `updatedBy` VARCHAR(45) NOT NULL DEFAULT 'Scripts' COMMENT 'Usuario o módulo que actualizó el registro',
   PRIMARY KEY (`idCedula`))
 ENGINE = InnoDB;
-
+ 
 
 -- -----------------------------------------------------
 -- Table `Mascotas`.`veterin`
