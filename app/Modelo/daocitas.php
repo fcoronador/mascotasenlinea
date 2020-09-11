@@ -24,8 +24,8 @@ class daocitas{
 
     public function setCitas($Citas)
     {
-        DB::insert('insert into citas (fecha, hora, motivo, cliente_idCedula, servicios_idServi, visible)
-                    VALUES (:fecha, :hora, :motivo, :cliente_idCedula, :servicios_idServi, :visible)',$Citas);
+        DB::insert('insert into citas (fecha, hora, motivo, cliente_idCedula, servicios_idServi, visible, veterin_idVeterin)
+                    VALUES (:fecha, :hora, :motivo, :cliente_idCedula, :servicios_idServi, :visible, :veterin_idVeterin)',$Citas);
     }
 
     public function seleccionCita($id)
@@ -33,7 +33,7 @@ class daocitas{
        $citas = DB::select('SELECT  date_format(c.fecha,"%d-%m-%Y") AS Fecha , c.idCitas AS idCita,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
        s.servicios AS Servicio ,v.nombre AS Veterinario
        FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
-       LEFT JOIN veterin v ON v.idVeterin = s.veterin_idVeterin  where cliente_idCedula = :idCedula', ['idCedula' => $id]);
+       LEFT JOIN veterin v ON v.idVeterin = c.veterin_idVeterin  where cliente_idCedula = :idCedula', ['idCedula' => $id]);
         return $citas;
 
     }
@@ -42,7 +42,7 @@ class daocitas{
         $idCita = DB::select('SELECT  date_format(c.fecha,"%d-%m-%Y") AS Fecha , c.idCitas AS idCita,c.hora AS Hora ,c.motivo AS Motivo, c.visible as visible,
         s.servicios AS Servicio ,v.nombre AS Veterinario
         FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
-        LEFT JOIN veterin v ON v.idVeterin = s.veterin_idVeterin  where c.idCitas = :idCita', ['idCita' => $idCita]);
+        LEFT JOIN veterin v ON v.idVeterin = c.veterin_idVeterin  where c.idCitas = :idCita', ['idCita' => $idCita]);
          return $idCita;
     }
 

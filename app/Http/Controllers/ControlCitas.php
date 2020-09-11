@@ -56,6 +56,7 @@ class ControlCitas extends Controller
         $Citas['servicios_idServi'] = $request->get('idServi');
         $Citas['cliente_idCedula'] = $request->get('cc');
         $Citas['visible'] = 1;
+        $Citas['veterin_idVeterin'] = $request->get('idVeterin');
 /*         dd($Citas);
  */        
         $index->guardarcita($Citas);
@@ -74,9 +75,11 @@ class ControlCitas extends Controller
     public function show($id)
     {
         $servicios = ControlServicios::listaServicios();
+        $veterinario = ControlVeterinarios::listaVeterinarios();
+        //dd($veterinario);
         $citas = $this->modelo->mostrarcita($id);
         $cc=$id;
-        return view('citas.citas', compact('citas','servicios','cc')); 
+        return view('citas.citas', compact('citas','servicios','cc','veterinario')); 
 
     }
 
@@ -110,6 +113,7 @@ class ControlCitas extends Controller
         $Citas['servicios_idServi'] = $request->get('idServi');
         $Citas['idCitas'] = $id;
         $Citas['visible'] = 1;
+        $Citas['veterin_idVeterin'] = $request->get('idVeterin');
 /*         dd($Citas);
  */        
         $this->modelo->Actualizar($Citas);

@@ -7,7 +7,7 @@
 {{-- @dump($nombre) --}}
 
 
- 
+
 
 <div class="container">
     <h1 class="my-3">CITAS</h1>
@@ -125,10 +125,21 @@
                             @endforeach
                         </select>
 
-
                         <small id="helpId" class="text-muted">Por favor seleccione el servicio </small>
                         <br>
 
+                        <label for="veterinario">Veterinario</label>
+                        
+                        <select class="form-control" name="idVeterin" id="">
+                            @foreach ($veterinario as $item)
+                            @if ($item->visible)
+                            <option value="{{$item->idVeterin}}">{{$item->nombre}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+
+                        <small id="helpId" class="text-muted">Por favor seleccione el Veterinario </small>
+                        <br>
 
                         <input type="submit" class="btn btnCrear btn-default" value="Enviar">
 
