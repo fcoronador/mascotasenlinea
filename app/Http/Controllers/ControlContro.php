@@ -54,8 +54,20 @@ class ControlContro extends Controller
      */
     public function store(Request $request, Control $index)
     {
-        $control = [];
 
+        request()->validate([
+            'veterin_idVeterin'=>'required',
+            'mascota_idMascotas'=>'required',
+            'fecha'=>'required',
+            'peso'=>'required'
+            ],[
+                'fecha.required'=>'Se necesita la fecha del control.',
+                'peso.required'=>'Se necesita el peso de la mascosta durannte el control.'
+            ]);
+
+
+
+        $control = [];
         $control['veterin_idVeterin'] = $request->get('idVeterin');
         $control['mascota_idMascotas'] = $request->get('idMascota');
         $control['fecha'] = str_replace('-','/',$request->get('fecha'));
@@ -63,9 +75,7 @@ class ControlContro extends Controller
         $control['diagnos'] = $request->get('diagnos');
         $control['trata'] = $request->get('trata');
         $control['observ'] = $request->get('observ');
-        
-        
-
+    
         $index->guardarcontroles($control);
 
         return redirect()->route('indexcontrol')->with('estado', 'El control se ha creado con éxito.');

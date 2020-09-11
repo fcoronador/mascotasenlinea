@@ -58,8 +58,27 @@ class ControlMascota extends Controller
      */
     public function store(Request $request, Mascota $index)
     {
+        request()->validate([
+            'numChip'=>'required|digits_between:5,15',
+            'nombre'=>'required|alpha_dash|between:3,39',
+            'especie'=>'required|alpha_dash|between:3,39',
+            'sexo'=>'required',
+            'raza'=>'required|alpha_dash|between:3,39',
+            'fecNacimi'=>'required'
+            ],[
+                'numChip.required'=>'Se necesita el número de identificación.',
+                'numChip.digits_between'=>'La longitud del número de identificación debe estar entre 5-20 caracteres.',
+                'nombre.required'=>'Se necesita el nombre de la mascota.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'especie.required'=>'Se necesita el nombre de la especie.',
+                'especie.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'sexo.required'=>'Se necesita el sexo de la mascota.',
+                'raza.required'=>'Se necesita el nombre de la raza.',
+                'raza.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'fecNacimi.required'=>'Se necesita la fecha de nacimiento de la mascota.'
+            ]);
+        
         $mascota = [];
-
         $mascota['numChip'] = $request->get('numChip');
         $mascota['nombre'] = $request->get('nombre');
         $mascota['especie'] = $request->get('especie');
@@ -116,8 +135,27 @@ class ControlMascota extends Controller
     public function update(Request $request)
     {
 
-        $mascota = [];
+        request()->validate([
+            'numChip'=>'required|digits_between:5,15',
+            'nombre'=>'required|alpha_dash|between:3,39',
+            'especie'=>'required|alpha_dash|between:3,39',
+            'sexo'=>'required',
+            'raza'=>'required|alpha_dash|between:3,39',
+            'fecNacimi'=>'required'
+            ],[
+                'numChip.required'=>'Se necesita el número de identificación.',
+                'numChip.digits_between'=>'La longitud del número de identificación debe estar entre 5-20 caracteres.',
+                'nombre.required'=>'Se necesita el nombre de la mascota.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'especie.required'=>'Se necesita el nombre de la especie.',
+                'especie.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'sexo.required'=>'Se necesita el sexo de la mascota.',
+                'raza.required'=>'Se necesita el nombre de la raza.',
+                'raza.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'fecNacimi.required'=>'Se necesita la fecha de nacimiento de la mascota.'
+            ]);
 
+        $mascota = [];
         $mascota['numChip'] = $request->get('numChip');
         $mascota['nombre'] = $request->get('nombre');
         $mascota['especie'] = $request->get('especie');
