@@ -43,7 +43,7 @@ class ControlServicios extends Controller
     {
         $servicio = [];
         $servicio['servicio'] = $request->get('servicio');
-        $servicio['veterin_idVeterin'] = 1;
+        //$servicio['veterin_idVeterin'] = 1;
         $servicio['visible'] = 1;
         //dd($servicio);
 

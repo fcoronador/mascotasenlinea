@@ -25,8 +25,8 @@ class daoservicios{
 
     public function setServicios($servicio)
     {
-        DB::insert('insert into servicios (servicios, veterin_idVeterin, visible)
-        VALUES (:servicio, :veterin_idVeterin, :visible)',$servicio);
+        DB::insert('insert into servicios (servicios, visible)
+        VALUES (:servicio, :visible)',$servicio);
 
     }
 
