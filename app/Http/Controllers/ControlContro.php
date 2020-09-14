@@ -62,7 +62,7 @@ class ControlContro extends Controller
             'peso'=>'required'
             ],[
                 'fecha.required'=>'Se necesita la fecha del control.',
-                'peso.required'=>'Se necesita el peso de la mascosta durannte el control.'
+                'peso.required'=>'Se necesita el peso de la mascota durante el control.'
             ]);
 
 

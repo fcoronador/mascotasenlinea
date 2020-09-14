@@ -22,5 +22,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#despara').DataTable();
 });
+$(document).ready(function () {
+    $('#misMascotas').DataTable();
+});
 
 

@@ -22,6 +22,10 @@ class Mascota{
         return $index;
     }
 
+    public function MascotasCliente($id){
+        return $this->dao->getMascotaPorCliente($id);
+    }
+
     public function adminMascota(){
         return $this->dao->getMascotasAdmin();
     }

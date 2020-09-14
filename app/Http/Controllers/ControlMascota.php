@@ -26,7 +26,11 @@ class ControlMascota extends Controller
         $mascotas = $modelo->adminMascota();
         return $mascotas;
     }
-
+    
+    public function mascotasPorCliente($id)
+    {
+        return $this->modelo->MascotasCliente($id);
+    }
 
     /**
      * Display a listing of the resource.

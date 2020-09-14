@@ -99,9 +99,11 @@
     <div id="paneCitas" class="container collapse">
         <h1 class="mt-4">Citas</h1>
     </div>
-    <div id="paneVete" class="container collapse">
-        <h1 class="mt-4">Veterinarios</h1>
-        <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
-    </div>
+    @if (session('rol')==1)
+        <div id="paneVete" class="container collapse">
+            <h1 class="mt-4">Veterinarios</h1>
+            <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
+        </div>
+    @endif
 </div>
 

@@ -100,5 +100,7 @@ select u.usuLogin as username,u.usuPassword as password, usuEstado as visible, r
 from (usuario_s u join usuario_s_roles r on u.usuUsuSesion = r.usuRolUsuSesion )
 
 
-
+SELECT m.numChip , m.nombre , m.fecNacimi 
+FROM (cliente c JOIN mascota m ON c.idCedula = m.cliente_idCedula ) 
+WHERE c.idCedula = 100
 
