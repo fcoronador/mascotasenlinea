@@ -22,6 +22,11 @@ class ControlVeterinarios extends Controller
         return view('vet.indexveterinarios',compact('veterinario'));
     }
 
+    public static function cantVet(){
+        $modelo= new Veterinarios();
+        $veterinario = $modelo->adminVet();
+        return $veterinario;
+    }
 
     public static function listaVeterinarios()
     {        

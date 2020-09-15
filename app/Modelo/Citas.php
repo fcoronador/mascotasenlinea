@@ -22,6 +22,10 @@ class Citas{
         return $index;
     }
 
+    public function adminCitas(){
+        return $this->dao->getCitasAdmin();
+    }
+
      public function guardarcita($Citas)
     {
 

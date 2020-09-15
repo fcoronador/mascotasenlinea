@@ -50,6 +50,19 @@
                     <small id="helpId" class="text-muted">Por favor seleccione el servicio </small>
                     <br>
 
+                    <label for="veterinario">Veterinario</label>
+                        
+                        <select class="form-control" name="idVeterin" id="">
+                            @foreach ($veterinario as $item)
+                            @if ($item->visible)
+                            <option value="{{$item->idVeterin}}">{{$item->nombre}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+
+                        <small id="helpId" class="text-muted">Por favor seleccione el Veterinario </small>
+                        <br>
+
                      @endforeach
 
                      <br>

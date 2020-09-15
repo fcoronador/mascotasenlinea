@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class daocitas{
 //select date_format(fecha,"%m-%d-%Y") as fecha, hora, motivo from citas where cliente_idCedula ="100"
     private $query='select date_format(fecha,"%m-%d-%Y") as fecha, hora, motivo, visible from citas ';
+    private $query2 = 'SELECT  YEAR(fecha) AS anio, MONTH(fecha) AS mes ,count(visible) AS cantidad FROM mascotas.citas c  WHERE visible =1 GROUP BY MONTH (fecha), YEAR (fecha)';
     private $listacitas;
 
     public function __construct()
@@ -20,6 +21,11 @@ class daocitas{
         $this->listacitas=DB::select($this->query);
         return $this->listacitas;
 
+    }
+
+    public function getCitasAdmin(){
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
     }
 
     public function setCitas($Citas)

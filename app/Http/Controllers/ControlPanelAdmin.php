@@ -17,14 +17,19 @@ class ControlPanelAdmin extends Controller
         $clientes = ControlCliente::cantClientes();
         $mascotas = ControlMascota::cantMascotas();
         $control = ControlContro::cantControl();
+        $citas = ControlCitas::cantCitas();
+        $Veterinarios =ControlVeterinarios::cantVet();
+
 
         $cantidadCli = $this->etiquetas($clientes);
         $cantidadMasco = $this->etiquetas($mascotas);
         $cantidadControl = $this->etiquetas($control);
+        $cantidadCitas = $this->etiquetas($citas);
+        $cantidadVet= $this->etiquetas($Veterinarios);
 
-        //dd($cantidadMasco);
+        //dd($cantidadVet);
 
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet'));
         }else{
             
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');

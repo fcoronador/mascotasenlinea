@@ -20,6 +20,11 @@ class Veterinarios{
         return $index;
     }
 
+    public function adminVet(){
+        return $this->dao->getVetAdmin();
+    }
+
+
     public function guardarveterinario($veterinario)
     {
         $this->dao->setVeterinario($veterinario);

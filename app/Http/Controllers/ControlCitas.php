@@ -28,6 +28,12 @@ class ControlCitas extends Controller
     }
 
 
+    public static function cantCitas(){
+        $modelo= new Citas();
+        $citas = $modelo->adminCitas();
+        return $citas;
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -93,7 +99,8 @@ class ControlCitas extends Controller
     {
         $servicios = ControlServicios::listaServicios();
         $idCita = $this->modelo->mostrarEditCita($idCita);
-        return view('citas.editcita', compact('idCita','servicios'));
+        $veterinario = ControlVeterinarios::listaVeterinarios();
+        return view('citas.editcita', compact('idCita','servicios','veterinario'));
     }
 
     
