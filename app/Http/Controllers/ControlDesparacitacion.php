@@ -29,6 +29,13 @@ class ControlDesparacitacion extends Controller
         return $cantidad;
     }
 
+    public function HistoriaDespara($id)
+    {
+        return $this->modelo->historiaDespara($id);
+    }
+
+
+
     public function index()
     {
         $desparas=$this->modelo->indexdesparas()->getDesparas();

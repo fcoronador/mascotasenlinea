@@ -10,6 +10,11 @@ class daoexamenes{
     private $query='select * from examenes';
     private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM examenes e GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listaexamenes;
+    private $query3='select m.nombre  AS Mascota, p.fecha AS Fecha, e.tipo AS Tipo, 
+	e.resulta AS Resultado, e.lab AS Laboratorio
+    from ((cliente c join mascota m on c.idCedula= m.cliente_idCedula)
+    LEFT JOIN procedi p	on p.mascota_idMascotas= m.idMascotas)
+    left join examenes e on p.examenes_idExam = e.idExam WHERE m.numChip= :numChip';
 
     public function __construct()
     {  
@@ -20,6 +25,12 @@ class daoexamenes{
     {
         $cantidad= DB::select($this->query2);
         return $cantidad; 
+    }
+
+    public function getHistoriaExamen($id)
+    {
+        $examen = DB::select($this->query3, ['numChip' => $id]);
+        return $examen;
     }
 
     public function getExamenes()

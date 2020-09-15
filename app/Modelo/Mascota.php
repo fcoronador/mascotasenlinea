@@ -30,6 +30,11 @@ class Mascota{
         return $this->dao->getMascotasAdmin();
     }
 
+    public function historiaMascota($id)
+    {
+        return $this->dao->getHistoriaMascota($id);
+    }
+
     public function guardarmascotas($mascota)
     {
 

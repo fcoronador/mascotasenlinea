@@ -22,11 +22,13 @@ class ControlContro extends Controller
         $controles = $modelo->adminControl();
         return $controles;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function controlHistoria($id)
+    {
+        return $this->modelo->controlMascota($id);
+    }
+
+
     public function index()
     {
         $controles=$this->modelo->indexcontroles()->getControl();
@@ -56,8 +58,8 @@ class ControlContro extends Controller
     {
 
         request()->validate([
-            'veterin_idVeterin'=>'required',
-            'mascota_idMascotas'=>'required',
+            'idVeterin'=>'required',
+            'idMascota'=>'required',
             'fecha'=>'required',
             'peso'=>'required'
             ],[

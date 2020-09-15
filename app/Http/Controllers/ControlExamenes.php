@@ -29,6 +29,11 @@ class ControlExamenes extends Controller
         return $cantidad;
     }
 
+    public function historiaExamen($id)
+    {
+        return $this->modelo->historiaExamen($id);
+    }
+
     public function index()
     {
         $examenes = $this->modelo->indexexamenes()->getExamenes();

@@ -19,7 +19,8 @@ class daomascota
     FROM (cliente c JOIN mascota m ON c.idCedula = m.cliente_idCedula ) 
     WHERE c.idCedula = :idCedula';
 
-
+    private $query5='SELECT m.numChip, m.nombre, m.especie, m.sexo, m.raza, m.fecNacimi, m.fecEsterili 
+    FROM mascota m WHERE m.numChip = :numChip';
 
     private $mascotas;
 
@@ -33,6 +34,11 @@ class daomascota
         return $mascota;
     }
 
+    public function getHistoriaMascota($id)
+    {
+        $mascota = DB::select($this->query5, ['numChip' => $id]);
+        return $mascota;
+    }
 
     public function getMascotas()
     {

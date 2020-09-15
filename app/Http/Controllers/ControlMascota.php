@@ -32,6 +32,11 @@ class ControlMascota extends Controller
         return $this->modelo->MascotasCliente($id);
     }
 
+    public function HistoriaClinica($id)
+    {
+        return $this->modelo->historiaMascota($id);
+    }
+
     /**
      * Display a listing of the resource.
      *

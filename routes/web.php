@@ -15,7 +15,7 @@ Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Vet','ControlPanelVet@index')->name('veterinario');
 Route::get('/Usuario','ControlPanelClien@index')->name('usuario');
 
-
+Route::get('/HistoriaClinica{id}','ControlHistoria@index')->name('historia');
 
 Route::view('/Actualizar','cliente.actualizar')->name('actualizar');
 Route::view('/MiMascota/Detalles','cliente.MascotaDetalles')->name('MascotaD');//index

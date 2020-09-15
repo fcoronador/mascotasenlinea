@@ -34,7 +34,9 @@
             {{$item->nombre}}
         </td>
         <td>
-            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+            <a href="{{route('historia', $item->numChip)}}">
+                <i class="fa fa-heartbeat" aria-hidden="true"></i>
+            </a>
             <i class="fa fa-pencil-square" aria-hidden="true"></i>
             <i class="fa fa-trash" aria-hidden="true"></i>
         </td>
