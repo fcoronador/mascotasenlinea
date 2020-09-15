@@ -11,6 +11,11 @@ class daodespara{
     private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM despara d GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listadesparacitacion;
 
+    private $query3='select m.nombre AS Nombre, p.fecha AS Fecha, p.sigDosis, d.nombre AS Desparacitante
+    from ((cliente c join mascota m on c.idCedula= m.cliente_idCedula)
+    LEFT JOIN procedi p	on p.mascota_idMascotas= m.idMascotas)
+    left join despara d on p.despara_idDespara = d.idDespara WHERE m.numChip= :numChip';
+
     public function __construct()
     {  
         
@@ -20,6 +25,14 @@ class daodespara{
         $cantidad= DB::select($this->query2);
         return $cantidad; 
     }
+
+    public function getHistoriaDespara($id)
+    {
+        $despara = DB::select($this->query3, ['numChip' => $id]);
+        return $despara;
+    }
+
+
 
     public function getDesparas(){
         $this->listadesparacitacion=DB::select($this->query);

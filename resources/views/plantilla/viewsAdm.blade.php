@@ -116,21 +116,21 @@
 
 
     </div>
-    
-    <div id="paneVete" class="container collapse">
-        <h1 class="mt-4">Veterinarios</h1>
-        <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
-
-        <div class="card-body"  style="height: 80vh; width: 60vw;">
+    @if (session('rol')==1)
+        <div id="paneVete" class="container collapse">
+            <h1 class="mt-4">Veterinarios</h1>
+            <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
+            <div class="card-body"  style="height: 80vh; width: 60vw;">
       
-            <h3>Cantidad de citas atendidas en el mes</h3>
-            <canvas id="myChartVet" width="" height=""></canvas>
-            <script> 
-                var etivet1 = {!! json_encode($cantidadVet['etiquetas']) !!};
-                var valvet1 = {!! json_encode($cantidadVet['valor']) !!};
-            
-            </script>       
-             </div>
-    </div>
+                <h3>Cantidad de citas atendidas en el mes</h3>
+                <canvas id="myChartVet" width="" height=""></canvas>
+                <script> 
+                    var etivet1 = {!! json_encode($cantidadVet['etiquetas']) !!};
+                    var valvet1 = {!! json_encode($cantidadVet['valor']) !!};
+                
+                </script>       
+                 </div>
+        </div>
+    @endif
 </div>
 

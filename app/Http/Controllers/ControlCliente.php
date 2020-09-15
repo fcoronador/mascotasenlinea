@@ -56,8 +56,33 @@ class ControlCliente extends Controller
      */
     public function store(Request $request, Cliente $index)
     {
+        
+        request()->validate([
+        'idCedula'=>'required|digits_between:5,20',
+        'nombre'=>'required|alpha_dash|between:3,39',
+        'apellido'=>'required|alpha_dash|between:3,39',
+        'telefono'=>'required|digits_between:7,14',
+        'direccion'=>'required|alpha_dash|alpha_num|max:74',
+        'correo'=>'required|email',
+        'contrasena'=>'required'
+        ],[
+            'idCedula.required'=>'Se necesita el número de identificación.',
+            'idCedula.digits_between'=>'La longitud del número de identificación debe estar entre 5-20 caracteres.',
+            'nombre.required'=>'Se necesita el nombre del cliente.',
+            'nombre.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+            'apellido.required'=>'Se necesita el nombre del cliente.',
+            'apellido.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+            'telefono.required'=>'Se necesita el número de teléfono.',
+            'telefono.digits_between'=>'La longitud del número de teléfono debe estar 7-14 dígitos.',
+            'direccion.required'=>'Se necesita la dirección del cliente',
+            'direccion.max'=>'La longitud máxima debe ser de 74 dígitos',
+            'correo.required'=>'Se necesita el correo del cliente.',
+            'correo.email'=>'Se  necesita un email valido.',
+            'contrasena.required'=>'Se necesita la contraseña'
+        ]);
+        
+        
         $cliente = [];
-
         $cliente['idCedula'] = $request->get('idCedula');
         $cliente['nombre'] = $request->get('nombre');
         $cliente['apellido'] = $request->get('apellido');
@@ -106,6 +131,30 @@ class ControlCliente extends Controller
     public function update(Request $request)
     {
 
+        request()->validate([
+            'idCedula'=>'required|digits_between:5,20',
+            'nombre'=>'required|alpha_dash|between:3,39',
+            'apellido'=>'required|alpha_dash|between:3,39',
+            'telefono'=>'required|digits_between:7,14',
+            'direccion'=>'required|alpha_dash|alpha_num|max:74',
+            'correo'=>'required|email',
+            'contrasena'=>'required'
+            ],[
+                'idCedula.required'=>'Se necesita el número de identificación.',
+                'idCedula.digits_between'=>'La longitud del número de identificación debe estar entre 5-20 caracteres.',
+                'nombre.required'=>'Se necesita el nombre del cliente.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'apellido.required'=>'Se necesita el nombre del cliente.',
+                'apellido.between'=>'La longitud del nombre debe estar entre 3-39 caracteres.',
+                'telefono.required'=>'Se necesita el número de teléfono.',
+                'telefono.digits_between'=>'La longitud del número de teléfono debe estar 7-14 dígitos.',
+                'direccion.required'=>'Se necesita la dirección del cliente',
+                'direccion.max'=>'La longitud máxima debe ser de 74 dígitos',
+                'correo.required'=>'Se necesita el correo del cliente.',
+                'correo.email'=>'Se  necesita un email valido.',
+                'contrasena.required'=>'Se necesita la contraseña'
+            ]);
+            
         $cliente = [];
         $cliente['idCedula'] = $request->get('idCedula');
         $cliente['nombre'] = $request->get('nombre');

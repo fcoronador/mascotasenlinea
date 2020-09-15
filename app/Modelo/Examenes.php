@@ -18,6 +18,11 @@ class Examenes{
         return $this->dao->getExamenesAdmin();
     }
 
+    public function historiaExamen($id)
+    {
+        return $this->dao->getHistoriaExamen($id);
+    }
+
     public function indexexamenes()
     {
         $index = $this->dao;

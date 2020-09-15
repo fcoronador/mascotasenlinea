@@ -29,6 +29,12 @@ class ControlVacunas extends Controller
         return $cantidad;
     }
 
+    public function historiaVacunas($id)
+    {
+        return $this->modelo->historiaVacuna($id);
+    }
+
+
     public function index()
     {
         $vacunas=$this->modelo->indexvacunas()->getVacunas();

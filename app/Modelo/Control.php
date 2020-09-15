@@ -25,6 +25,12 @@ class Control{
         return $this->dao->getControlesAdmin();
     }
 
+    public function controlMascota($id)
+    {
+        return $this->dao->getControlporMascota($id);
+    }
+
+
 
 
     public function guardarcontroles($control)

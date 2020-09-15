@@ -18,6 +18,11 @@ class Desparacitacion{
         return $this->dao->getDesparaAdmin();
     }
 
+    public function historiaDespara($id)
+    {
+        return $this->dao->getHistoriaDespara($id);
+    }
+
     public function indexdesparas()
     {
         $index = $this->dao;

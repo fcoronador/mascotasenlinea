@@ -18,6 +18,11 @@ class Vacunas{
         return $this->dao->getVacunaAdmin();
     }
 
+    public function historiaVacuna($id)
+    {
+        return $this->dao->getHistoriaVacuna($id);
+    }
+
     public function indexvacunas()
     {
         $index = $this->dao;

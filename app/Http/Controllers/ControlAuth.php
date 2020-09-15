@@ -95,7 +95,7 @@ class ControlAuth extends Controller
                         session(['apellido'=> $prop->apellido]);
                         session(['correo'=> $prop->correo]);
                     }
-                    return redirect()->route('inicio');
+                    return redirect()->route('usuario');
                 }
             }
             else{

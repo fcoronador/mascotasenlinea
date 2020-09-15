@@ -79,7 +79,7 @@ select m.nombre  AS Mascota, p.fecha AS Fecha, e.tipo AS Tipo,
 CREATE VIEW ConsultarVacunas AS 
 --Query11
 select m.nombre AS Mascota, p.fecha AS Fecha,
-	p.sigDosis AS 'Siguiente Dosis', v.nombre AS Veterinario
+	p.sigDosis AS 'Siguiente Dosis', v.nombre AS Vacuna
     from ((cliente c join mascota m on c.idCedula= m.cliente_idCedula)
     	LEFT JOIN procedi p	on p.mascota_idMascotas= m.idMascotas)
         left join vacunas v on p.vacunas_idVacun = v.idVacun WHERE c.idCedula= 100;
@@ -100,5 +100,15 @@ select u.usuLogin as username,u.usuPassword as password, usuEstado as visible, r
 from (usuario_s u join usuario_s_roles r on u.usuUsuSesion = r.usuRolUsuSesion )
 
 
+SELECT m.numChip , m.nombre , m.fecNacimi 
+FROM (cliente c JOIN mascota m ON c.idCedula = m.cliente_idCedula ) 
+WHERE c.idCedula = 100
 
+select m.numChip, m.nombre, m.especie, m.sexo, m.raza, m.fecNacimi, m.fecEsterili , e.tipo AS 'Tipo de examen' ,p.fecha AS Fecha, v.nombre AS  Vacuna, 
+	p.sigDosis AS 'Siguiente Vacuna', d.nombre AS Desparacitante,p.sigDosis AS 'Siguiente Dosis' 
+    from ((((cliente c join mascota m on c.idCedula= m.cliente_idCedula)
+    	LEFT JOIN procedi p	on p.mascota_idMascotas= m.idMascotas)
+        left join examenes e on p.examenes_idExam = e.idExam)
+        left join vacunas v on  v.idVacun = p.vacunas_idVacun)
+        left join despara d on d.idDespara = p.despara_idDespara WHERE m.numChip = 300;
 

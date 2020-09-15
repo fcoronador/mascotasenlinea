@@ -19,7 +19,7 @@ class ControlVeterinarios extends Controller
     {        
         $index= new Veterinarios();
         $veterinario=$index->indexveterinarios()->getVeterinario();
-        return view('vet.indexveterinarios',compact('veterinario'));
+        return view('vet.indexVeterinarios',compact('veterinario'));
     }
 
     public static function cantVet(){

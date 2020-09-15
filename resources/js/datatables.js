@@ -22,5 +22,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#despara').DataTable();
 });
+$(document).ready(function () {
+    $('#misMascotas').DataTable();
+});
+$(document).ready(function () {
+    $('#HisVacunas').DataTable();
+});
+$(document).ready(function () {
+    $('#HisDespara').DataTable();
+});
+$(document).ready(function () {
+    $('#HisExa').DataTable();
+});
+
 
 
