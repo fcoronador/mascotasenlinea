@@ -45,6 +45,11 @@ class ControlMascota extends Controller
     public function index()
     {
         $mascotas = $this->modelo->indexmascotas()->getMascotas();
+
+        foreach ($mascotas as $item) {
+            $item->edad = $this->ago(date_create($item->Fecha_de_nacimiento));
+        }
+
         return view('mascota.indexMascota', compact('mascotas'));
     }
 
@@ -193,4 +198,27 @@ class ControlMascota extends Controller
         $this->modelo->borrar($mascota);
         return redirect()->route('indexmascota')->with('estado', 'La mascota se ha sido eliminado con éxito');
     }
+
+    public function pluralize($count, $text)
+    {
+        if($text=='mes')
+        {
+            return $count . (($count == 1) ? (" $text") : (" ${text}es"));
+        }else{
+            return $count . (($count == 1) ? (" $text") : (" ${text}s"));
+        }
+    }
+
+    public function ago($datetime)
+    {
+        $interval = date_create('now')->diff($datetime);
+        $suffix = ($interval->invert ? '' : '');
+        if ($v = $interval->y >= 1) return $suffix . $this->pluralize($interval->y, 'año');
+        if ($v = $interval->m >= 1) return $suffix . $this->pluralize($interval->m, 'mes');
+        if ($v = $interval->d >= 1) return $suffix . $this->pluralize($interval->d, 'dia');
+        if ($v = $interval->h >= 1) return $suffix . $this->pluralize($interval->h, 'hora');
+        if ($v = $interval->i >= 1) return $suffix . $this->pluralize($interval->i, 'minuto');
+        return $suffix . $this->pluralize($interval->s, 'segundo');
+    }
+
 }

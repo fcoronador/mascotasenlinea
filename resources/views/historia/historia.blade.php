@@ -13,25 +13,25 @@
     @foreach ($historia as $item)
     <tr>
         <td>Nombre Cliente</td>
-        <td>{{session('nombre')}} &nbsp; {{session('apellido')}}
+        <td>{{$item->NombreCli}} &nbsp; {{$item->ApellCli}}
             <br>
-            <small>CC: {{session('idCedula')}}</small>
+            <small>CC: {{$item->ID}}</small>
         </td>
         <td>Nombre Mascota</td>
         <td>{{$item->nombre}} <br>
-        <small>Chip: {{$item->numChip}}</small>
+            <small>Chip: {{$item->numChip}}</small>
         </td>
     </tr>
     <tr>
         <td>Edad</td>
-        <td></td>
+        <td>{{$item->edad}}</td>
         <td>Sexo</td>
         <td>
-        @if ($item->sexo ==1)
-            Macho  
-        @else
+            @if ($item->sexo ==1)
+            Macho
+            @else
             Hembra
-        @endif
+            @endif
         </td>
     </tr>
     <tr>
@@ -50,24 +50,26 @@
 </table>
 <h2>Historial de Vacunas</h2>
 <table id="HisVacunas" class="table table-striped table-inverse table-responsive">
-        <thead>
-            <tr>
-                <th scope="col">Fecha de aplicación</th>
-                <th scope="col">Antiguedad</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Siguiente Dosis</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($vacuna as $item)
-            <tr>
-                <td>{{$item->Fecha}}</td>
-                <td></td>
-                <td>{{$item->Vacuna}}</td>
-                <td>{{$item->sigDosis}}</td>
-            </tr>
-            @endforeach
-        </tbody>
+    <thead>
+        <tr>
+            <th scope="col">Fecha de aplicación</th>
+            <th scope="col">Antiguedad</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Siguiente Dosis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($vacuna as $item)
+        @if ($item->Vacuna != 'N/A')
+        <tr>
+            <td>{{$item->Fecha}}</td>
+            <td>{{$item->anti}}</td>
+            <td>{{$item->Vacuna}}</td>
+            <td>{{$item->sigDosis}}</td>
+        </tr>
+        @endif
+        @endforeach
+    </tbody>
 </table>
 <h2>Historial de desparacitaciones</h2>
 <table id="HisDespara" class="table table-striped table-inverse table-responsive">
@@ -81,12 +83,14 @@
     </thead>
     <tbody>
         @foreach ($desparaci as $item)
+        @if ($item->Desparacitante != 'N/A')
         <tr>
             <td>{{$item->Fecha}}</td>
-            <td></td>
+            <td>{{$item->anti}}</td>
             <td>{{$item->Desparacitante}}</td>
             <td>{{$item->sigDosis}}</td>
         </tr>
+        @endif
         @endforeach
     </tbody>
 </table>
@@ -95,6 +99,7 @@
     <thead>
         <tr>
             <th scope="col">Fecha del Exámen</th>
+            <th scope="col">Antiguedad</th>
             <th scope="col">Tipo de Exámen</th>
             <th scope="col">Resultado</th>
             <th scope="col">Laboratorio</th>
@@ -102,19 +107,22 @@
     </thead>
     <tbody>
         @foreach ($examen as $item)
+        @if ($item->Tipo != 'N/A')
         <tr>
             <td>{{$item->Fecha}}</td>
+            <td>{{$item->anti}}</td>
             <td>{{$item->Tipo}}</td>
             <td>{{$item->Resultado}}</td>
             <td>{{$item->Laboratorio}}</td>
         </tr>
+        @endif
         @endforeach
     </tbody>
 </table>
 
 <h2>Historial de Controles</h2>
 @foreach ($controles as $item)
-<table  class="table table-striped table-inverse table-responsive">
+<table class="table table-striped table-inverse table-responsive">
     <thead>
         <tr>
             <th scope="col">Fecha del Control</th>
@@ -144,6 +152,14 @@
     </tbody>
 </table>
 @endforeach
+<div class="card-body" style="height: 80vh; width: 60vw;">
+    <h3>Variación del Peso</h3>
+    <canvas id="pesoHistoria" width="" height=""></canvas>
+    <script>
+        var eti1 = {!! json_encode($fechas) !!};
+        var val1 = {!! json_encode($pesos) !!};
+    </script>
+</div>
 
 
 

@@ -29,7 +29,7 @@
                         <tr>
                             <th scope="col">Chip</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Edad Mascota (Años)</th>
+                            <th scope="col">Edad Mascota</th>
                             <th scope="col">Dueño</th>
                             <th scope="col">Opciones</th>
                         </tr>
@@ -46,12 +46,15 @@
                                     {{$item->Mascota}}</a>
                             </td>
                             <td>
-                                {{$item->Edad_Mascota}} Años
+                                {{$item->edad}} 
                             </td>
                             <td>
                                 {{$item->Nombre}} {{$item->Apellido}}
                             </td>
                             <td>
+                                <a href="{{route('historia', $item->Chip)}}">
+                                    <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                                </a>
                                 <a name="" id="" class="btn btn-primary btn-sm"
                                     href="{{route('editarmascota',$item->Chip)}}" role="button"> Editar</a>
 
