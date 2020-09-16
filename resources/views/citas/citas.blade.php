@@ -101,17 +101,17 @@
 
                         <label for="fecha">Fecha</label>
                         <input type="date" name="fecha" id="" class="form-control" placeholder=""
-                            aria-describedby="helpId">
+                            aria-describedby="helpId" required>
                         <small id="helpId" class="text-muted">Por favor ingrese la fecha</small>
                         <br>
                         <label for="hora">Hora</label>
-                        <input type="time" name="hora" id="" class="form-control" placeholder=""
-                            aria-describedby="helpId">
-                        <small id="helpId" class="text-muted">Por favor ingrese la hora </small>
+                        <input type="time" min="09:00:00" max="19:00:00" step="900" name="hora" id="" class="form-control" placeholder=""
+                            aria-describedby="helpId" required>
+                        <small id="helpId" class="text-muted">Horario de atención 9AM - 7PM cada 15 min</small>
                         <br>
 
                         <label for="motivo">Motivo</label>
-                        <input name="motivo" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <input name="motivo" id="" class="form-control" placeholder="" aria-describedby="helpId" required>
                         <small id="helpId" class="text-muted">Por favor ingrese el motivo </small>
                         <br>
 

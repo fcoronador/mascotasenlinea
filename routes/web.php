@@ -42,7 +42,7 @@ Route::patch('/Veterinarios/{id}/actualizar','ControlVeterinarios@update')->name
 Route::delete('/Veterinarios/{id}/eliminar','ControlVeterinarios@destroy')->name('borrarveterinario');
 
 
-//Route::get('/Citas','ControlCitas@index')->name('citas');
+Route::get('/indexCitas','ControlCitas@index')->name('indexcitas');
 //Route::get('/CrearCita','ControlCitas@create')->name('crearcita');
 Route::post('/CrearCita','ControlCitas@store')->name('guardarcita');
 Route::get('/Citas/{id}/','ControlCitas@show')->name('mostrarcita');

@@ -112,10 +112,8 @@
             </script>       
              </div>
        
-
-
-
     </div>
+
     @if (session('rol')==1)
         <div id="paneVete" class="container collapse">
             <h1 class="mt-4">Veterinarios</h1>

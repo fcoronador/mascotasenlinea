@@ -11,8 +11,8 @@
             <a id="ItemVacunas" href="#" class="list-group-item list-group-item-action bg-light">Vacunas</a>
             <a id="ItemExamenes" href="#" class="list-group-item list-group-item-action bg-light">Exámenes</a>
             <a id="ItemDesparas" href="#" class="list-group-item list-group-item-action bg-light">Desparasitantes</a>
-            <a id="ItemServicios" href="#" class="list-group-item list-group-item-action bg-light">Servicios</a>
-            <a id="ItemCitas" href="#" class="list-group-item list-group-item-action bg-light">Citas</a>
+{{--             <a id="ItemServicios" href="#" class="list-group-item list-group-item-action bg-light">Servicios</a>
+ --}}            <a id="ItemCitas" href="#" class="list-group-item list-group-item-action bg-light">Citas</a>
             @if (session('rol')==1)
             <a id="ItemVete" href="#" class="list-group-item list-group-item-action bg-light">Veterinarios</a>
             @endif

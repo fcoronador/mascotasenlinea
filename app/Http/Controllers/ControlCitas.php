@@ -22,9 +22,15 @@ class ControlCitas extends Controller
      */
     public function index()
     {
-        
+        $servicios = ControlServicios::listaServicios();
+        $veterinario = ControlVeterinarios::listaVeterinarios();
+        $clientes = ControlCliente::listClientes();
         $citas=$this->modelo->indexcitas()->getCitas();
-        return view('citas.citas',compact('citas'));
+        //dd($clientes);
+        return view('citas.indexcitas',compact('citas','servicios','veterinario'));
+        
+
+        
     }
 
 
