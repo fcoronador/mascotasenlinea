@@ -53,7 +53,7 @@
                                 <td>
                                     <a name="" id="" class="btn btn-primary btn-sm "
                                         href="{{route('editarcita',$item->idCita)}}" role="button">
-                                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
 
                                     <a id="boton_eliminar" class=" btn btn-danger btn-sm "

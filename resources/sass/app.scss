@@ -43,7 +43,7 @@
 
 .login {
     border-radius: 12px;
-    color: #F50808;
+    color: #ca2323;
     -webkit-transition: all 0.5s;
 }
 
@@ -92,7 +92,8 @@ h1 {
     font-size: 2.4rem;
     text-align: center;
     font-weight: bold;
-    color: #114148;
+    /* color: #114148; */
+    color: #0a015f;
 }
 
 a {
@@ -110,46 +111,56 @@ body {
 
 #wrapper {
     overflow-x: hidden;
- }
+}
 
 #sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
 }
 
 #sidebar-wrapper .list-group {
-  width: 15rem;
+    width: 15rem;
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
+    min-width: 100vw;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 @media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
 }
- 
+
+thead {
+    /* background: rgb(233, 236, 239);
+    color: rgb(11, 35, 63); */
+    text-shadow: 0.5px 0.5px 0.5px black;
+    background: rgb(35, 83, 138);
+    color: rgb(233, 236, 239);
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}

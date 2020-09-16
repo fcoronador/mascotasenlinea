@@ -21,7 +21,7 @@
             <h1>Vacunas</h1>
             <hr>
 
-            <a name="" id="" class="btn btn-success" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
             <div class="table-responsive my-3">
                 <table class="table table-hover" id="vacun">
                     <thead>
