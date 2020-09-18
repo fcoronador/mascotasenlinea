@@ -23,7 +23,7 @@
 
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="vacun">
+                <table class="table table-hover table-striped" id="vacun">
                     <thead>
                         <tr>
                             <th scope="col">Código</th>

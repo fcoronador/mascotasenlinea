@@ -24,7 +24,7 @@
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearmascota')}}" role="button">Crear
                 mascota</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="mascotas">
+                <table class="table table-hover table-striped" id="mascotas">
                     <thead>
                         <tr>
                             <th scope="col">Chip</th>
@@ -52,15 +52,17 @@
                                 {{$item->Nombre}} {{$item->Apellido}}
                             </td>
                             <td>
-                                <a href="{{route('historia', $item->Chip)}}">
+                                <a class="btn btn-warning btn-sm" href="{{route('historia', $item->Chip)}}">
                                     <i class="fa fa-heartbeat" aria-hidden="true"></i>
                                 </a>
                                 <a name="" id="" class="btn btn-primary btn-sm"
-                                    href="{{route('editarmascota',$item->Chip)}}" role="button"> Editar</a>
+                                    href="{{route('editarmascota',$item->Chip)}}" role="button">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
 
                                 <a id="boton_eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->Chip}}').submit()">
-                                    Borrar
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                             <form class="d-none" id="delete{{$item->Chip}}"

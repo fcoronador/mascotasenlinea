@@ -23,7 +23,7 @@
 
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearexamen')}}" role="button">Crear examen</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="exa">
+                <table class="table table-hover table-striped" id="exa">
                     <thead>
                         <tr>
                             <th scope="col">Código</th>

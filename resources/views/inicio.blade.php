@@ -123,20 +123,20 @@ dd($matriz);
                             <label for="correo">Correo electrónico</label>
                             <div class="input-group margin-bottom-sm">
                             <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                            <input type="email" name="correo" id="" class="form-control" placeholder="">
+                            <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
                             </div>
                            
                         
                         <label for="password">Contraseña</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                            <input type="password" name="password" id="" class="form-control" placeholder="">
+                            <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
                         </div>
 
                         <label for="confirmar">Confirmar Contraseña</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                            <input type="password" name="confirmar" id="" class="form-control" placeholder="">
+                            <input type="password" name="confirmar" id="" class="form-control" placeholder="" size="10">
                         </div>
 
                     </div>
@@ -167,12 +167,12 @@ dd($matriz);
                             <label for="correo">Correo electrónico</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-                            <input type="email" name="correo" id="" class="form-control" placeholder="" >
+                            <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
                             </div>
                             <label for="password">Contraseña</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                            <input type="password" name="password" id="" class="form-control" placeholder="">
+                            <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
                             </div>
                         </div>
             </div>

@@ -27,7 +27,7 @@ class ControlCitas extends Controller
         $clientes = ControlCliente::listClientes();
         $citas=$this->modelo->indexcitas()->getCitas();
         //dd($clientes);
-        return view('citas.indexcitas',compact('citas','servicios','veterinario'));
+        return view('citas.indexcitas',compact('citas','servicios','veterinario','clientes'));
         
 
         
@@ -48,7 +48,10 @@ class ControlCitas extends Controller
      */
     public function create()
     {
-        //return view('citas.crearcita');
+        $servicios = ControlServicios::listaServicios();
+        $veterinario = ControlVeterinarios::listaVeterinarios();
+        $clientes = ControlCliente::listClientes();
+        return view('citas.crearcita', compact('citas','servicios','veterinario','clientes'));
     }
 
     /**
@@ -75,6 +78,25 @@ class ControlCitas extends Controller
 
 
         return redirect()->route('indexcliente')->with('estado', 'La cita se ha creado con éxito');
+    }
+
+    public function store2(Request $request, Citas $index)
+    {
+
+        $Citas = [];
+        $Citas['cliente_idCedula']=$request->get('cliente_idCedula');
+        $Citas['fecha'] = str_replace('-','/',$request->get('fecha'));
+        $Citas['hora'] = $request->get('hora');
+        $Citas['motivo'] = $request->get('motivo');
+        $Citas['servicios_idServi'] = $request->get('idServi');
+        $Citas['visible'] = 1;
+        $Citas['veterin_idVeterin'] = $request->get('idVeterin');
+/*         dd($Citas);
+ */        
+        $index->guardarcita2($Citas);
+
+
+        return redirect()->route('indexcitas')->with('estado', 'La cita se ha creado con éxito');
     }
 
 
@@ -132,7 +154,7 @@ class ControlCitas extends Controller
         $this->modelo->Actualizar($Citas);
 
 
-        return redirect()->route('indexcliente')->with('estado', 'La cita se ha actualizado con éxito');
+        return redirect()->route('indexcitas')->with('estado', 'La cita se ha actualizado con éxito');
     }
 
   
@@ -141,6 +163,6 @@ class ControlCitas extends Controller
         $Citas['idCitas']=$idCita;
         $Citas['visible']= false;
         $this->modelo->borrar($Citas);
-        return redirect()->route('indexcliente')->with('estado', 'La cita se ha sido eliminado con exito');
+        return redirect()->route('indexcitas')->with('estado', 'La cita se ha sido eliminado con exito');
     }
 }

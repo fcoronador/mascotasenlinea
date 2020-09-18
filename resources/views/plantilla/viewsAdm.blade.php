@@ -14,6 +14,8 @@
     <div id="paneCliente" class="container show">
         <h1 class="mt-4">Clientes</h1>
         <a href="{{route('indexcliente')}}" class="btn btn-primary">Lista de clientes</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcliente')}}" role="button">Crear
+            cliente</a>
         {{-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
             larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
@@ -32,6 +34,8 @@
     <div id="paneMascota" class="container collapse">
         <h1 class="mt-4">Mascotas</h1>
         <a href="{{route('indexmascota')}}" class="btn btn-primary">Lista de Mascotas</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearmascota')}}" role="button">Crear
+            mascota</a>
         {{-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
             larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
@@ -50,6 +54,8 @@
     <div id="paneControles" class="container collapse">
         <h1 class="mt-4">Controles</h1>
         <a href="{{route('indexcontrol')}}" class="btn btn-primary">Lista de Controles</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un
+            Control</a>
         {{-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
             larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
@@ -75,33 +81,43 @@
     <div id="paneProcedimientos" class="container collapse">
         <h1 class="mt-4">Procedimientos</h1>
         <a href="{{route('indexprocedi')}}" class="btn btn-primary">Lista de Procedimientos</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearprocedimiento')}}" role="button">Crear procedimiento</a>
     </div>
 
     <div id="paneVacunas" class="container collapse">
         <h1 class="mt-4">Vacunas</h1>
         <a href="{{route('indexvacuna')}}" class="btn btn-primary">Lista de Vacunas</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
 
     </div>
     <div id="paneExamenes" class="container collapse">
         <h1 class="mt-4">Exámenes</h1>
         <a href="{{route('indexexamen')}}" class="btn btn-primary">Lista de Examenes</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearexamen')}}" role="button">Crear examen</a>
+
 
     </div>
     <div id="paneDesparas" class="container collapse">
         <h1 class="mt-4">Desparacitantes</h1>
         <a href="{{route('indexdespara')}}" class="btn btn-primary">Lista de Desparacitantes</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('creardesparacitacion')}}" role="button">Crear desparacitacion</a>
+
 
     </div>
-    {{-- <div id="paneServicios" class="container collapse">
+    <div id="paneServicios" class="container collapse">
         <h1 class="mt-4">Servicios</h1>
         <a href="{{route('servicios')}}" class="btn btn-primary">Lista de Servicios</a>
-    </div> --}}
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearservicio')}}" role="button">Crear Servicio</a>
+
+    </div>
     <div id="paneCitas" class="container collapse">
         <h1 class="mt-4">Citas</h1>
         
-            
-            <a href="{{route('indexcliente')}}" class="btn btn-primary">Agendar cita</a>
-            <div class="card-body"  style="height: 80vh; width: 60vw;">
+        <a href="{{route('indexcitas')}}" class="btn btn-primary">Lista de Citas</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcita')}}" role="button">Crear Cita</a>
+
+{{--             <a href="{{route('indexcliente')}}" class="btn btn-primary">Agendar cita</a>
+ --}}            <div class="card-body"  style="height: 80vh; width: 60vw;">
       
             <h3>Cantidad de citas atendidas en el mes</h3>
             <canvas id="myChartCitas1" width="" height=""></canvas>
@@ -118,6 +134,8 @@
         <div id="paneVete" class="container collapse">
             <h1 class="mt-4">Veterinarios</h1>
             <a href="{{route('indexveterinarios')}}" class="btn btn-primary">Lista de Veterinarios</a>
+            <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearveterinario')}}" role="button">Crear Veterinario</a>
+
             <div class="card-body"  style="height: 80vh; width: 60vw;">
       
                 <h3>Cantidad de citas atendidas en el mes</h3>

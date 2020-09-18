@@ -1,6 +1,6 @@
 @extends('plantilla.plantillaAdmin')
 
-@section('titulo','Mascotas en línea')
+@section('titulo','Agendar Cita')
 
 @section('contenido')
 
@@ -9,27 +9,29 @@
 
 
 
-<div class="container">
-    <h1 class="my-3">CITAS</h1>
 
-    
+    <h1 class="my-3">Agendar Cita</h1>
 
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-6 mx-auto">
+            <div class="container">
+                
+                
 
-        <div class="card col-sm-11">
-            <img class="card-img-top" src="holder.js/100x180/" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Agenda tu cita</h4>
-                <p class="card-text">¿Necesitas programar una cita? <br>
-                    Llena el formulario y estaremos felices de atenderte</p>
-
-                <form action="{{route('guardarcita')}}" method="post">
+                <form action="{{route('guardarcita2')}}" method="post">
+                    
                     @csrf
                     <div class="form-group">
                         
+                        <label for="cliente_idCedula">Seleccione un cliente</label>
+                        <select multiple class="custom-select" name="cliente_idCedula" id="">
+                        @foreach ($clientes as $item)
+                        <option value="{{$item->idCedula}}">{{$item->nombre}} {{$item->apellido}}</option>
+                         @endforeach
+                        </select>
+
 
                         
-
-
                         <label for="fecha">Fecha</label>
                         <input type="date" name="fecha" id="" class="form-control" placeholder=""
                             aria-describedby="helpId" required>

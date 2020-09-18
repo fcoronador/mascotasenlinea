@@ -26,7 +26,7 @@
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
         <div class="col-sm-5 encabezado">
             <a href="{{route('inicio')}}">
-                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" alt="Responsive image">
+                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" alt="Responsive image" >
             </a>
         </div>
 

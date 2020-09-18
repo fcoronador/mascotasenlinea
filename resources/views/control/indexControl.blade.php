@@ -24,7 +24,7 @@
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un
                 Control</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="controles">
+                <table class="table table-hover table-striped" id="controles">
                     <thead>
                         <tr>
                             <th scope="col">Cliente</th>
