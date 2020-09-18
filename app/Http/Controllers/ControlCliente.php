@@ -110,7 +110,15 @@ class ControlCliente extends Controller
     public function show($id)
     {
         $cliente = $this->modelo->mostrarCliente($id);
-        return view('admin.showCliente', compact('cliente'));
+       
+
+        if(session('rol')=== 3 )
+        {
+            return view('cliente.perfil', compact('cliente'));
+        }else if(session('rol')===1 || session('rol')===2){
+            return view('admin.showCliente', compact('cliente'));
+        }
+
     }
 
     /**

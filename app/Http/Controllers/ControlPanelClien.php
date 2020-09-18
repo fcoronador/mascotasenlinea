@@ -39,6 +39,16 @@ class ControlPanelClien extends Controller
         }
     }
 
+    public function perfil($id)
+    {
+        if($id == session('idCedula'))
+        {
+            return $this->clientes->show($id);
+        }else{
+            return redirect()->back();
+        }
+    }
+
 
 
 
