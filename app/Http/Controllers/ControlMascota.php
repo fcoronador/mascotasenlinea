@@ -61,7 +61,13 @@ class ControlMascota extends Controller
     public function create()
     {
         $clientes = ControlCliente::listClientes();
-        return view('mascota.crearMascota', compact('clientes'));
+
+        if(session('rol')===3){
+            return view('cliente.crearmascota');
+        }else if (session('rol')===2 || session('rol')===1)
+        {
+            return view('mascota.crearMascota', compact('clientes'));
+        }
     }
 
     /**
@@ -107,7 +113,12 @@ class ControlMascota extends Controller
         //dd($mascota);
         $index->guardarmascotas($mascota);
 
-        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha creado con éxito.');
+        if(session('rol')===3){
+            return redirect()->route('usuario')->with('estado', 'La mascota se ha creado con éxito.');
+        }else if (session('rol')===2 || session('rol')===1)
+        {
+            return redirect()->route('indexmascota')->with('estado', 'La mascota se ha creado con éxito.');
+        }
     }
 
     /**

@@ -49,6 +49,16 @@ class ControlPanelClien extends Controller
         }
     }
 
+    public function CrearMascota($id)
+    {
+        if($id == session('idCedula'))
+        {
+            return $this->mascotas->create();
+        }else{
+            return redirect()->back();
+        }
+    }
+
 
 
 
