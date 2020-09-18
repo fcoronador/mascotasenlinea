@@ -12,7 +12,7 @@ class daocitas{
     FROM (citas c JOIN servicios s ON c.servicios_idServi=s.idServi)
     LEFT JOIN veterin v ON v.idVeterin = c.veterin_idVeterin 
     LEFT JOIN cliente cli on cli.idCedula = c.cliente_idCedula';
-    private $query2 = 'SELECT  YEAR(fecha) AS anio, MONTH(fecha) AS mes ,count(visible) AS cantidad FROM citas c  WHERE visible =1 GROUP BY MONTH (fecha), YEAR (fecha)';
+    private $query2 = 'SELECT  YEAR(fecha) AS anio, MONTH(fecha) AS mes ,count(visible) AS cantidad FROM citas WHERE visible =1 GROUP BY MONTH (fecha), YEAR (fecha)';
     private $listacitas;
 
     public function __construct()
