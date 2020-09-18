@@ -56,4 +56,9 @@ class Cliente
     {
         return $cliente = $this->dao->getClienteCorreo($correo);
     }
+
+    public function regist($cliente)
+    {
+        return $this->dao->registCliente($cliente);
+    }
 }

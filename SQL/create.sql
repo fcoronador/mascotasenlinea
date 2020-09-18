@@ -19,10 +19,10 @@ USE `Mascotas` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Mascotas`.`cliente` (
   `idCedula` DOUBLE NOT NULL COMMENT 'Número de cedula',
-  `nombre` VARCHAR(45) NOT NULL COMMENT 'Nombre del usuario',
-  `apellido` VARCHAR(45) NOT NULL COMMENT 'Apellido del usuario',
-  `telefono` DOUBLE NOT NULL COMMENT 'Telefóno del usuario',
-  `direccion` VARCHAR(80) NULL COMMENT 'Dirección del usuario',
+  `nombre` VARCHAR(45) NOT NULL DEFAULT '' COMMENT 'Nombre del usuario',
+  `apellido` VARCHAR(45) NOT NULL DEFAULT '' COMMENT 'Apellido del usuario',
+  `telefono` DOUBLE NOT NULL DEFAULT 0 COMMENT 'Telefóno del usuario',
+  `direccion` VARCHAR(80) NULL DEFAULT '' COMMENT 'Dirección del usuario',
   `visible` BOOLEAN NOT NULL DEFAULT '1' COMMENT 'Campo para eliminación lógica', 
   `correo` VARCHAR(45) NULL COMMENT 'Correo electronico',
   `contrasena` VARCHAR(300) NOT NULL COMMENT 'Contraseña del usuario\n',

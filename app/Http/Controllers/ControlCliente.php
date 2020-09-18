@@ -15,11 +15,7 @@ class ControlCliente extends Controller
         $this->modelo = new Cliente();
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public static function listClientes(){
         $modelo= new Cliente();
         $clientes = $modelo->indexclientes()->getClientes();
@@ -31,6 +27,15 @@ class ControlCliente extends Controller
         return $cantidad;
     }
 
+    public function clientCorreo($cliente)
+    {
+        return $this->modelo->cliente($cliente);
+    }
+
+    public function registrar($cliente)
+    {
+        $this->modelo->regist($cliente);
+    }
 
     public function index()
     {
