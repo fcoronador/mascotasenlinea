@@ -126,6 +126,12 @@ class ControlCliente extends Controller
         return view('admin.editCliente', compact('cliente', 'id'));
     }
 
+    public function editForUser($id)
+    {
+        $cliente = $this->modelo->mostrarCliente($id);
+        return view('cliente.actualizar', compact('cliente', 'id'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -169,9 +175,13 @@ class ControlCliente extends Controller
         $cliente['correo'] = $request->get('correo');
         $cliente['contrasena'] = $request->get('contrasena');
 
-
         $this->modelo->Actualizar($cliente);
-        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con exito');
+        if(session('rol')=== 3 )
+        {
+            return redirect()->route('usuario')->with('estado', 'El cliente se ha actualizado con éxito');
+        }else if(session('rol')===1 || session('rol')===2){
+            return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con éxito');
+        }
     }
 
     /**

@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\ControlMascota;
+use App\Http\Controllers\ControlCliente;
 class ControlPanelClien extends Controller
 {
     private $mascotas;
+    private $clientes;
+
     public function __construct()
     {
-        $this->mascotas= new ControlMascota;
+        $this->mascotas= new ControlMascota();
+        $this->clientes = new ControlCliente();
     }
     
 
@@ -25,6 +29,15 @@ class ControlPanelClien extends Controller
             }
     }
 
+    public function editUser($id)
+    {
+        if($id == session('idCedula'))
+        {
+            return $this->clientes->editForUser($id);
+        }else{
+            return redirect()->back();
+        }
+    }
 
 
 

@@ -14,10 +14,11 @@ Route::get('/logout','ControlAuth@Logout')->name('logout');
 Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Vet','ControlPanelVet@index')->name('veterinario');
 Route::get('/Usuario','ControlPanelClien@index')->name('usuario');
+Route::get('/Usuario/{id}/actualizar','ControlPanelClien@editUser')->name('actualizarUser');;
 
 Route::get('/HistoriaClinica{id}','ControlHistoria@index')->name('historia');
 
-Route::view('/Actualizar','cliente.actualizar')->name('actualizar');
+
 Route::view('/MiMascota/Detalles','cliente.MascotaDetalles')->name('MascotaD');//index
 Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
 Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
