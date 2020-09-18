@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class daoveterinarios{
 
     private $query='select * from veterin';
+    private $query2='SELECT  YEAR(fecha) AS anio, MONTH(fecha) AS mes , veterin_idVeterin as vet,count(visible) AS cantidad FROM mascotas.controles c  WHERE visible =1 GROUP BY MONTH (fecha), YEAR (fecha), veterin_idVeterin';
     
     private $listaveterinario;
 
@@ -21,6 +22,11 @@ class daoveterinarios{
         $this->listaveterinario=DB::select($this->query);
         return $this->listaveterinario;
 
+    }
+
+    public function getVetAdmin(){
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
     }
 
     public function setVeterinario($veterinario)

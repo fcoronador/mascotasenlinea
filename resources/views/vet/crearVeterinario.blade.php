@@ -12,7 +12,7 @@
         @csrf
         <div class="form-group">
         <label for="nombre">Veterinario</label>
-        <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId" required>
         <small id="helpId" class="text-muted">Por favor ingrese el nombre del veterinario</small>
         <br>
         <input type="submit" value="Enviar">

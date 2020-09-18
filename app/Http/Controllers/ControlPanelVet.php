@@ -13,14 +13,16 @@ class ControlPanelVet extends Controller
             $clientes = ControlCliente::cantClientes();
             $mascotas = ControlMascota::cantMascotas();
             $control = ControlContro::cantControl();
+            $citas = ControlCitas::cantCitas();
     
             $cantidadCli = $this->etiquetas($clientes);
             $cantidadMasco = $this->etiquetas($mascotas);
             $cantidadControl = $this->etiquetas($control);
+            $cantidadCitas = $this->etiquetas($citas);
     
             //dd($cantidadMasco);
     
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl'));
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas'));
         }else{
                 
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');

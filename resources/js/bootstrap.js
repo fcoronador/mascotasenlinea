@@ -9,11 +9,19 @@ try {
     window.$ = window.jQuery = require('jquery'); //Esto me incluye el jQuery
     window.Popper = require('popper.js').default;
     Chart = require('chart.js');
-    
+
     require('bootstrap');
     require('datatables.net')(window, $); //ESto activo el datatable.net
-} catch (e) { }
-
+    require('jszip');
+    require('pdfmake');
+    require('datatables.net-dt')();
+    require('datatables.net-buttons-dt')();
+    require('datatables.net-buttons/js/buttons.colVis.js')();
+    require('datatables.net-buttons/js/buttons.flash.js')();
+    require('datatables.net-buttons/js/buttons.html5.js')();
+    require('datatables.net-buttons/js/buttons.print.js')();
+    require('datatables.net-searchpanes-dt')();
+} catch (e) {}
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -37,9 +45,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
-/* require('jquery'); */ 
+/* require('jquery'); */
 /* var $ = require('jquery'); */
 /* require('datatables.net')(window, $); */
 /* require( 'datatables.net-bs4' )(window, $);
 require( 'datatables.net-buttons-bs4' )(window, $); */
-

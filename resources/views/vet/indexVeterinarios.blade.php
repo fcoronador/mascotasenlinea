@@ -25,7 +25,7 @@
 
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearveterinario')}}" role="button">Crear Veterinario</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="veter">
+                <table class="table table-hover table-striped" id="veter">
                     <thead>
                         <tr>
                             <th scope="col">Cargo</th>
