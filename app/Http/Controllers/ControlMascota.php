@@ -72,7 +72,8 @@ class ControlMascota extends Controller
      */
     public function store(Request $request, Mascota $index)
     {
-        request()->validate([
+        request()->validate(
+            [
             'numChip'=>'required|digits_between:5,15',
             'nombre'=>'required|alpha_dash|between:3,39',
             'especie'=>'required|alpha_dash|between:3,39',
