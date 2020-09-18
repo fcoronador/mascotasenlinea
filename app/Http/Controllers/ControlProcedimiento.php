@@ -4,20 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Procedimiento;
+use App\Http\Controllers\ControlMascota;
 use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class ControlProcedimiento extends Controller
 {
     private $modelo;
+    private $ControlMascota;
 
     public function __construct(){
         $this->modelo = new Procedimiento();
+        $this->ControlMascota = new ControlMascota();
     }
 
     public function index()
     {
+        $mascotas = $this->ControlMascota->index();
         $procedimiento = $this->modelo->indexprocedi()->getProcedi();
-        return view('procedimientos.indexProcedi',compact('procedimiento'));
+        return view('procedimientos.indexProcedi',compact('procedimiento','mascotas'));
     }
 
     /**

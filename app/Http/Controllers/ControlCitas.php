@@ -51,7 +51,6 @@ class ControlCitas extends Controller
         $servicios = ControlServicios::listaServicios();
         $veterinario = ControlVeterinarios::listaVeterinarios();
         $clientes = ControlCliente::listClientes();
-        
         return view('citas.crearCita', compact('servicios','veterinario','clientes'));
     }
 

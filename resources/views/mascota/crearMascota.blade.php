@@ -4,6 +4,17 @@
 
 @section('contenido')
 
+<span class="invalid-feeback text-danger" role="alert">
+    {!! $errors->first('descripcion','<small>:message</small><br>')!!}    
+</span>
+
+@php
+    if($errors->first('raza'))
+    {
+        echo '<script> alert("'.$errors->first('raza',':message').'") </script>';
+    }
+@endphp
+
 
 <h1 class="my-3">Crear mascota</h1>
 <div class="row">
@@ -47,7 +58,8 @@
        <br>
         <label for="raza">Raza</label>
         <input type="text" name="raza" id="raza" class="form-control" placeholder="" aria-describedby="Helpraz" required>
-        <h6 id="Helpraz" class="text-muted">Por favor ingrese la raza. </h6>
+        <h6 id="Helraz" class="text-muted">Por favor ingrese la raza. </h6>
+        <span> {!!$errors->first('raza',':message') !!}</span>
 
         <label for="fecNacimi">Fecha de Nacimiento</label>
         <input type="date" name="fecNacimi" id="" class="form-control" placeholder="" aria-describedby="helpId" required>
