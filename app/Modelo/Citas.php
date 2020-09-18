@@ -22,12 +22,21 @@ class Citas{
         return $index;
     }
 
+    public function adminCitas(){
+        return $this->dao->getCitasAdmin();
+    }
+
      public function guardarcita($Citas)
     {
 
         $this->dao->setCitas($Citas);
     }
 
+    public function guardarcita2($Citas)
+    {
+
+        $this->dao->setCitas($Citas);
+    }
     public function mostrarCita($id)
     {
         $cliente = $this->dao->seleccionCita($id);

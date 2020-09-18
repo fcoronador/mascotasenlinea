@@ -49,7 +49,7 @@ dd($matriz);
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/eventos.png" class="img-fluid cardimg" alt="Responsive image">
+                    <img src="/img/eventos.png" class="img-fluid cardimg responsive" alt="Responsive image">
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
@@ -68,7 +68,7 @@ dd($matriz);
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/vacuna.png" class="img-fluid cardimg" alt="Responsive image">
+                    <img src="/img/vacuna.png" class="img-fluid cardimg responsive" alt="Responsive image">
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
@@ -86,7 +86,7 @@ dd($matriz);
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/blog.png" class="img-fluid cardimg" alt="Responsive image">
+                    <img src="/img/blog.png" class="img-fluid cardimg responsive" alt="Responsive image">
                 </div>
                 <div class="col-md-8 " align="center">
                     <div class="card-body">
@@ -109,7 +109,7 @@ dd($matriz);
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Registro</h5>
+                <h4 class="modal-title" id="staticBackdropLabel">Registro</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -118,16 +118,31 @@ dd($matriz);
             <form action="{{route('registrocliente')}}" method="POST">
                 @csrf
                     <div class="form-group">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" name="correo" id="" class="form-control" placeholder="">
+                        
+                        
+                            <label for="correo">Correo electrónico</label>
+                            <div class="input-group margin-bottom-sm">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
+                            </div>
+                           
+                        
                         <label for="password">Contraseña</label>
-                        <input type="password" name="password" id="" class="form-control" placeholder="">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
+                        </div>
+
                         <label for="confirmar">Confirmar Contraseña</label>
-                        <input type="password" name="confirmar" id="" class="form-control" placeholder="">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input type="password" name="confirmar" id="" class="form-control" placeholder="" size="10">
+                        </div>
+
                     </div>
             </div>
             <div class="modal-footer">
-                <input class="btn btn-primary" type="submit" value="Registrarse">
+                <input class="btn btnCrear btn-default" type="submit" value="Registrarse">
                 </form>
             </div>
         </div>
@@ -140,7 +155,7 @@ dd($matriz);
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+                <h4 class="modal-title " id="staticBackdropLabel">Login</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -150,13 +165,19 @@ dd($matriz);
                     @csrf
                         <div class="form-group">
                             <label for="correo">Correo electrónico</label>
-                            <input type="email" name="correo" id="" class="form-control" placeholder="">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                            <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
+                            </div>
                             <label for="password">Contraseña</label>
-                            <input type="password" name="password" id="" class="form-control" placeholder="">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
+                            </div>
                         </div>
             </div>
             <div class="modal-footer">
-                <input class="btn btn-primary" type="submit" value="Entrar">
+                <input class="btn btnCrear btn-default" type="submit" value="Entrar">
                 </form>
             </div>
         </div>

@@ -18,13 +18,13 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1>Controles Registradas</h1>
+            <h1>Controles Registrados</h1>
             <hr>
 
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcontrol')}}" role="button">Crear un
                 Control</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover" id="controles">
+                <table class="table table-hover table-striped" id="controles">
                     <thead>
                         <tr>
                             <th scope="col">Cliente</th>
