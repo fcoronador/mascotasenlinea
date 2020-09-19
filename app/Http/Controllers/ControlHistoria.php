@@ -28,9 +28,15 @@ class ControlHistoria extends Controller
 
     public function index($id)
     {
+
         if (session('rol') == 1 || session('rol') == 2 || session('rol') == 3) {
 
             $historia = $this->mascota->HistoriaClinica($id);
+            $ID = '';
+            foreach ($historia as $item) {
+                $ID = $item->ID;
+            }
+
             $controles = $this->control->controlHistoria($id);
             $vacuna = $this->vacunas->historiaVacunas($id);
             $desparaci = $this->despara->HistoriaDespara($id);
@@ -49,28 +55,30 @@ class ControlHistoria extends Controller
                 $item->anti = $this->ago(date_create($item->Fecha));
             }
 
-            $pesos=[];
-            $fechas=[];
-            
-            foreach($controles as $item)
-            {
-                array_push($pesos, $item->Peso); 
-                array_push($fechas,date_create($item->Fecha)->format('Y-m-d'));
+            $pesos = [];
+            $fechas = [];
+
+            foreach ($controles as $item) {
+                array_push($pesos, $item->Peso);
+                array_push($fechas, date_create($item->Fecha)->format('Y-m-d'));
             }
 
-            return view('historia.historia', compact('pesos','fechas','historia', 'controles', 'vacuna', 'desparaci', 'examen'));
+
+            if ($ID === session('idCedula')) {
+                return view('historia.historia', compact('pesos', 'fechas', 'historia', 'controles', 'vacuna', 'desparaci', 'examen'));
+            } else { return redirect()->back();}
+            
         } else {
 
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
         }
     }
-    
+
     public function pluralize($count, $text)
     {
-        if($text=='mes')
-        {
+        if ($text == 'mes') {
             return $count . (($count == 1) ? (" $text") : (" ${text}es"));
-        }else{
+        } else {
             return $count . (($count == 1) ? (" $text") : (" ${text}s"));
         }
     }

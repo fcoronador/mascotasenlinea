@@ -163,7 +163,7 @@ class ControlMascota extends Controller
 
         request()->validate([
             'numChip'=>'required|digits_between:5,15',
-            'nombre'=>'required|alpha_dash|between:3,39',
+            'nombre'=>'required|between:3,39',
             'especie'=>'required|alpha_dash|between:3,39',
             'sexo'=>'required',
             'raza'=>'required|alpha_dash|between:3,39',
@@ -192,9 +192,14 @@ class ControlMascota extends Controller
         else{$mascota['fecEsterili'] = $request->get('fecEsterili');}
         $mascota['cliente_idCedula'] = $request->get('idCedula');
 
-
         $this->modelo->Actualizar($mascota);
-        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha actualizado con éxito');
+
+        if(session('rol')===3){
+            return redirect()->route('usuario')->with('estado', 'La mascota se ha actualizado con éxito.');
+        }else if (session('rol')===2 || session('rol')===1)
+        {
+            return redirect()->route('indexmascota')->with('estado', 'La mascota se ha actualizado con éxito');
+        }
     }
 
     /**
@@ -208,7 +213,13 @@ class ControlMascota extends Controller
         $mascota['numChip'] = $id;
         $mascota['visible'] = false;
         $this->modelo->borrar($mascota);
-        return redirect()->route('indexmascota')->with('estado', 'La mascota se ha sido eliminado con éxito');
+
+        if(session('rol')===3){
+            return redirect()->route('usuario')->with('estado', 'La mascota se ha eliminado con éxito.');
+        }else if (session('rol')===2 || session('rol')===1)
+        {
+            return redirect()->route('indexmascota')->with('estado', 'La mascota se ha sido eliminado con éxito');
+        }
     }
 
     public function pluralize($count, $text)

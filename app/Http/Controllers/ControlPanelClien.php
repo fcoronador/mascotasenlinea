@@ -59,6 +59,42 @@ class ControlPanelClien extends Controller
         }
     }
 
+    public function EditarMascota($id)
+    {
+        $mascota = $this->mascotas->HistoriaClinica($id);
+        $ID='';
+        foreach($mascota as $item)
+        {
+            $ID= $item->ID;
+        }
+
+        if($ID === session('idCedula'))
+        {
+            return view('cliente.MascotaDetalles',compact('mascota','id'));
+        }else{
+            return redirect()->back();
+        }
+
+    }
+
+    public function BorrarMascota($id)
+    {
+        $mascota = $this->mascotas->HistoriaClinica($id);
+        $ID='';
+        foreach($mascota as $item)
+        {
+            $ID= $item->ID;
+        }
+
+        if($ID === session('idCedula'))
+        {
+            $this->mascotas->destroy($id);
+            return redirect()->route('usuario');
+        }else{
+            return redirect()->back();
+        }
+
+    }
 
 
 

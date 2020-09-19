@@ -13,23 +13,22 @@ Route::get('/logout','ControlAuth@Logout')->name('logout');
 
 Route::get('/Admin','ControlPanelAdmin@index')->name('administracion');
 Route::get('/Vet','ControlPanelVet@index')->name('veterinario');
+
+
 Route::get('/Usuario','ControlPanelClien@index')->name('usuario');
-Route::get('/Usuario/{id}/actualizar','ControlPanelClien@editUser')->name('actualizarUser');;
-Route::get('/Usuario/{id}/perfil','ControlPanelClien@perfil')->name('perfilUser');;
-Route::get('/Usuario/{id}/mascota','ControlPanelClien@CrearMascota')->name('mascotaUser');;
+Route::get('/Usuario/{id}/actualizar','ControlPanelClien@editUser')->name('actualizarUser');
+Route::get('/Usuario/{id}/perfil','ControlPanelClien@perfil')->name('perfilUser');
+Route::get('/Usuario/{id}/mascota','ControlPanelClien@CrearMascota')->name('mascotaUser');
+Route::get('/Usuario/{id}/mascotaEditar','ControlPanelClien@EditarMascota')->name('mascotaEditar');
+Route::get('/Usuario/{id}/mascotaEliminar','ControlPanelClien@BorrarMascota')->name('mascotaBorrar');
+
 
 Route::get('/HistoriaClinica{id}','ControlHistoria@index')->name('historia');
 
 
-Route::view('/MiMascota/Detalles','cliente.MascotaDetalles')->name('MascotaD');//index
-Route::view('/MiMascota','cliente.MascotaLista')->name('MascotaL');//show
-Route::view('/Crearmascota','cliente.crearmascota')->name('crearmascota');//create
-
-
-
 Route::get('/Servicios','ControlServicios@index')->name('servicios');
-Route::get('/CrearServicio','ControlServicios@create')->name('crearservicio');/* Sale data en el POST->$_REQUEST */
-Route::post('/CrearServicio','ControlServicios@store')->name('guardarservicio');/* Recibe la data del $_REQUEST */
+Route::get('/CrearServicio','ControlServicios@create')->name('crearservicio');
+Route::post('/CrearServicio','ControlServicios@store')->name('guardarservicio');
 Route::get('/Servicios/{id}/','ControlServicios@show')->name('mostrarservicio');
 Route::get('/Servicios/{id}/editar','ControlServicios@edit')->name('editarservicio');
 Route::patch('/Servicios/{id}/actualizar','ControlServicios@update')->name('actualizarservicio');

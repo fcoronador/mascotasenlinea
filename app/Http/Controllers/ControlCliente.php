@@ -155,7 +155,7 @@ class ControlCliente extends Controller
             'nombre'=>'required|alpha_dash|between:3,39',
             'apellido'=>'required|alpha_dash|between:3,39',
             'telefono'=>'required|digits_between:7,14',
-            'direccion'=>'required|alpha_dash|alpha_num|max:74',
+            'direccion'=>'required|alpha_num|max:74',
             'correo'=>'required|email',
             'contrasena'=>'required'
             ],[
