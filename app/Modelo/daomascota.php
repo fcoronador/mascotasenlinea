@@ -15,7 +15,7 @@ class daomascota
 
     private $query3 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes ,count(nombre) AS cantidad FROM mascota GROUP BY MONTH (createdAt), YEAR (createdAt)';
     
-    private $query4='SELECT m.numChip , m.nombre , m.fecNacimi 
+    private $query4='SELECT m.numChip , m.nombre , m.fecNacimi, m.visible 
     FROM (cliente c JOIN mascota m ON c.idCedula = m.cliente_idCedula ) 
     WHERE c.idCedula = :idCedula';
 

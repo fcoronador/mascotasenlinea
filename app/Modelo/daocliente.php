@@ -71,4 +71,10 @@ class daocliente
     {
         return $cliente = DB::select('select * from cliente where correo = :correo',['correo'=>$correo]);
     }
+
+    public function registCliente($cliente)
+    {
+        DB::insert('insert into cliente (idCedula, correo, contrasena)
+                    VALUES (:idCedula, :correo, :contrasena)', $cliente);
+    }
 }

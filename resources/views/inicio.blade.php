@@ -120,13 +120,19 @@ dd($matriz);
                     <div class="form-group">
                         
                         
-                            <label for="correo">Correo electrónico</label>
-                            <div class="input-group margin-bottom-sm">
-                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                            <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
-                            </div>
+                        <label for="idCedula">Número de identificación</label>
+                        <small>  <label for="idCedula" id="helpidCed"> </label> </small>
+                        <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-id-card" aria-hidden="true"></i></span>
+                        <input type="number" id="idCedula" name="idCedula" id="" class="form-control" placeholder="" size="10">
+                        </div>
+
+                        <label for="correo">Correo electrónico</label>
+                        <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
+                        </div>
                            
-                        
                         <label for="password">Contraseña</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>

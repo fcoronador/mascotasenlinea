@@ -4,40 +4,45 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo\Auth;
-use App\Modelo\Cliente;
-//use App\Http\Controllers\ControlCliente;
+use App\Http\Controllers\ControlCliente;
 
 class ControlAuth extends Controller
 {
     private $modelo;
-    private $ModeloCli;
+    private $ControlCliente;
 
     public function __construct()
     {
         $this->modelo = new Auth();
-        $this->ModeloCli = new Cliente();
+        $this->ControlCliente = new ControlCliente();
     }
 
 
     public function RegistroCliente(Request $request, Auth $index)
     {
         $persona = [];
+        $cliente=[];
 
         $existe = $index->verificarCorreo($request->get('correo'));
         if ($existe) {
             return redirect()->route('inicio')->with('alerta', 'El correo ya existe');
         } else {
             $persona['usuLogin'] = $request->get('correo');
+            $cliente['correo'] = $request->get('correo');
+            $cliente['idCedula'] =  $request->get('idCedula');
         }
 
         if ($request->get('password') === $request->get('confirmar')) {
             $persona['usuPassword'] = password_hash($request->get('password'), PASSWORD_BCRYPT);
+            $cliente['contrasena'] = password_hash($request->get('password'), PASSWORD_BCRYPT);
         } else {
             return redirect()->route('inicio')->with('alerta', 'Las contraseñas no coinciden');
         }
+        
         $persona['usuUsuSesion'] = $request->get('correo');
         $persona['usuEstado'] = true;
 
+        $this->ControlCliente->registrar($cliente);
         $index->guardarCliente($persona);
 
         return redirect()->route('inicio')->with('estado', 'Se ha registrado con éxito');
@@ -55,7 +60,7 @@ class ControlAuth extends Controller
 
             if (password_verify($request->get('password'), $item->password)) {
                 
-                $cliente = $this->ModeloCli->cliente($request->get('correo'));
+                $cliente = $this->ControlCliente->clientCorreo($request->get('correo'));
 
                 if ($item->rol == 1) {
 

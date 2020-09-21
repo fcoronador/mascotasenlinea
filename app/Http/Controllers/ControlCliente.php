@@ -15,11 +15,7 @@ class ControlCliente extends Controller
         $this->modelo = new Cliente();
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public static function listClientes(){
         $modelo= new Cliente();
         $clientes = $modelo->indexclientes()->getClientes();
@@ -31,6 +27,15 @@ class ControlCliente extends Controller
         return $cantidad;
     }
 
+    public function clientCorreo($cliente)
+    {
+        return $this->modelo->cliente($cliente);
+    }
+
+    public function registrar($cliente)
+    {
+        $this->modelo->regist($cliente);
+    }
 
     public function index()
     {
@@ -105,7 +110,15 @@ class ControlCliente extends Controller
     public function show($id)
     {
         $cliente = $this->modelo->mostrarCliente($id);
-        return view('admin.showCliente', compact('cliente'));
+       
+
+        if(session('rol')=== 3 )
+        {
+            return view('cliente.perfil', compact('cliente'));
+        }else if(session('rol')===1 || session('rol')===2){
+            return view('admin.showCliente', compact('cliente'));
+        }
+
     }
 
     /**
@@ -119,6 +132,12 @@ class ControlCliente extends Controller
 
         $cliente = $this->modelo->mostrarCliente($id);
         return view('admin.editCliente', compact('cliente', 'id'));
+    }
+
+    public function editForUser($id)
+    {
+        $cliente = $this->modelo->mostrarCliente($id);
+        return view('cliente.actualizar', compact('cliente', 'id'));
     }
 
     /**
@@ -136,7 +155,7 @@ class ControlCliente extends Controller
             'nombre'=>'required|alpha_dash|between:3,39',
             'apellido'=>'required|alpha_dash|between:3,39',
             'telefono'=>'required|digits_between:7,14',
-            'direccion'=>'required|alpha_dash|alpha_num|max:74',
+            'direccion'=>'required|alpha_num|max:74',
             'correo'=>'required|email',
             'contrasena'=>'required'
             ],[
@@ -164,9 +183,13 @@ class ControlCliente extends Controller
         $cliente['correo'] = $request->get('correo');
         $cliente['contrasena'] = $request->get('contrasena');
 
-
         $this->modelo->Actualizar($cliente);
-        return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con exito');
+        if(session('rol')=== 3 )
+        {
+            return redirect()->route('usuario')->with('estado', 'El cliente se ha actualizado con éxito');
+        }else if(session('rol')===1 || session('rol')===2){
+            return redirect()->route('indexcliente')->with('estado', 'El cliente se ha actualizado con éxito');
+        }
     }
 
     /**
