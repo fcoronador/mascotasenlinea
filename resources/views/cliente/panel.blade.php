@@ -10,9 +10,11 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="nav navbar-nav">
         <span class="nav-item nav-link active">Bienvenido {{session('nombre')}}&nbsp;{{session('apellido')}}</span>
-        <a class="nav-item nav-link " href="#">Actulizar Datos<span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Perfil</a>
+        <a class="nav-item nav-link " href="{{route('actualizarUser',session('idCedula'))}}">Actualizar Datos<span
+                class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{{route('perfilUser',session('idCedula'))}}">Perfil</a>
         <a class="nav-item nav-link" href="{{route('mostrarcita',session('idCedula'))}}">Crear cita</a>
+        <a class="nav-item nav-link" href="{{route('mascotaUser',session('idCedula'))}}">Crear mascota</a>
     </div>
 </nav>
 <h2>Mis mascotas</h2>
@@ -26,6 +28,7 @@
         </tr>
     </thead>
     @foreach ($misMascotas as $item)
+    @if ($item->visible)
     <tr>
         <td>
             {{$item->numChip}}
@@ -37,18 +40,17 @@
             <a href="{{route('historia', $item->numChip)}}">
                 <i class="fa fa-heartbeat" aria-hidden="true"></i>
             </a>
-            <i class="fa fa-pencil-square" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <a href="{{route('mascotaEditar', $item->numChip)}}">
+                <i class="fa fa-pencil-square" aria-hidden="true"></i>
+            </a>
+            <a href="{{route('mascotaBorrar', $item->numChip)}}">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
         </td>
     </tr>
+    @endif
     @endforeach
 </table>
-
-
-
-
-
-
 
 @else
 
