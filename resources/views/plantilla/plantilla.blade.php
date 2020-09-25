@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css ">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-colvis-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/sp-1.1.1/datatables.min.css"/>
 
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.bootstrap4.min.css"/>
+     --}}
     {{-- Hoja de estilos de datables buena --}}
     <script src="/js/app.js"></script>{{-- No dejar JavaScript encima de este --}}
 
@@ -30,18 +33,20 @@
             </a>
         </div>
 
-        <nav class="navbar navbar-expand-md sticky-top">
+        <nav class=" navbar navbar-expand-md sticky-top">
             <div class="navbar1 navbar-collapse collapse w-110 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item active ">
                         <a class="nav-link menu" href="{{route('quienes')}}">Nosotros</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('servicios')}}">Servicios</a>
-                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
+                    @if (session('rol')===3)
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="{{route('usuario')}}">Mi Perfil</a>
+                    </li>
+                    @endif
                     @if (session('rol')===1)
                         <li class="nav-item">
                             <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
@@ -58,7 +63,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="navbar2 navbar-collapse collapse w-100 order-3 dual-collapse2 ">
+            <div class="navbar2 navbar-collapse collapse w-70 order-3 dual-collapse2 ">
                 <ul class="navbar-nav ml-auto">
 
                    @if (session('rol')==null)
