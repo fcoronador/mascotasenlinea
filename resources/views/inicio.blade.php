@@ -100,9 +100,6 @@ dd($matriz);
     </div>
 </div>
 
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="registroModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
