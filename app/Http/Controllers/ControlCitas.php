@@ -76,8 +76,12 @@ class ControlCitas extends Controller
  */        
         $index->guardarcita($Citas);
 
-
-        return redirect()->route('indexcliente')->with('estado', 'La cita se ha creado con éxito');
+        if(session('rol')===3){
+            return redirect()->route('usuario')->with('estado', 'La cita se ha creado con éxito.');
+        }else if (session('rol')===2 || session('rol')===1)
+        {
+            return redirect()->route('indexcliente')->with('estado', 'La cita se ha creado con éxito.');
+        }
     }
 
     public function store2(Request $request, Citas $index)

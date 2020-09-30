@@ -14,8 +14,8 @@
 
     <div class="card-deck">
         <div class="card col-sm-9">
-            <img class="card-img-top" src="holder.js/100x180/" alt="">
-            <div class="card-body">
+{{--             <img class="card-img-top" src="holder.js/100x180/" alt="">
+ --}}            <div class="card-body">
                 <h4 class="card-title">Tus próximas citas </h4>
                 <p class="card-text">¡Estamos ansiosos por verte! Te esperamos el día: </p>
 
@@ -51,12 +51,12 @@
                                 <td>{{$item->Servicio}}</td>
                                 <td>{{$item->Veterinario}}</td>
                                 <td>
-                                    <a name="" id="" class="btn btn-primary btn-sm "
+                                    <a name="" id="" title="Editar"  class="btn btn-primary btn-sm "
                                         href="{{route('editarcita',$item->idCita)}}" role="button">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
 
-                                    <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                    <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                         onclick="document.getElementById('delete{{$item->idCita}}').submit()">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>

@@ -6,12 +6,36 @@
 
 @foreach ($cliente as $propiedad)
 
+<div class="container">
+    <h1 class="my-3">Editar cliente: {{$propiedad->nombre }} {{$propiedad->apellido}}</h1>
+
+@if (session('rol')===3 )
+
+    <div class="card-deck">
+           
+
+ <div class="vertical-menu">
+    <a class="navuser nav-item nav-link activo" href="{{route('usuario')}}">Mis Mascotas</a>
+        <a class="navuser1 nav-item nav-link " href="{{route('actualizarUser',session('idCedula'))}}">Actualizar Datos<span
+                class="sr-only">(current)</span></a>
+        <a class="navuser  nav-item nav-link" href="{{route('perfilUser',session('idCedula'))}}">Perfil</a>
+        <a class="navuser nav-item nav-link" href="{{route('mostrarcita',session('idCedula'))}}">Citas</a>
+        <a class="navuser nav-item nav-link" href="{{route('mascotaUser',session('idCedula'))}}">Crear mascota</a>
+    </div>
+
+
+
+
+@endif
+
+
+<div class="card col-sm-10">
+    <div class="card-body">
 
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1 class="">Editar cliente: {{$propiedad->nombre }} {{$propiedad->apellido}}</h1>
-            <hr>
+            
             <form action="{{route('actualizarcliente',$id)}}" method="post">
                 @csrf
                 <input type="hidden" name="_method" value="patch">
@@ -58,11 +82,13 @@
                     <input value="{{$propiedad->contrasena}}" type="hidden" name="contrasena" id="contrasena" class="form-control" aria-describedby="helpcontra" required>
                     @endforeach
                     <br>
-                    <input class="form-control" type="submit" value="Enviar">
+                    <input class="form-control btn btnCrear btn-default" type="submit" value="Enviar">
 
                 </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 
