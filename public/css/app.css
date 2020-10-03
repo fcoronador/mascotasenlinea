@@ -14226,6 +14226,11 @@ a.text-dark:focus {
   font-size: 15px;
 }
 
+.table {
+  margin: auto;
+  align: center;
+}
+
 .btn-primary {
   background: #3f48cc;
 }

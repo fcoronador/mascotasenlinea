@@ -52,7 +52,11 @@
                             <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
                         </li>
                     @endif
-
+                    @if (session('rol')===2)
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="{{route('veterinario')}}">Administración</a>
+                    </li>
+                @endif
                 </ul>
             </div>
 
