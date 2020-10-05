@@ -53,7 +53,7 @@ dd($matriz);
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
-                        <h5 class="card-title titulo">EVENTOS</h5>
+                        <h4 class="card-title titulo">EVENTOS</h4>
                         <p class="card-text">Este mes estamos premiando a la mascota con la mejor pinta navideña!! No te
                             quedes sin participar</p>
                         <a href="#" class="btn btn-primary">Ver más</a>
@@ -72,7 +72,7 @@ dd($matriz);
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
-                        <h5 class="card-title titulo">VACUNAS</h5>
+                        <h4 class="card-title titulo">VACUNAS</h4>
                         <p class="card-text">No olvides vacunar a tus mascotas, agenda una cita y visítanos</p>
 
                         <a href="{{route('indexcliente')}}" class="btn btn-primary">Agendar Cita</a>
@@ -90,7 +90,7 @@ dd($matriz);
                 </div>
                 <div class="col-md-8 " align="center">
                     <div class="card-body">
-                        <h5 class="card-title titulo">BLOG</h5>
+                        <h4 class="card-title titulo">BLOG</h4>
                         <p class="card-text">Lee los mejores consejos para el cuidado de tus mascotas aquí</p>
                         <a href="#" class="btn btn-primary">Blog</a>
                     </div>

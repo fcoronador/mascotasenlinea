@@ -14,8 +14,9 @@
             <div class="d-flex" id="wrapper">
 
 
-    <div class="bg-light border-right col-sm-3" id="sidebar-wrapper">
-        <div class="list-group list-group-flush col-sm-12">
+    <div class="bg-light border-right hist" id="sidebar-wrapper">
+        <div class="sidebar-heading">Menú</div>
+        <div class="list-group list-group-flush ">
     <div class="vertical-menu ">
         <a class="navuser1 nav-item nav-link" href="{{route('usuario')}}">Mis Mascotas</a>
             <a class="navuser nav-item nav-link " href="{{route('actualizarUser',session('idCedula'))}}">Actualizar Datos

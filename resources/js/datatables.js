@@ -5,6 +5,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -50,6 +56,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT"');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -93,6 +105,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT"');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -136,6 +154,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -182,6 +206,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -224,6 +254,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -266,6 +302,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -308,6 +350,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -350,6 +398,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -392,6 +446,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -434,6 +494,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -477,6 +543,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -521,6 +593,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",
@@ -565,6 +643,12 @@ $(document).ready(function() {
         buttons: [
             'pdf', 'csv', 'excel'
         ],
+        initComplete: function() {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-sm btnDT');
+            btns.removeClass('dt-button');
+
+        },
         "language": {
             "emptyTable": "No hay datos disponibles en la tabla.",
             "info": "Del _START_ al _END_ de _TOTAL_ ",

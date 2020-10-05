@@ -160,7 +160,7 @@
                 <h4 style="text-align: center">Historial de Controles</h4>
 
                         @foreach ($controles as $item)
-                        <table id="controles" class="table table-striped table-inverse table-responsive">
+                        <table id="HisVacunas" class="table table-striped table-inverse table-responsive">
                             <thead>
                                 <tr>
                                     <th scope="col">Fecha del Control</th>
@@ -197,8 +197,8 @@
 
 <div id="panePeso" class="col-sm-9 container-fluid mt-3 collapse">
     <div class="card-body" style="height: 80vh; width: 60vw;">
-        <h4 style="text-align: center">Variación del Peso</h4>
-        <canvas id="pesoHistoria" width="" height=""></canvas>
+{{--         <h4 style="text-align: center">Variación del Peso</h4>
+ --}}        <canvas id="pesoHistoria" width="" height=""></canvas>
         <script>
             var eti1 = {!! json_encode($fechas) !!};
             var val1 = {!! json_encode($pesos) !!};

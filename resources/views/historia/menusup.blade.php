@@ -1,11 +1,16 @@
 
-@dump($historia)
+{{-- @dump($historia)
+ --}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<div class="col-sm-11 container-fluid mt-3" id="menu-wrapper">
     <button class="btn btn-primary" id="menu-toggle">
-        <i class="fa fa-building" aria-hidden="true"></i>
+        <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
-    <span class="navbar-brand mx-5">Historia Clínica de: {{-- {{$historia->nombre}} --}}</span>
+    @foreach ($historia as $item)
+    <h5 class="navbar-brand mx-auto cardtitle">Historia Clínica de: {{$item->nombre}} </h5>
+    @endforeach
+    </nav>
+    <div class="col-sm-12 container-fluid mt-3" id="menu-wrapper">
 
     <nav class="nav nav-tabs nav-stacked">
         <a id="ItemHistoria" class="nav-link active" id="nav-home" data-toggle="tab" href="#">Historia Clinica</a>

@@ -224,7 +224,7 @@ $(document).ready(function() {
                 data: {
                     labels: eti1,
                     datasets: [{
-                        label: 'Variación del peso de la mascota',
+                        label: 'Variación del peso',
                         data: val1,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
