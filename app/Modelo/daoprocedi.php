@@ -8,11 +8,17 @@ use Illuminate\Support\Facades\DB;
 class daoprocedi{
 
     private $query='select * from procedi';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM procedi p GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listaprocedimientos;
 
     public function __construct()
     {  
         
+    }
+
+    public function getProcediAdmin(){
+        $cantidad= DB::select($this->query2);
+        return $cantidad; 
     }
 
     public function getProcedi(){

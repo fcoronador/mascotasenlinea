@@ -47,6 +47,19 @@ class ControlExamenes extends Controller
 
     public function store(Request $request, Examenes $index)
     {
+        request()->validate([
+            'tipo'=>'required|alpha_dash|between:3,15',
+            'resulta'=>'required|alpha_dash|between:3,39',
+            'lab'=>'required|alpha_dash|between:3,39',
+            ],[
+                'tipo.required'=>'Se necesita el tipo de examen.',
+                'tipo.between'=>'La longitud del tipo de examen debe estar entre 3-15 caracteres.',
+                'resulta.required'=>'Se necesita el resultado del examen.',
+                'resulta.between'=>'La longitud del resultado debe estar entre 3-39 caracteres.',
+                'lab.required'=>'Se necesita el tipo de examen.',
+                'lab.between'=>'La longitud del resultado debe estar entre 3-39 caracteres.',
+            ]);
+
         $examen = [];
         $examen['idExam'] = $request->get('idExam');
         $examen['tipo'] = $request->get('tipo');
@@ -71,6 +84,19 @@ class ControlExamenes extends Controller
 
     public function update(Request $request)
     {
+        request()->validate([
+            'tipo'=>'required|alpha_dash|between:3,15',
+            'resulta'=>'required|alpha_dash|between:3,39',
+            'lab'=>'required|alpha_dash|between:3,39',
+            ],[
+                'tipo.required'=>'Se necesita el tipo de examen.',
+                'tipo.between'=>'La longitud del nombre debe estar entre 3-15 caracteres.',
+                'resulta.required'=>'Se necesita el resultado del examen.',
+                'resulta.between'=>'La longitud del resultado debe estar entre 3-39 caracteres.',
+                'lab.required'=>'Se necesita el tipo de examen.',
+                'lab.between'=>'La longitud del resultado debe estar entre 3-39 caracteres.',
+            ]);
+
         $examen = [];
         $examen['idExam'] = $request->get('idExam');
         $examen['tipo'] = $request->get('tipo');

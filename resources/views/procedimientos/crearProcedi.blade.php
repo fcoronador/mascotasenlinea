@@ -11,10 +11,20 @@
     <form action="{{route('guardarprocedimiento')}}" method="post">
         @csrf
         <div class="form-group">
-        <label for="idProc">Número de procedimiento</label>
-        <input type="number" name="idProc" id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Por favor ingrese el número del procedimiento</small>
+
+        <label for="procedimiento">Procedimiento</label>
+            <select class="form-control" name="idProc" id="">
+                @foreach ($procedimiento as $item)
+                    @if ($item->visible)
+                        <option value="{{$item->idProc}}">{{$item->procedimiento}}</option>
+                    @endif
+                @endforeach
+             </select>
+
+        <small id="helpId" class="text-muted">Por favor seleccione el procedimiento </small>
         <br>
+
+
         <label for="fecha">Fecha del procedimiento</label>
         <input type="date" name="fecha" id="" class="form-control" placeholder="" aria-describedby="helpId">
         <small id="helpId" class="text-muted">Por favor ingrese la fecha del procedimiento </small>

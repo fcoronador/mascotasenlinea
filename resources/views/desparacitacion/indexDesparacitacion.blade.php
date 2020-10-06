@@ -42,11 +42,13 @@
                                 {{$item->nombre}}</a></td>
                             <td>
                                 <a name="" id="" class="btn btn-primary btn-sm"
-                                    href="{{route('editardesparacitacion',$item->idDespara)}}" role="button"> Editar</a>
+                                    href="{{route('editardesparacitacion',$item->idDespara)}}" role="button"> 
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
 
                                 <a id="boton_eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->nombre}}').submit()">
-                                    Borrar
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                        
