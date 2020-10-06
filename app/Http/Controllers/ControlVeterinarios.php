@@ -39,7 +39,7 @@ class ControlVeterinarios extends Controller
 
     public function create()
     {
-        return view('vet.crearveterinario');
+        return view('vet.crearVeterinario');
     }
 
 

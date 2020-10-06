@@ -48,4 +48,12 @@ class daoauth
         $existe = DB::select('select usuLogin from usuario_s where usuLogin = :usuLogin', ['usuLogin' => $correo]);
         return $existe;
     }
+    public function verificarCedula($idCedula)
+    {
+        $existe = DB::select('select idCedula from cliente where idCedula = :idCedula', ['idCedula' => $idCedula]);
+        return $existe;
+    }
+
+
+
 }
