@@ -15,8 +15,6 @@ dd($matriz);
 
 @section('contenido')
 
-
-
 @if(session('estado'))
 <div class="container">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -99,9 +97,6 @@ dd($matriz);
         </div>
     </div>
 </div>
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="registroModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
