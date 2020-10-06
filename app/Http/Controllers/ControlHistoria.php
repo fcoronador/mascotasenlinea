@@ -62,11 +62,17 @@ class ControlHistoria extends Controller
                 array_push($pesos, $item->Peso);
                 array_push($fechas, date_create($item->Fecha)->format('Y-m-d'));
             }
-
-
-            if ($ID === session('idCedula')) {
+/* dump(session('idCedula'));  
+dd($ID); */
+            if ($ID === session('idCedula') && session('rol') == 3) {
                 return view('historia.historia', compact('pesos', 'fechas', 'historia', 'controles', 'vacuna', 'desparaci', 'examen'));
-            } else { return redirect()->back();}
+            } 
+            
+            elseif (session('rol') == 1 || session('rol') == 2){
+                return view('historia.historia', compact('pesos', 'fechas', 'historia', 'controles', 'vacuna', 'desparaci', 'examen'));
+            }
+            
+            else { return redirect()->back();}
             
         } else {
 

@@ -44,9 +44,14 @@
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
                     </li>
-                    @if (session('rol')===1 || session('rol') ===2) 
+                    @if (session('rol')===1) 
                         <li class="nav-item">
                             <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
+                        </li>
+                    @endif
+                     @if (session('rol') ===2) 
+                        <li class="nav-item">
+                            <a class="nav-link menu" href="{{route('veterinario')}}">Administración</a>
                         </li>
                     @endif
 

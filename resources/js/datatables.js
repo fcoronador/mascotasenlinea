@@ -58,7 +58,7 @@ $(document).ready(function() {
         ],
         initComplete: function() {
             var btns = $('.dt-button');
-            btns.addClass('btn btn-sm btnDT"');
+            btns.addClass('btn btn-sm btnDT');
             btns.removeClass('dt-button');
 
         },
@@ -107,7 +107,7 @@ $(document).ready(function() {
         ],
         initComplete: function() {
             var btns = $('.dt-button');
-            btns.addClass('btn btn-sm btnDT"');
+            btns.addClass('btn btn-sm btnDT');
             btns.removeClass('dt-button');
 
         },
