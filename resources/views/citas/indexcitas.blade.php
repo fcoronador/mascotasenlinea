@@ -55,18 +55,18 @@
                                 <td>{{$item->Servicio}}</td>
                                 <td>{{$item->Veterinario}}</td>
                                 <td>
-                                    <a name="" id="" class="btn btn-primary btn-sm "
+                                    <a name="" id=""  title="Editar" class="btn btn-primary btn-sm "
                                         href="{{route('editarcita',$item->idCita)}}" role="button">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
             
-                                    <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                    <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                         onclick="document.getElementById('delete{{$item->idCita}}').submit()">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
                                 </td>
                             
-                            <form class="d-none" id="delete{{$item->idCita}}"
+                            <form class="d-none"  id="delete{{$item->idCita}}"
                             action="{{route('borrarcita',$idCita=$item->idCita)}}" method="post">
                             @csrf
                             @method('delete')

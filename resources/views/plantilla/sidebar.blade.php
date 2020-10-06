@@ -18,7 +18,7 @@
             @endif
 
 
-            <div class="dropdown dropright">
+            {{-- <div class="dropdown dropright">
                 <a class="list-group-item dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Otras opciones
                 </a>
@@ -27,7 +27,7 @@
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-              </div>
+              </div> --}}
         </div>
     </div> 
     <!-- /#sidebar-wrapper -->

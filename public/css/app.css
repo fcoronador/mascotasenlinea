@@ -14226,6 +14226,11 @@ a.text-dark:focus {
   font-size: 15px;
 }
 
+.table {
+  margin: auto;
+  align: center;
+}
+
 .btn-primary {
   background: #3f48cc;
 }
@@ -14263,8 +14268,25 @@ h1 {
   color: #0a015f;
 }
 
+h5 {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  /* color: #114148; */
+  color: #0a015f;
+}
+
+.navbar-light .navbar-brand {
+  color: #0a015f;
+  text-align: center;
+}
+
 a {
   color: #111948;
+}
+
+.cardtitle {
+  font-size: 1.8rem;
 }
 
 h4 {
@@ -14329,5 +14351,71 @@ thead {
 .responsive {
   width: 100%;
   height: auto;
+}
+
+.navuser {
+  border-radius: 12px;
+  color: #140071;
+  -webkit-transition: all 0.5s;
+  border-color: #070D4F;
+  border-width: 1px;
+  margin: 2px;
+}
+
+.navuser1 {
+  border-radius: 12px;
+  -webkit-transition: all 0.5s;
+  border-color: #070D4F;
+  border-width: 1px;
+  margin: 2px;
+  background-color: #242997;
+  color: #ffc800;
+}
+
+.navuser:hover {
+  background-color: #242997;
+  color: #ffc800;
+}
+
+.navuser:hover .huella {
+  -webkit-filter: invert(100%);
+}
+
+.bienvenida {
+  background-color: #1a1f6e;
+  color: #ffc800;
+  border-radius: 12px;
+}
+
+.login1 {
+  border-radius: 12px;
+  color: red;
+  -webkit-transition: all 0.5s;
+}
+
+.login1:hover {
+  background-color: #070D4F;
+  color: #ca2323;
+}
+
+.login1:hover .huella {
+  -webkit-filter: invert(100%);
+}
+
+.hist {
+  max-width: 500px;
+}
+
+.btnDT {
+  background: #e6e7e9;
+  border-color: #040726;
+  color: #040726;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 

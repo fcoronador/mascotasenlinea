@@ -1,7 +1,7 @@
 <div id="page-content-wrapper"> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">
-            <i class="fa fa-building" aria-hidden="true"></i>
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         @if (session('rol') == 1 )
             <span class="navbar-brand mx-5"> Bienvenido Admin. {{session('nombre')}}&nbsp;{{session('apellido')}} </span>
@@ -16,11 +16,7 @@
         <a href="{{route('indexcliente')}}" class="btn btn-primary">Lista de clientes</a>
         <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearcliente')}}" role="button">Crear
             cliente</a>
-        {{-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
-            larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
-            optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which
-            will toggle the menu when clicked.</p> --}}
+      
         <div class="card-body"  style="height: 80vh; width: 60vw;">
                 <h3>Cantidad de clientes creados por mes</h3>
                 <canvas id="myChart1" width="" height=""></canvas>

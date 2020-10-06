@@ -22,7 +22,7 @@
             <h1>Detalles del Control: {{$item->Cliente}} {{$item->Mascota}} </h1>
             <hr>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="controles">
                     <thead>
                         <tr>
                             <th colspan="2" scope="col">Datos del control</th>
