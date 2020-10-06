@@ -27,9 +27,9 @@
 
 <body>
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
-        <div class="col-sm-5 encabezado">
+        <div class="col-sm-5 encabezado" style="text-align: center">
             <a href="{{route('inicio')}}">
-                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" alt="Responsive image" >
+                <img src="{{url('/img/hueso1.png')}}" class="img-fluid" alt="Responsive image" style="max-height: 170px; widht: auto;">
             </a>
         </div>
 
@@ -37,22 +37,26 @@
             <div class="navbar1 navbar-collapse collapse w-110 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item active ">
-                        <a class="nav-link menu" href="{{route('quienes')}}">Nosotros</a>
+                        <a class="nav-link menu btn" href="{{route('quienes')}}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('contacto')}}">Contacto</a>
+                        <a class="nav-link menu btn" href="{{route('contacto')}}">Contacto</a>
                     </li>
                     @if (session('rol')===3)
                     <li class="nav-item">
-                        <a class="nav-link menu" href="{{route('usuario')}}">Mi Perfil</a>
+                        <a class="nav-link menu btn" href="{{route('usuario')}}">Mi Perfil</a>
                     </li>
                     @endif
                     @if (session('rol')===1)
                         <li class="nav-item">
-                            <a class="nav-link menu" href="{{route('administracion')}}">Administración</a>
+                            <a class="nav-link menu btn" href="{{route('administracion')}}">Administración</a>
                         </li>
                     @endif
-
+                    @if (session('rol')===2)
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="{{route('veterinario')}}">Administración</a>
+                    </li>
+                @endif
                 </ul>
             </div>
 
@@ -68,7 +72,7 @@
 
                    @if (session('rol')==null)
                     <li class="nav-item">
-                        <a class="nav-link registro"  data-toggle="modal" data-target="#registroModal">Registrarse
+                        <a class="nav-link registro btn"  data-toggle="modal" data-target="#registroModal">Registrarse
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/pet-commands-summon.png">
                             </span></a>
@@ -78,7 +82,7 @@
                     @if (session('rol'))
                         
                     <li class="nav-item">
-                        <a class="nav-link login" href="{{route('logout')}}">Cerrar Sesión
+                        <a class="nav-link login btn" href="{{route('logout')}}">Cerrar Sesión
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
                             </span>
@@ -88,7 +92,7 @@
                     @else
                         
                     <li class="nav-item">
-                        <a class="nav-link login1"  data-toggle="modal" data-target="#loginModal">Iniciar Sesión
+                        <a class="nav-link login btn"  data-toggle="modal" data-target="#loginModal" style="color: red">Iniciar Sesión
                             <span class="huella">
                                 <img src="https://img.icons8.com/ios/40/000000/dog-training.png">
                             </span>

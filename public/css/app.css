@@ -14226,6 +14226,11 @@ a.text-dark:focus {
   font-size: 15px;
 }
 
+.table {
+  margin: auto;
+  align: center;
+}
+
 .btn-primary {
   background: #3f48cc;
 }
@@ -14263,8 +14268,25 @@ h1 {
   color: #0a015f;
 }
 
+h5 {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  /* color: #114148; */
+  color: #0a015f;
+}
+
+.navbar-light .navbar-brand {
+  color: #0a015f;
+  text-align: center;
+}
+
 a {
   color: #111948;
+}
+
+.cardtitle {
+  font-size: 1.8rem;
 }
 
 h4 {
@@ -14378,5 +14400,22 @@ thead {
 
 .login1:hover .huella {
   -webkit-filter: invert(100%);
+}
+
+.hist {
+  max-width: 500px;
+}
+
+.btnDT {
+  background: #e6e7e9;
+  border-color: #040726;
+  color: #040726;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 

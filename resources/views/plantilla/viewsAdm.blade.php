@@ -1,7 +1,7 @@
 <div id="page-content-wrapper"> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">
-            <i class="fa fa-building" aria-hidden="true"></i>
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         @if (session('rol') == 1 )
             <span class="navbar-brand mx-5"> Bienvenido Admin. {{session('nombre')}}&nbsp;{{session('apellido')}} </span>

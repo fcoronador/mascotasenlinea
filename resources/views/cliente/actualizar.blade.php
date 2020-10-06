@@ -6,12 +6,25 @@
 
 @foreach ($cliente as $propiedad)
 
+
+@if (session('rol')===1 || session('rol') == 2 )
+    
 <div class="container">
     <h1 class="my-3">Editar cliente: {{$propiedad->nombre }} {{$propiedad->apellido}}</h1>
 
+@endif
+
 @if (session('rol')===3 )
 
-    <div class="card-deck">
+
+<div class="row">
+    <div class="col-12 col-sm-10 col-lg-10 mx-auto">
+        <div class="container p-3" id="panel">
+            <div class="d-flex" id="wrapper">
+                    
+    <div class="bg-light border-right hist" id="sidebar-wrapper">
+        <div class="sidebar-heading">Menú</div>
+        <div class="list-group list-group-flush ">
            
 
  <div class="vertical-menu">
@@ -22,19 +35,29 @@
         <a class="navuser nav-item nav-link" href="{{route('mostrarcita',session('idCedula'))}}">Citas</a>
         <a class="navuser nav-item nav-link" href="{{route('mascotaUser',session('idCedula'))}}">Crear mascota</a>
     </div>
+</div>
+</div>
 
 
+
+    <div id="page-content-wrapper">  
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    
+        <button class="btn btn-primary" id="menu-toggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <h5 class="navbar-brand mx-auto cardtitle">Editar cliente: {{$propiedad->nombre }} {{$propiedad->apellido}}</h5>
+        </nav>
 
 
 @endif
 
 
-<div class="card col-sm-10">
-    <div class="card-body">
 
-<div class="row">
-    <div class="col-12 col-sm-10 col-lg-10 mx-auto">
-        <div class="container p-3">
+
+<div class="col-12 col-sm-10 col-lg-10 mx-auto">
+    <div class="row">
+                <div class="container p-3">
             
             <form action="{{route('actualizarcliente',$id)}}" method="post">
                 @csrf
