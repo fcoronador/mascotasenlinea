@@ -14412,3 +14412,10 @@ thead {
   color: #040726;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+

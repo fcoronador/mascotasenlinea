@@ -44,12 +44,12 @@ dd($matriz);
     <div class="card-deck">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="text-align: center">
 
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/eventos.png" class="img-fluid cardimg responsive" alt="Responsive image">
+                    <img src="/img/eventos.png" class="img-fluid cardimg responsive " alt="Responsive image" style="max-height: 230px; width:auto;">
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
@@ -64,11 +64,11 @@ dd($matriz);
         </div>
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="text-align: center">
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/vacuna.png" class="img-fluid cardimg responsive" alt="Responsive image">
+                    <img src="/img/vacuna.png" class="img-fluid cardimg responsive" alt="Responsive image" style="max-height: 230px; width:auto;">
                 </div>
                 <div class="col-md-8" align="center">
                     <div class="card-body">
@@ -82,11 +82,11 @@ dd($matriz);
         </div>
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="text-align: center">
                     <tr>
                         <td><br></td>
                     </tr>
-                    <img src="/img/blog.png" class="img-fluid cardimg responsive" alt="Responsive image">
+                    <img src="/img/blog.png" class="img-fluid cardimg responsive" alt="Responsive image" style="max-height: 230px; width:auto;">
                 </div>
                 <div class="col-md-8 " align="center">
                     <div class="card-body">
@@ -123,25 +123,25 @@ dd($matriz);
                         <label for="idCedula">Número de identificación</label>
                         <small>  <label for="idCedula" id="helpidCed"> </label> </small>
                         <div class="input-group margin-bottom-sm">
-                        <span class="input-group-addon"><i class="fa fa-id-card" aria-hidden="true"></i></span>
+                        <span class="input-group-prepend input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i></span>
                         <input type="number" id="idCedula" name="idCedula" id="" class="form-control" placeholder="" size="10">
                         </div>
 
                         <label for="correo">Correo electrónico</label>
                         <div class="input-group margin-bottom-sm">
-                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <span class="input-group-prepend input-group-text"><i class="fa fa-envelope-o fa-fw"></i></span>
                         <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
                         </div>
                            
                         <label for="password">Contraseña</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <div class="input-group margin-bottom-sm">
+                            <span class="input-group-prepend input-group-text"><i class="fa fa-key fa-fw"></i></span>
                             <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
                         </div>
 
                         <label for="confirmar">Confirmar Contraseña</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <div class="input-group margin-bottom-sm">
+                            <span class="input-group-prepend input-group-text"><i class="fa fa-key fa-fw"></i></span>
                             <input type="password" name="confirmar" id="" class="form-control" placeholder="" size="10">
                         </div>
 
@@ -172,12 +172,12 @@ dd($matriz);
                         <div class="form-group">
                             <label for="correo">Correo electrónico</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                <span class="input-group-prepend input-group-text"><i class="fa fa-envelope-o"></i></span>
                             <input type="email" name="correo" id="" class="form-control" placeholder="" size="10">
                             </div>
                             <label for="password">Contraseña</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                <span class="input-group-prepend input-group-text"><i class="fa fa-key fa-fw"></i></span>
                             <input type="password" name="password" id="" class="form-control" placeholder="" size="10">
                             </div>
                         </div>
