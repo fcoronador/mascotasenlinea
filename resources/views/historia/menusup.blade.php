@@ -2,10 +2,11 @@
 {{-- @dump($historia)
  --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
+        @if (session('rol')===3 )
     <button class="btn btn-primary" id="menu-toggle">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
+    @endif
     @foreach ($historia as $item)
     <h5 class="navbar-brand mx-auto cardtitle">Historia Clínica de: {{$item->nombre}} </h5>
     @endforeach

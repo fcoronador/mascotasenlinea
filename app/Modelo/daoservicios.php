@@ -8,12 +8,20 @@ use Illuminate\Support\Facades\DB;
 class daoservicios{
 
     private $query='select * from servicios';
+    private $query2="SELECT servicios as nombre, count(idServi) as cant FROM servicios s left join citas c on s.idServi=c.servicios_idServi where c.visible='1' group by idServi";
     
     private $listaservicios;
 
     public function __construct()
     {  
         
+    }
+
+    
+    public function getServiciosAdmin()
+    {
+        $cantidad = DB::select($this->query2);
+        return $cantidad;
     }
 
     public function getServicios(){

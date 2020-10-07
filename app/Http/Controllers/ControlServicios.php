@@ -15,6 +15,13 @@ class ControlServicios extends Controller
         $this->modelo = new Servicios();
     }
 
+    public static function cantServi(){
+        
+        $modelo = new Servicios();
+        $Servicios = $modelo->adminServi();
+        return $Servicios;
+    }
+
     public function index()
     {        
         $index= new Servicios();

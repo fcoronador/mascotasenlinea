@@ -20,6 +20,10 @@ class Servicios{
         return $index;
     }
 
+    public function adminServi(){
+        return $this->dao->getServiciosAdmin();
+    }
+
     public function guardarservicio($servicio)
     {
         $this->dao->setServicios($servicio);

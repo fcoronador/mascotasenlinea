@@ -19,17 +19,21 @@ class ControlPanelAdmin extends Controller
         $control = ControlContro::cantControl();
         $citas = ControlCitas::cantCitas();
         $Veterinarios =ControlVeterinarios::cantVet();
-
+        $Servicios =ControlServicios::cantServi();
 
         $cantidadCli = $this->etiquetas($clientes);
         $cantidadMasco = $this->etiquetas($mascotas);
         $cantidadControl = $this->etiquetas($control);
         $cantidadCitas = $this->etiquetas($citas);
-        $cantidadVet= $this->etiquetas($Veterinarios);
+        $cantidadVet= $this->etiqueta($Veterinarios);
+        $cantidadSer= $this->etiqueta($Servicios);
+ 
+        
+/*     dd($cantidadVet);
+ */
 
-        //dd($cantidadVet);
-
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet'));
+ 
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet','cantidadSer'));
         }else{
             
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
@@ -80,6 +84,20 @@ class ControlPanelAdmin extends Controller
                 array_push($valor, $etiqueta->cantidad);
             }
         }
+        return compact('etiquetas', 'valor');
+    }
+
+    public function etiqueta($consulta)
+    {
+        $etiquetas = [];
+        $valor = [];
+
+        foreach ($consulta as $item){
+            array_push($etiquetas, $item->nombre);
+            array_push($valor, $item->cant);
+        }
+
+
         return compact('etiquetas', 'valor');
     }
 

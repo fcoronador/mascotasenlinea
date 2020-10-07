@@ -112,3 +112,6 @@ select m.numChip, m.nombre, m.especie, m.sexo, m.raza, m.fecNacimi, m.fecEsteril
         left join vacunas v on  v.idVacun = p.vacunas_idVacun)
         left join despara d on d.idDespara = p.despara_idDespara WHERE m.numChip = 300;
 
+--Grafica Servicios
+SELECT servicios as nombre, count(idServi) as cant FROM servicios s left join citas c on 
+s.idServi=c.servicios_idServi where c.visible='1' group by idServi;

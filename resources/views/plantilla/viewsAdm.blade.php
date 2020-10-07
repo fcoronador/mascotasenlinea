@@ -105,6 +105,19 @@
         <a href="{{route('servicios')}}" class="btn btn-primary">Lista de Servicios</a>
         <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearservicio')}}" role="button">Crear Servicio</a>
 
+        <div class="card-body">
+            <h3>Cantidad de servicios atendidos por mes</h3>
+            <canvas id="GraphServi" width="" height=""></canvas>
+        </div>
+        <div class="card-body">
+            <h3></h3>
+            <canvas id="GraphServi" width="" height=""></canvas>
+            <script> 
+                var etiSer1 = {!! json_encode($cantidadSer['etiquetas']) !!};
+                var valSer1 = {!! json_encode($cantidadSer['valor']) !!};
+            </script>
+        </div>
+
     </div>
     <div id="paneCitas" class="container collapse">
         <h1 class="mt-4">Citas</h1>
@@ -134,7 +147,7 @@
 
             <div class="card-body"  style="height: 80vh; width: 60vw;">
       
-                <h3>Cantidad de citas atendidas en el mes</h3>
+                <h3>Cantidad de citas atendidas por veterinario</h3>
                 <canvas id="myChartVet" width="" height=""></canvas>
                 <script> 
                     var etivet1 = {!! json_encode($cantidadVet['etiquetas']) !!};

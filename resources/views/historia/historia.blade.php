@@ -5,12 +5,14 @@
 @section('contenido')
 
 
-@if (session('rol')===3 || session('rol')===2 || session('rol')===1)
 
   
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3" id="panel">
+            
+@if (session('rol')===3 )
+
             <div class="d-flex" id="wrapper">
 
 
@@ -28,7 +30,9 @@
 </div>
 </div>
 
+@endif
 
+@if (session('rol')===3 || session('rol')===2 || session('rol')===1)
 
     <div id="page-content-wrapper"> 
 
