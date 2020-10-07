@@ -19,16 +19,20 @@
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
             @foreach ($procedi as $item)
-            <h1>Detalles del procedimiento: </h1>
+            <h1>Detalles del procedimiento: {{$item->Mascota}} </h1>
             <hr>
             <div class="table-responsive my-3">
-                <table class="table table-hover">
+                <table class="table table-hover" id="procedi">
                     <thead>
                         <tr>
-                            <th colspan="2" scope="col">Datos</th>
+                            <th colspan="2" scope="col">Datos del procedimiento</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <th scope="row">Mascota</th>
+                            <td>{{$item->Mascota}}</td>
+                        </tr>
                         <tr>
                             <th scope="row">Fecha del procedimiento</th>
                             <td>{{$item->fecha}}</td>

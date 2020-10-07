@@ -34,8 +34,6 @@ class ControlDesparacitacion extends Controller
         return $this->modelo->historiaDespara($id);
     }
 
-
-
     public function index()
     {
         $desparas=$this->modelo->indexdesparas()->getDesparas();
@@ -49,6 +47,13 @@ class ControlDesparacitacion extends Controller
 
     public function store(Request $request, Desparacitacion $index)
     {
+        request()->validate([
+            'nombre'=>'required|alpha_dash|between:3,15',
+            ],[
+                'nombre.required'=>'Se necesita el nombre del medicamento.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-15 caracteres.',
+            ]);
+
         $despara = [];
         $despara['idDespara'] = $request->get('idDespara');
         $despara['nombre'] = $request->get('nombre');
@@ -71,6 +76,13 @@ class ControlDesparacitacion extends Controller
 
     public function update(Request $request)
     {
+        request()->validate([
+            'nombre'=>'required|alpha_dash|between:3,15',
+            ],[
+                'nombre.required'=>'Se necesita el nombre del medicamento.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-15 caracteres.',
+            ]);
+
         $despara = [];
         $despara['idDespara'] = $request->get('idDespara');
         $despara['nombre'] = $request->get('nombre');

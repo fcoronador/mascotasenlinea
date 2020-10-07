@@ -65,13 +65,11 @@
     <div class="row">
 
 
-        <div class=" card card-body">
+    <div class=" card card-body">
     <form action="{{route('guardarmascota')}}" method="post">
         @csrf
         <div class="form-group container p-3 col-8 mx-auto">
-        
-
-
+    
         <input type="hidden" name="idCedula" value="{{session('idCedula')}}">
 
         <label for="numChip">Número de Chip</label>

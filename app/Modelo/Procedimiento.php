@@ -14,6 +14,11 @@ class Procedimiento{
         $this->dao = new daoprocedi();
     }
 
+    public function adminProcedi()
+    {
+        return $this->dao->getProcediAdmin();
+    }
+
     public function indexprocedi(){
         $index= $this->dao;
         return $index;
@@ -32,7 +37,7 @@ class Procedimiento{
         $this->dao->update($procedi);
     }
 
-    public function borrar($id){
+    public function borrar($procedi){
         $this->dao->delete($procedi);
     }
 }

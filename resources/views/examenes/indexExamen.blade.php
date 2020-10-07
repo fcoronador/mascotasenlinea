@@ -41,12 +41,14 @@
                             <td><a name="" id="" class="" href="{{route('mostrarexamen',$item->idExam)}}" role="button">
                                 {{$item->tipo}}</a></td>
                             <td>
-                                <a name="" id="" class="btn btn-primary btn-sm"
-                                    href="{{route('editarexamen',$item->idExam)}}" role="button"> Editar</a>
+                                <a title="Editar" name="" id="" class="btn btn-primary btn-sm"
+                                    href="{{route('editarexamen',$item->idExam)}}" role="button"> 
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
 
-                                <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->tipo}}').submit()">
-                                    Borrar
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                         

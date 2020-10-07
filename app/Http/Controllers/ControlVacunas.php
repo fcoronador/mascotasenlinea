@@ -48,6 +48,13 @@ class ControlVacunas extends Controller
 
     public function store(Request $request, Vacunas $index)
     {
+        request()->validate([
+            'nombre'=>'required|alpha_dash|between:3,15',
+            ],[
+                'nombre.required'=>'Se necesita el nombre del medicamento.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-15 caracteres.',
+            ]);
+
         $vacuna = [];
         $vacuna['idVacun'] = $request->get('idVacun');
         $vacuna['nombre'] = $request->get('nombre');
@@ -70,6 +77,13 @@ class ControlVacunas extends Controller
 
     public function update(Request $request)
     {
+        request()->validate([
+            'nombre'=>'required|alpha_dash|between:3,15',
+            ],[
+                'nombre.required'=>'Se necesita el nombre del medicamento.',
+                'nombre.between'=>'La longitud del nombre debe estar entre 3-15 caracteres.',
+            ]);
+            
         $vacuna = [];
         $vacuna['idVacun'] = $request->get('idVacun');
         $vacuna['nombre'] = $request->get('nombre');

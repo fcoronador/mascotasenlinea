@@ -20,42 +20,60 @@
         <div class="container p-3">
             <h1>Procedimientos Registrados</h1>
             <hr>
-
+            
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearprocedimiento')}}" role="button">Crear procedimiento</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover table-striped" id="prodce">
+                <table class="table table-hover table-striped fuenteprocedi" id="procedi">
                     <thead>
                         <tr>
-                            <th scope="col">Numero de procedimiento</th>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Mascota</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Tipo de Examen</th>
+                            <th scope="col">Fecha Examen</th>
+                            <th scope="col">Vacunas</th>
+                            <th scope="col">Siguiente Vacuna</th>
+                            <th scope="col">Desparacitacion</th>
                             <th scope="col">Siguiente Dosis</th>
+                            <th scope="col">Veterinario</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($procedimiento as $item)
+                        @if ($item->visible)
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                            <th scope="row">{{$item->idProc}}</th>
-                            <td><a name="" id="" class="" href="{{route('mostrarprocedimiento',$item->idProc)}}"
-                                    role="button">
-                                    {{$item->fecha}}</a></td>
-                            <td>{{$item->sigDosis}}</td>
+                        <th scope="row">{{$item->idProc}}</th>
+                            <td><a name="" id="" class="" href="{{route('mostrarprocedimiento',$item->idProc)}}" role="button">
+                                {{$item->nombre}}</a></td>
+                            <td>{{$item->especie}}</td>
+                            <td>{{$item->Tipo_de_examen}}</td>
+                            <td>{{$item->Fecha}}</td>
+                            <td>{{$item->Vacuna}}</td>
+                            <td>{{$item->SiguienteVacuna}}</td>
+                            <td>{{$item->Desparacitante}}</td>
+                            <td>{{$item->SiguienteDosis}}</td>
+                            <td>{{$item->Veterinario}}</td>
+                                                        
                             <td>
-                                <a name="" id="" class="btn btn-primary btn-sm"
-                                    href="{{route('editarprocedimiento',$item->idProc)}}" role="button"> Editar</a>
+                                <a title="Editar" name="" id="" class="btn btn-primary btn-sm"
+                                    href="{{route('editarprocedimiento',$item->idProc)}}" role="button">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
 
-                                <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->idProc}}').submit()">
-                                    Borrar
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                         
                         <form class="d-none" id="delete{{$item->idProc}}"
-                            action="{{route('borrarprocedimiento',$id=$item->idProc)}}" method="post">
+                            action="{{route('borrarprocedimiento',$idProc=$item->idProc)}}" method="post">
                             @csrf
                             @method('delete')
                         </form>
+                        @endif
                     </tr>
                         @endforeach
                     </tbody>
