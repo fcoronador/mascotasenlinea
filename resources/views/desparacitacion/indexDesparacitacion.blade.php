@@ -41,12 +41,12 @@
                             <td><a name="" id="" class="" href="{{route('mostrardesparacitacion',$item->idDespara)}}" role="button">
                                 {{$item->nombre}}</a></td>
                             <td>
-                                <a name="" id="" class="btn btn-primary btn-sm"
+                                <a title="Editar" name="" id="" class="btn btn-primary btn-sm"
                                     href="{{route('editardesparacitacion',$item->idDespara)}}" role="button"> 
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
 
-                                <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->nombre}}').submit()">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>

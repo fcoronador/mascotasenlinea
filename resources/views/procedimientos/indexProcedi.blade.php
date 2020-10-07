@@ -20,19 +20,22 @@
         <div class="container p-3">
             <h1>Procedimientos Registrados</h1>
             <hr>
-
+            
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearprocedimiento')}}" role="button">Crear procedimiento</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover table-striped" id="procedi">
+                <table class="table table-hover table-striped fuenteprocedi" id="procedi">
                     <thead>
                         <tr>
+                            <th scope="col">#</th>
                             <th scope="col">Mascota</th>
-                            <th scope="col">Veterinario</th>
-                            <th scope="col">Desparacitacion</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Tipo de Examen</th>
+                            <th scope="col">Fecha Examen</th>
                             <th scope="col">Vacunas</th>
-                            <th scope="col">Examenes</th>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">Siguiente Vacuna</th>
+                            <th scope="col">Desparacitacion</th>
                             <th scope="col">Siguiente Dosis</th>
+                            <th scope="col">Veterinario</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
@@ -41,21 +44,25 @@
                         @if ($item->visible)
                         <tr> {{-- Aqui van impresiones de la variable --}}
 
-                        <th scope="row">{{$item->Mascota}}</th>
+                        <th scope="row">{{$item->idProc}}</th>
                             <td><a name="" id="" class="" href="{{route('mostrarprocedimiento',$item->idProc)}}" role="button">
-                                {{$item->Veterinario}}</td>
-                            <td>{{$item->Desparacitacion}}</td>
-                            <td>{{$item->Vacunas}}</td>
-                            <td>{{$item->Examenes}}</td>
+                                {{$item->nombre}}</a></td>
+                            <td>{{$item->especie}}</td>
+                            <td>{{$item->Tipo_de_examen}}</td>
                             <td>{{$item->Fecha}}</td>
-                            <td>{{$item->sigDosis}}</td>
+                            <td>{{$item->Vacuna}}</td>
+                            <td>{{$item->SiguienteVacuna}}</td>
+                            <td>{{$item->Desparacitante}}</td>
+                            <td>{{$item->SiguienteDosis}}</td>
+                            <td>{{$item->Veterinario}}</td>
+                                                        
                             <td>
-                                <a name="" id="" class="btn btn-primary btn-sm"
+                                <a title="Editar" name="" id="" class="btn btn-primary btn-sm"
                                     href="{{route('editarprocedimiento',$item->idProc)}}" role="button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
 
-                                <a id="boton_eliminar" class=" btn btn-danger btn-sm "
+                                <a id="boton_eliminar" title="Eliminar" class=" btn btn-danger btn-sm "
                                     onclick="document.getElementById('delete{{$item->idProc}}').submit()">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>

@@ -4,6 +4,10 @@
 
 @section('contenido')
 
+<span class="invalid-feeback text-danger" role="alert">
+    {!! $errors->first('nombre','<small>:message</small><br>')!!}    
+</span>
+
 <h1 class="">Crear desparacitacion</h1>
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-6 mx-auto">

@@ -71,9 +71,23 @@ class ControlProcedimiento extends Controller
 
     public function store(Request $request, Procedimiento $index)
     {
+        request()->validate([
+            'idMascotas'=>'required',
+            'idVacun'=>'required',
+            'idDespara'=>'required',
+            'idVeterin'=>'required',
+            'idExam'=>'required',
+        ],[
+                'idMascotas.required'=>'Se necesita escoger una mascota',
+                'idVacun.required'=>'Se necesita escoger una vacuna',
+                'idDespara.required'=>'Se necesita escoger desparacitante.',
+                'idVeterin.required'=>'Se necesita escoger veterinario.',
+                'idExam.required'=>'Se necesita escoger examen',
+        ]);
+
         $procedi=[];
         $procedi['fecha']= str_replace('-','/',$request->get('fecha'));
-        $procedi['sigDosis']=$request->get('sigDosis');
+        $procedi['sigDosis']=str_replace('-','/',$request->get('sigDosis'));
         $procedi['mascota_idMascotas'] = $request->get('idMascotas');
         $procedi['vacunas_idVacun'] = $request->get('idVacun');
         $procedi['despara_idDespara'] = $request->get('idDespara');
@@ -93,22 +107,40 @@ class ControlProcedimiento extends Controller
 
     public function edit($id)
     {
-        $procedi=$this->modelo->mostrarProcedi($id);
-        return view('procedimientos.editProcedi',compact('procedi','id'));
+        $procedi=$this->modelo->mostrarProcedi($id); 
+        $mascotas=ControlMascota::listMascotas();
+        $vacunas=ControlVacunas::listVacun();
+        $desparas=ControlDesparacitacion::listDespara();
+        $veterinario=ControlVeterinarios::listaVeterinarios();
+        $examenes=ControlExamenes::listExam();
+        return view('procedimientos.editProcedi',compact('procedi', 'id', 'mascotas','vacunas','desparas','veterinario','examenes'));
     }
 
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'idMascotas'=>'required',
+            'idVacun'=>'required',
+            'idDespara'=>'required',
+            'idVeterin'=>'required',
+            'idExam'=>'required',
+        ],[
+                'idMascotas.required'=>'Se necesita escoger una mascota',
+                'idVacun.required'=>'Se necesita escoger una vacuna',
+                'idDespara.required'=>'Se necesita escoger desparacitante.',
+                'idVeterin.required'=>'Se necesita escoger veterinario.',
+                'idExam.required'=>'Se necesita escoger examen',
+        ]);
+
         $procedi=[];
         $procedi['fecha']= str_replace('-','/',$request->get('fecha'));
-        $procedi['sigDosis']=$request->get('sigDosis');
+        $procedi['sigDosis']=str_replace('-','/',$request->get('sigDosis'));
         $procedi['mascota_idMascotas'] = $request->get('idMascotas');
         $procedi['vacunas_idVacun'] = $request->get('idVacun');
         $procedi['despara_idDespara'] = $request->get('idDespara');
         $procedi['veterin_idVeterin'] = $request->get('idVeterin');
         $procedi['examenes_idExam'] = $request->get('idExam');
         $procedi['idProc'] = $id;
-        $procedi['visible'] = 1;
         
         $this->modelo->Actualizar($procedi);
         return redirect()->route('indexprocedi')->with('estado', 'Se ha actualizado con exito');

@@ -37,7 +37,7 @@ class Procedimiento{
         $this->dao->update($procedi);
     }
 
-    public function borrar($id){
+    public function borrar($procedi){
         $this->dao->delete($procedi);
     }
 }
