@@ -24,8 +24,9 @@ class ControlAuth extends Controller
         $cliente=[];
 
         $existe = $index->verificarCorreo($request->get('correo'));
-        if ($existe) {
-            return redirect()->route('inicio')->with('alerta', 'El correo ya existe');
+        $existeID = $index->verificarCedula($request->get('idCedula'));
+        if ($existe && $existeID) {
+            return redirect()->route('inicio')->with('alerta', 'El correo o cédula ya existe');
         } else {
             $persona['usuLogin'] = $request->get('correo');
             $cliente['correo'] = $request->get('correo');

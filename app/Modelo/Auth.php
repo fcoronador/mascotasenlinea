@@ -32,6 +32,11 @@ class Auth{
         $existe = $this->dao->verificarCorreo($correo);
         return $existe;
     }
+    public function verificarCedula($idCedula)
+    {
+        $existe = $this->dao->verificarCedula($idCedula);
+        return $existe;
+    }
 
     public function obtenerUsuario($correo)
     {
