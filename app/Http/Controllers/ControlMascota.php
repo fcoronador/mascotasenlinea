@@ -81,10 +81,10 @@ class ControlMascota extends Controller
         request()->validate(
             [
             'numChip'=>'required|digits_between:5,15',
-            'nombre'=>'required|alpha_dash|between:3,39',
-            'especie'=>'required|alpha_dash|between:3,39',
+            'nombre'=>'required|between:3,39',
+            'especie'=>'required|between:3,39',
             'sexo'=>'required',
-            'raza'=>'required|alpha_dash|between:3,39',
+            'raza'=>'required|between:3,39',
             'fecNacimi'=>'required'
             ],[
                 'numChip.required'=>'Se necesita el número de identificación.',
