@@ -1,5 +1,13 @@
-@extends('plantilla.plantillaAdmin')
+{{-- @if (session('rol') ===1 || session('rol') ===2) 
+ --}}
+@extends('plantilla.plantilla')
+{{-- @endif --}}
 
+{{-- 
+@if (session('rol') ===3) 
+@extends('plantilla.plantilla')
+@endif
+ --}}
 @section('titulo','Editar Cita')
 
 @section('contenido')

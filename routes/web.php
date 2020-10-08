@@ -21,6 +21,8 @@ Route::get('/Usuario/{id}/perfil','ControlPanelClien@perfil')->name('perfilUser'
 Route::get('/Usuario/{id}/mascota','ControlPanelClien@CrearMascota')->name('mascotaUser');
 Route::get('/Usuario/{id}/mascotaEditar','ControlPanelClien@EditarMascota')->name('mascotaEditar');
 Route::get('/Usuario/{id}/mascotaEliminar','ControlPanelClien@BorrarMascota')->name('mascotaBorrar');
+Route::get('/Usuario/Citas/{id}/','ControlPanelClien@crearCitas')->name('citaUsuario');
+
 
 
 Route::get('/HistoriaClinica{id}','ControlHistoria@index')->name('historia');

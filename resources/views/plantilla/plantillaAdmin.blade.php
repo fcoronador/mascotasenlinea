@@ -25,6 +25,25 @@
 
 <body >
 
+
+<script >
+if (!!window.performance && window.performance.navigation.type === 2) {
+            // value 2 means "The page was accessed by navigating into the history"
+            console.log('Reloading');
+            window.location.reload(); // reload whole page
+
+        }
+        window.onpageshow = function (event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+
+
+</script>
+
+
+
     <div class="row jumbotron jumbotron-fluid mb-0 py-0 shadow-lg rounded">
         <div class="col-sm-5 encabezado">
             <a href="{{route('inicio')}}" style="text-align: center">

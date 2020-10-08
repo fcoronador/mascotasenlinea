@@ -80,7 +80,7 @@ class ControlCitas extends Controller
             return redirect()->route('usuario')->with('estado', 'La cita se ha creado con éxito.');
         }else if (session('rol')===2 || session('rol')===1)
         {
-            return redirect()->route('indexcliente')->with('estado', 'La cita se ha creado con éxito.');
+            return redirect()->route('inicio')->with('estado', 'La cita se ha creado con éxito.');
         }
     }
 
@@ -158,7 +158,8 @@ class ControlCitas extends Controller
         $this->modelo->Actualizar($Citas);
 
 
-        return redirect()->route('indexcitas')->with('estado', 'La cita se ha actualizado con éxito');
+        return redirect()->route('inicio')->with('estado', 'La cita se ha actualizado con éxito');
+        
     }
 
   
@@ -167,6 +168,6 @@ class ControlCitas extends Controller
         $Citas['idCitas']=$idCita;
         $Citas['visible']= false;
         $this->modelo->borrar($Citas);
-        return redirect()->route('indexcitas')->with('estado', 'La cita se ha sido eliminado con exito');
+        return redirect()->route('inicio')->with('estado', 'La cita se ha sido eliminado con exito');
     }
 }

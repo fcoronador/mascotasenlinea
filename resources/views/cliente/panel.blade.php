@@ -22,7 +22,7 @@
             <a class="navuser nav-item nav-link " href="{{route('actualizarUser',session('idCedula'))}}">Actualizar Datos
                 <span class="sr-only">(current)</span></a>
             <a class="navuser  nav-item nav-link" href="{{route('perfilUser',session('idCedula'))}}">Perfil</a>
-            <a class="navuser nav-item nav-link" href="{{route('mostrarcita',session('idCedula'))}}">Citas</a>
+            <a class="navuser nav-item nav-link" href="{{route('citaUsuario',session('idCedula'))}}">Citas</a>
             <a class="navuser nav-item nav-link" href="{{route('mascotaUser',session('idCedula'))}}">Crear mascota</a>
         </div>
 </div>

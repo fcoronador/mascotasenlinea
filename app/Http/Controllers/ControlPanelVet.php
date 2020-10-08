@@ -14,15 +14,27 @@ class ControlPanelVet extends Controller
             $mascotas = ControlMascota::cantMascotas();
             $control = ControlContro::cantControl();
             $citas = ControlCitas::cantCitas();
+            $Veterinarios =ControlVeterinarios::cantVet();
+            $Servicios =ControlServicios::cantServi();
+            $procedimientos =ControlProcedimiento::cantProcedi();
+            $vacunas= ControlVacunas::cantVacunas();
+            $examenes= ControlExamenes::cantExamenes();
+            $desparasi= ControlDesparacitacion::cantDespara();
     
             $cantidadCli = $this->etiquetas($clientes);
             $cantidadMasco = $this->etiquetas($mascotas);
             $cantidadControl = $this->etiquetas($control);
             $cantidadCitas = $this->etiquetas($citas);
-    
-            //dd($cantidadMasco);
-    
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas'));
+            $cantidadVet= $this->etiqueta($Veterinarios);
+            $cantidadSer= $this->etiqueta($Servicios);
+            $cantidadPro= $this->etiquetas($procedimientos);
+            $cantidadVac= $this->etiquetas($vacunas);
+            $cantidadExa= $this->etiquetas($examenes);
+            $cantidadDes= $this->etiquetas($desparasi);
+
+
+
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet','cantidadSer','cantidadPro','cantidadVac','cantidadExa','cantidadDes'));
         }else{
                 
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
@@ -75,4 +87,21 @@ class ControlPanelVet extends Controller
         }
         return compact('etiquetas', 'valor');
     }
+
+
+    
+    public function etiqueta($consulta)
+    {
+        $etiquetas = [];
+        $valor = [];
+
+        foreach ($consulta as $item){
+            array_push($etiquetas, $item->nombre);
+            array_push($valor, $item->cant);
+        }
+
+
+        return compact('etiquetas', 'valor');
+    }
+
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ControlMascota;
 use App\Http\Controllers\ControlCliente;
+use App\Modelo\Citas;
+
 class ControlPanelClien extends Controller
 {
     private $mascotas;
@@ -35,7 +37,26 @@ class ControlPanelClien extends Controller
         {
             return $this->clientes->editForUser($id);
         }else{
-            return redirect()->back();
+            return redirect()->route('inicio');
+        }
+    }
+
+    public function crearCitas($id)
+    {
+        
+        if($id == session('idCedula'))
+        {
+            $modelo= new Citas();
+            $servicios = ControlServicios::listaServicios();
+            $veterinario = ControlVeterinarios::listaVeterinarios();
+            //dd($veterinario);
+            $citas = $modelo->mostrarcita($id);
+            $cc=$id;
+            return view('cliente.citas', compact('citas','servicios','cc','veterinario')); 
+            
+    
+        }else{
+            return redirect()->route('inicio');
         }
     }
 
@@ -45,7 +66,7 @@ class ControlPanelClien extends Controller
         {
             return $this->clientes->show($id);
         }else{
-            return redirect()->back();
+            return redirect()->route('inicio');
         }
     }
 
@@ -55,7 +76,7 @@ class ControlPanelClien extends Controller
         {
             return $this->mascotas->create();
         }else{
-            return redirect()->back();
+            return redirect()->route('inicio');
         }
     }
 
@@ -72,7 +93,7 @@ class ControlPanelClien extends Controller
         {
             return view('cliente.MascotaDetalles',compact('mascota','id'));
         }else{
-            return redirect()->back();
+            return redirect()->route('inicio');
         }
 
     }
@@ -91,7 +112,7 @@ class ControlPanelClien extends Controller
             $this->mascotas->destroy($id);
             return redirect()->route('usuario');
         }else{
-            return redirect()->back();
+            return redirect()->route('inicio');
         }
 
     }
