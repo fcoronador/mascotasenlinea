@@ -40,7 +40,7 @@
                     
                     @endforeach
                     <br>
-                    <input class="form-control" type="submit" value="Enviar">
+                    <input class="form-control btnCrear btn-default" type="submit" value="Enviar">
 
                 </div>
         </div>

@@ -19,7 +19,7 @@
         <input type="text" name="nombre" id="" class="form-control" placeholder="" aria-describedby="helpId">
         <small id="helpId" class="text-muted">Por favor ingrese el nombre del medicamento</small>
         <br>
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn btnCrear btn-default" value="Enviar">
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@
         <input type="text" name="lab" id="" class="form-control" placeholder="" aria-describedby="helpId">
         <small id="helpId" class="text-muted">Por favor ingrese el resultado de laboratorio</small>
         <br>
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn btnCrear btn-default" value="Enviar">
 
             </div>
         </div>

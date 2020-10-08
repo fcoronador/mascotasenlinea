@@ -81,7 +81,7 @@
         <small id="helpId" class="text-muted">Por favor ingrese la fecha del siguiente procedimiento </small>
         <br>
         
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn btnCrear btn-default" value="Enviar">
 
             </div>
         </div>
