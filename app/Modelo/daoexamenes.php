@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class daoexamenes{
 
     private $query='select * from examenes';
-    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM examenes e GROUP BY MONTH (createdAt), YEAR (createdAt)';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(idExam) AS cantidad FROM examenes e GROUP BY MONTH (createdAt), YEAR (createdAt)';
     private $listaexamenes;
     private $query3='select m.nombre  AS Mascota, p.fecha AS Fecha, e.tipo AS Tipo, 
 	e.resulta AS Resultado, e.lab AS Laboratorio

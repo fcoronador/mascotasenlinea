@@ -97,13 +97,13 @@ Route::patch('/Examenes/{id}/actualizar','ControlExamenes@update')->name('actual
 Route::delete('/Examenes/{id}/eliminar','ControlExamenes@destroy')->name('borrarexamen');
 
 
-Route::get('/IndexDesparacitacion','ControlDesparacitacion@index')->name('indexdespara');
-Route::get('/CrearDesparacitacion','ControlDesparacitacion@create')->name('creardesparacitacion');/* Sale data en el POST->$_REQUEST */
-Route::post('/CrearDesparacitacion','ControlDesparacitacion@store')->name('guardardesparacitacion');/* Recibe la data del $_REQUEST */
-Route::get('/Desparacitacion/{id}/','ControlDesparacitacion@show')->name('mostrardesparacitacion');
-Route::get('/Desparacitacion/{id}/editar','ControlDesparacitacion@edit')->name('editardesparacitacion');
-Route::patch('/Desparacitacion/{id}/actualizar','ControlDesparacitacion@update')->name('actualizardesparacitacion');
-Route::delete('/Desparacitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');
+Route::get('/IndexDesparasitacion','ControlDesparacitacion@index')->name('indexdespara');
+Route::get('/CrearDesparasitacion','ControlDesparacitacion@create')->name('creardesparacitacion');/* Sale data en el POST->$_REQUEST */
+Route::post('/CrearDesparasitacion','ControlDesparacitacion@store')->name('guardardesparacitacion');/* Recibe la data del $_REQUEST */
+Route::get('/Desparasitacion/{id}/','ControlDesparacitacion@show')->name('mostrardesparacitacion');
+Route::get('/Desparasitacion/{id}/editar','ControlDesparacitacion@edit')->name('editardesparacitacion');
+Route::patch('/Desparasitacion/{id}/actualizar','ControlDesparacitacion@update')->name('actualizardesparacitacion');
+Route::delete('/Desparasitacion/{id}/eliminar','ControlDesparacitacion@destroy')->name('borrardesparacitacion');
 
 
 Route::get('/IndexVacunas','ControlVacunas@index')->name('indexvacuna');

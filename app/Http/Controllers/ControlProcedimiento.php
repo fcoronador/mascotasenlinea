@@ -87,7 +87,8 @@ class ControlProcedimiento extends Controller
 
         $procedi=[];
         $procedi['fecha']= str_replace('-','/',$request->get('fecha'));
-        $procedi['sigDosis']=str_replace('-','/',$request->get('sigDosis'));
+        if($request->get('sigDosis')){$procedi['sigDosis'] = str_replace('-','/',$request->get('sigDosis'));}
+        else{$procedi['sigDosis'] = $request->get('sigDosis');}
         $procedi['mascota_idMascotas'] = $request->get('idMascotas');
         $procedi['vacunas_idVacun'] = $request->get('idVacun');
         $procedi['despara_idDespara'] = $request->get('idDespara');
@@ -134,7 +135,8 @@ class ControlProcedimiento extends Controller
 
         $procedi=[];
         $procedi['fecha']= str_replace('-','/',$request->get('fecha'));
-        $procedi['sigDosis']=str_replace('-','/',$request->get('sigDosis'));
+        if($request->get('sigDosis')){$procedi['sigDosis'] = str_replace('-','/',$request->get('sigDosis'));}
+        else{$procedi['sigDosis'] = $request->get('sigDosis');}
         $procedi['mascota_idMascotas'] = $request->get('idMascotas');
         $procedi['vacunas_idVacun'] = $request->get('idVacun');
         $procedi['despara_idDespara'] = $request->get('idDespara');

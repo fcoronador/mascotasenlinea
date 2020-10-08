@@ -19,18 +19,18 @@
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
             @foreach ($despara as $item)
-            <h1>Detalles de la desparacitacion: {{$item->nombre}} </h1>
+            <h1>Detalles de la desparasitación: {{$item->nombre}} </h1>
             <hr>
             <div class="table-responsive my-3">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th colspan="2" scope="col">Datos de la desparacitacion</th>
+                            <th colspan="2" scope="col">Datos de la desparasitación</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Número de la desparacitacion</th>
+                            <th scope="row">Número de la desparasitación</th>
                             <td>{{$item->idDespara}}</td>
                         </tr>
                         <tr>

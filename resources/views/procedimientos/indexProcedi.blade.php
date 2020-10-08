@@ -23,7 +23,7 @@
             
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearprocedimiento')}}" role="button">Crear procedimiento</a>
             <div class="table-responsive my-3">
-                <table class="table table-hover table-striped fuenteprocedi" id="procedi">
+                <table class="table table-hover table-striped fuenteprocedi" id="prodce">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

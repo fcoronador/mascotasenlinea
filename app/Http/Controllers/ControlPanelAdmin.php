@@ -20,6 +20,10 @@ class ControlPanelAdmin extends Controller
         $citas = ControlCitas::cantCitas();
         $Veterinarios =ControlVeterinarios::cantVet();
         $Servicios =ControlServicios::cantServi();
+        $procedimientos =ControlProcedimiento::cantProcedi();
+        $vacunas= ControlVacunas::cantVacunas();
+        $examenes= ControlExamenes::cantExamenes();
+        $desparasi= ControlDesparacitacion::cantDespara();
 
         $cantidadCli = $this->etiquetas($clientes);
         $cantidadMasco = $this->etiquetas($mascotas);
@@ -27,13 +31,16 @@ class ControlPanelAdmin extends Controller
         $cantidadCitas = $this->etiquetas($citas);
         $cantidadVet= $this->etiqueta($Veterinarios);
         $cantidadSer= $this->etiqueta($Servicios);
- 
+        $cantidadPro= $this->etiquetas($procedimientos);
+        $cantidadVac= $this->etiquetas($vacunas);
+        $cantidadExa= $this->etiquetas($examenes);
+        $cantidadDes= $this->etiquetas($desparasi);
         
-/*     dd($cantidadVet);
- */
+     //dd($cantidadPro);
+
 
  
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet','cantidadSer'));
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet','cantidadSer','cantidadPro','cantidadVac','cantidadExa','cantidadDes'));
         }else{
             
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');

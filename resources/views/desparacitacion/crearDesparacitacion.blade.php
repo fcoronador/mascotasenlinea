@@ -8,7 +8,7 @@
     {!! $errors->first('nombre','<small>:message</small><br>')!!}    
 </span>
 
-<h1 class="">Crear desparacitacion</h1>
+<h1 class="">Crear desparasitación</h1>
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-6 mx-auto">
         <div class="container">

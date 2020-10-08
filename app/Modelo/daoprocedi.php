@@ -16,7 +16,7 @@ class daoprocedi{
         left join vacunas v on  v.idVacun = p.vacunas_idVacun)
         left join despara d on d.idDespara = p.despara_idDespara)
         left join veterin vet on p.veterin_idVeterin = vet.idVeterin";
-    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(nombre) AS cantidad FROM procedi p GROUP BY MONTH (createdAt), YEAR (createdAt)';
+    private $query2 = 'SELECT  YEAR(createdAt ) AS anio, MONTH(createdAt) AS mes, count(idProc) AS cantidad FROM procedi p GROUP BY MONTH (createdAt), YEAR (createdAt)';
     
     private $listaprocedimientos;
 

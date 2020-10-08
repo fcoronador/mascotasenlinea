@@ -78,28 +78,58 @@
         <h1 class="mt-4">Procedimientos</h1>
         <a href="{{route('indexprocedi')}}" class="btn btn-primary">Lista de Procedimientos</a>
         <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearprocedimiento')}}" role="button">Crear procedimiento</a>
+        <div class="card-body"  style="height: 80vh; width: 60vw;">
+                <h3>Cantidad de procedimientos creados por mes</h3>
+                <canvas id="myProcedim" width="" height=""></canvas>
+                <script>
+                    var eti5 = {!! json_encode($cantidadPro['etiquetas']) !!};
+                    var val5 = {!! json_encode($cantidadPro['valor']) !!};
+                </script>
+        </div>
     </div>
 
     <div id="paneVacunas" class="container collapse">
         <h1 class="mt-4">Vacunas</h1>
         <a href="{{route('indexvacuna')}}" class="btn btn-primary">Lista de Vacunas</a>
-        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearvacuna')}}" role="button">Crear vacuna</a>
-
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearvacuna')}}" role="button">Crear Vacuna</a>
+        <div class="card-body"  style="height: 80vh; width: 60vw;">
+                <h3>Cantidad de vacunas creadas por mes</h3>
+                <canvas id="myVacun" width="" height=""></canvas>
+                <script>
+                    var eti6 = {!! json_encode($cantidadVac['etiquetas']) !!};
+                    var val6 = {!! json_encode($cantidadVac['valor']) !!};
+                </script>
+        </div>
     </div>
+
     <div id="paneExamenes" class="container collapse">
         <h1 class="mt-4">Exámenes</h1>
         <a href="{{route('indexexamen')}}" class="btn btn-primary">Lista de Examenes</a>
-        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearexamen')}}" role="button">Crear examen</a>
-
-
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('crearexamen')}}" role="button">Crear Examen</a>
+        <div class="card-body"  style="height: 80vh; width: 60vw;">
+                <h3>Cantidad de examenes creados por mes</h3>
+                <canvas id="myExam" width="" height=""></canvas>
+                <script>
+                    var eti7 = {!! json_encode($cantidadExa['etiquetas']) !!};
+                    var val7 = {!! json_encode($cantidadExa['valor']) !!};
+                </script>
+        </div>
     </div>
+
     <div id="paneDesparas" class="container collapse">
-        <h1 class="mt-4">Desparacitantes</h1>
-        <a href="{{route('indexdespara')}}" class="btn btn-primary">Lista de Desparacitantes</a>
-        <a name="" id="" class="btn btn-default btnCrear" href="{{route('creardesparacitacion')}}" role="button">Crear desparacitacion</a>
-
-
+        <h1 class="mt-4">Desparasitantes</h1>
+        <a href="{{route('indexdespara')}}" class="btn btn-primary">Lista Desparasitantes</a>
+        <a name="" id="" class="btn btn-default btnCrear" href="{{route('creardesparacitacion')}}" role="button">Crear Desparasitación</a>
+        <div class="card-body"  style="height: 80vh; width: 60vw;">
+                <h3>Cantidad de desparasitantes creados por mes</h3>
+                <canvas id="myDesp" width="" height=""></canvas>
+                <script>
+                    var eti8 = {!! json_encode($cantidadDes['etiquetas']) !!};
+                    var val8 = {!! json_encode($cantidadDes['valor']) !!};
+                </script>
+        </div>
     </div>
+
     <div id="paneServicios" class="container collapse">
         <h1 class="mt-4">Servicios</h1>
         <a href="{{route('servicios')}}" class="btn btn-primary">Lista de Servicios</a>

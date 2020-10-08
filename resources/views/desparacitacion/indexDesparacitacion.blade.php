@@ -18,7 +18,7 @@
 <div class="row">
     <div class="col-12 col-sm-10 col-lg-10 mx-auto">
         <div class="container p-3">
-            <h1>Desparacitaciones</h1>
+            <h1>Desparasitaciones</h1>
             <hr>
 
             <a name="" id="" class="btn btn-default btnCrear" href="{{route('creardesparacitacion')}}" role="button">Crear desparacitacion</a>
