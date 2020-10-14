@@ -152,10 +152,10 @@ class ControlCliente extends Controller
 
         request()->validate([
             'idCedula' => 'required|digits_between:5,20',
-            'nombre' => 'required|alpha_dash|between:3,39',
-            'apellido' => 'required|alpha_dash|between:3,39',
+            'nombre' => 'required|between:3,39',
+            'apellido' => 'required|between:3,39',
             'telefono' => 'required|digits_between:7,14',
-            'direccion' => 'required|alpha_num|max:74',
+            'direccion' => 'required|max:74',
             'correo' => 'required|email',
             'contrasena' => 'required'
         ], [
