@@ -8,23 +8,37 @@ class ControlPanelVet extends Controller
 {
     public function index()
     {
-        if(session('rol')==2 ){
+        if(session('rol') == 2){
 
-            $clientes = ControlCliente::cantClientes();
-            $mascotas = ControlMascota::cantMascotas();
-            $control = ControlContro::cantControl();
-            $citas = ControlCitas::cantCitas();
-    
-            $cantidadCli = $this->etiquetas($clientes);
-            $cantidadMasco = $this->etiquetas($mascotas);
-            $cantidadControl = $this->etiquetas($control);
-            $cantidadCitas = $this->etiquetas($citas);
-    
-            //dd($cantidadMasco);
-    
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas'));
+        $clientes = ControlCliente::cantClientes();
+        $mascotas = ControlMascota::cantMascotas();
+        $control = ControlContro::cantControl();
+        $citas = ControlCitas::cantCitas();
+        $Veterinarios =ControlVeterinarios::cantVet();
+        $Servicios =ControlServicios::cantServi();
+        $procedimientos =ControlProcedimiento::cantProcedi();
+        $vacunas= ControlVacunas::cantVacunas();
+        $examenes= ControlExamenes::cantExamenes();
+        $desparasi= ControlDesparacitacion::cantDespara();
+
+        $cantidadCli = $this->etiquetas($clientes);
+        $cantidadMasco = $this->etiquetas($mascotas);
+        $cantidadControl = $this->etiquetas($control);
+        $cantidadCitas = $this->etiquetas($citas);
+        //$cantidadVet= $this->etiqueta($Veterinarios);
+        //$cantidadSer= $this->etiqueta($Servicios);
+        $cantidadPro= $this->etiquetas($procedimientos);
+        $cantidadVac= $this->etiquetas($vacunas);
+        $cantidadExa= $this->etiquetas($examenes);
+        $cantidadDes= $this->etiquetas($desparasi);
+        
+     //dd($cantidadPro);
+
+
+ 
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadPro','cantidadVac','cantidadExa','cantidadDes'));
         }else{
-                
+            
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
         }
     }
