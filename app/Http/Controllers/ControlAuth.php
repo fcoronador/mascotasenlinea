@@ -21,11 +21,15 @@ class ControlAuth extends Controller
     public function RegistroCliente(Request $request, Auth $index)
     {
         $persona = [];
-        $cliente=[];
+        $cliente = [];
 
         $existe = $index->verificarCorreo($request->get('correo'));
         $existeID = $index->verificarCedula($request->get('idCedula'));
-        if ($existe && $existeID) {
+
+
+        if ($existe) {
+            return redirect()->route('inicio')->with('alerta', 'El correo o cédula ya existe');
+        } elseif ($existeID) {
             return redirect()->route('inicio')->with('alerta', 'El correo o cédula ya existe');
         } else {
             $persona['usuLogin'] = $request->get('correo');
@@ -39,7 +43,7 @@ class ControlAuth extends Controller
         } else {
             return redirect()->route('inicio')->with('alerta', 'Las contraseñas no coinciden');
         }
-        
+
         $persona['usuUsuSesion'] = $request->get('correo');
         $persona['usuEstado'] = true;
 
@@ -56,61 +60,56 @@ class ControlAuth extends Controller
             return redirect()->route('inicio')->with('alerta', 'El usuario no existe.');
         }
         $usuario = $this->consultarUsuario($request->get('correo'));
-        
+
         foreach ($usuario as $item) {
 
             if (password_verify($request->get('password'), $item->password)) {
-                
+
                 $cliente = $this->ControlCliente->clientCorreo($request->get('correo'));
 
                 if ($item->rol == 1) {
 
-                    session(['rol'=> 1]);
-                    foreach($cliente as $prop)
-                    {
-                        session(['idCedula'=> $prop->idCedula]);
-                        session(['nombre'=> $prop->nombre]);
-                        session(['apellido'=> $prop->apellido]);
-                        session(['correo'=> $prop->correo]);
+                    session(['rol' => 1]);
+                    foreach ($cliente as $prop) {
+                        session(['idCedula' => $prop->idCedula]);
+                        session(['nombre' => $prop->nombre]);
+                        session(['apellido' => $prop->apellido]);
+                        session(['correo' => $prop->correo]);
                     }
-                    
+
                     //$temp = new ControlCliente();
-                   //return $temp->show(session('idCedula'));
+                    //return $temp->show(session('idCedula'));
 
                     return redirect()->route('administracion');
-
                 } elseif ($item->rol == 2) {
 
-                    session(['rol'=> 2]);
-                    foreach($cliente as $prop)
-                    {
-                        session(['idCedula'=> $prop->idCedula]);
-                        session(['nombre'=> $prop->nombre]);
-                        session(['apellido'=> $prop->apellido]);
-                        session(['correo'=> $prop->correo]);
+                    session(['rol' => 2]);
+                    foreach ($cliente as $prop) {
+                        session(['idCedula' => $prop->idCedula]);
+                        session(['nombre' => $prop->nombre]);
+                        session(['apellido' => $prop->apellido]);
+                        session(['correo' => $prop->correo]);
                     }
                     return redirect()->route('veterinario');
-
                 } elseif ($item->rol == 3) {
 
-                    session(['rol'=> 3]);
-                    foreach($cliente as $prop)
-                    {
-                        session(['idCedula'=> $prop->idCedula]);
-                        session(['nombre'=> $prop->nombre]);
-                        session(['apellido'=> $prop->apellido]);
-                        session(['correo'=> $prop->correo]);
+                    session(['rol' => 3]);
+                    foreach ($cliente as $prop) {
+                        session(['idCedula' => $prop->idCedula]);
+                        session(['nombre' => $prop->nombre]);
+                        session(['apellido' => $prop->apellido]);
+                        session(['correo' => $prop->correo]);
                     }
                     return redirect()->route('usuario');
                 }
-            }
-            else{
+            } else {
                 return redirect()->route('inicio')->with('alerta', 'Contraseña incorrecta.');
             }
         }
     }
 
-    public function Logout(){
+    public function Logout()
+    {
         session()->forget('rol');
         session()->forget('idCedula');
         session()->forget('nombre');
