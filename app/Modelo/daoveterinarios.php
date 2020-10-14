@@ -10,8 +10,8 @@ class daoveterinarios{
     private $query='select * from veterin';
 /*     private $query3="SELECT  YEAR(fecha) AS anio, MONTH(fecha) AS mes , veterin_idVeterin as vet,count(visible) AS cantidad FROM controles WHERE visible =1 GROUP BY MONTH (fecha), YEAR (fecha), veterin_idVeterin";
  */    
-    private $query2="SELECT nombre, count(idVeterin) as cant FROM veterin v left join citas c on 
-    v.idVeterin=c.veterin_idVeterin where c.visible='1' ";
+    /* private $query2="SELECT nombre, count(idVeterin) as cant FROM veterin v left join citas c on 
+    v.idVeterin=c.veterin_idVeterin where c.visible='1' "; */
     private $listaveterinario;
 
     public function __construct()
@@ -27,8 +27,8 @@ class daoveterinarios{
     }
 
     public function getVetAdmin(){
-        $cantidad= DB::select($this->query2);
-        return $cantidad; 
+        /* $cantidad= DB::select($this->query2);
+        return $cantidad;  */
     }
 
     public function setVeterinario($veterinario)
