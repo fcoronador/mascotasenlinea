@@ -29,8 +29,8 @@ class ControlPanelAdmin extends Controller
         $cantidadMasco = $this->etiquetas($mascotas);
         $cantidadControl = $this->etiquetas($control);
         $cantidadCitas = $this->etiquetas($citas);
-        $cantidadVet= $this->etiqueta($Veterinarios);
-        $cantidadSer= $this->etiqueta($Servicios);
+        //$cantidadVet= $this->etiqueta($Veterinarios);
+        //$cantidadSer= $this->etiqueta($Servicios);
         $cantidadPro= $this->etiquetas($procedimientos);
         $cantidadVac= $this->etiquetas($vacunas);
         $cantidadExa= $this->etiquetas($examenes);
