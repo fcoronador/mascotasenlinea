@@ -143,8 +143,7 @@
             <h3></h3>
             <canvas id="GraphServi" width="" height=""></canvas>
             <script> 
-                var etiSer1 = {!! json_encode($cantidadSer['etiquetas']) !!};
-                var valSer1 = {!! json_encode($cantidadSer['valor']) !!};
+                
             </script>
         </div>
 
@@ -180,8 +179,7 @@
                 <h3>Cantidad de citas atendidas por veterinario</h3>
                 <canvas id="myChartVet" width="" height=""></canvas>
                 <script> 
-                    var etivet1 = {!! json_encode($cantidadVet['etiquetas']) !!};
-                    var valvet1 = {!! json_encode($cantidadVet['valor']) !!};
+          
                 
                 </script>       
                  </div>

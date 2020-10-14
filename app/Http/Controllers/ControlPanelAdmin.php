@@ -40,7 +40,7 @@ class ControlPanelAdmin extends Controller
 
 
  
-            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadVet','cantidadSer','cantidadPro','cantidadVac','cantidadExa','cantidadDes'));
+            return view('admin.Admin', compact('cantidadCli', 'cantidadMasco', 'cantidadControl','cantidadCitas','cantidadPro','cantidadVac','cantidadExa','cantidadDes'));
         }else{
             
             return redirect()->route('inicio')->with('estado', 'No tienes permiso para acceder.');
